@@ -1,0 +1,162 @@
+/* ======================================================
+   Author: Sharkapuce group (CB, JM, LF, NM, PF, RK) 
+   For: Wild Code School - First project 
+   Description: Basic.css with root variable, general reset
+   ====================================================== */
+
+
+/* === IMPORT FONT === */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* === ROOT VARIABLES === */
+:root {
+  /* COLORS */
+  --color-red: hsl(4, 47%, 54%);
+  --color-dark-gray: hsl(180, 4%, 14%);
+  --color-light-brown: hsl(34, 40%, 84%);
+  --color-light-blue: hsl(187, 18%, 63%);
+  --color-yellow: hsl(40, 81%, 63%);
+
+  --color-bg: #ffffff;
+  --color-text: hsl(180, 4%, 14%);
+
+  --color-error: hsl(0, 70%, 50%);
+  --color-success: hsl(150, 70%, 40%);
+
+  /* TYPOGRAPHY */
+  --font-family-base: 'Roboto', sans-serif;
+  --font-family-title: 'Quicksand', sans-serif;
+
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* SPACING */
+  --space-0: 0;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* SHADOWS */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+/* === GENERAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* === HTML & BODY === */
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* === TITRES === */
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: var(--font-family-title);
+  color: var(--color-dark-gray);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* === LINKS === */
+a {
+  text-decoration: none;
+  color: var(--color-red);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+}
+
+/* === IMG === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === LIST === */
+ul,
+ol {
+  list-style: none;
+}
+
+/* === BUTTONS === */
+button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  background-color: var(--color-red);
+  font-weight: 600;
+  color: var(--color-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* --- OTHERS BUTTONS --- */
+.border-red {
+  border-color: var(--color-red);
+  color: var(--color-red);
+  background-color: var(--color-bg);
+}
+
+.border-dark {
+  border-color: var(--color-dark-gray);
+  color: var(--color-dark-gray);
+  background-color: var(--color-bg);
+}
+
+/* --- ACTIVES BUTTONS --- */
+.active-red {
+  background-color: var(--color-red);
+  color: var(--color-bg);
+}
+
+.active-dark {
+  background-color: var(--color-dark-gray);
+  color: var(--color-bg);
+}
