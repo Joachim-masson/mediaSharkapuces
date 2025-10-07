@@ -1,0 +1,35 @@
+footer{
+   background-color:grey;
+
+   header{
+      display:flex;
+      justify-content: space-between;
+      padding:2rem 4rem;
+
+      input {
+         padding:0.8rem;
+         width: 22rem;
+      }
+      button {
+         background-color: orangered;
+         padding : 0.8rem;
+         border-style: none;
+         color : beige;
+         margin: 0.8rem;
+      }
+   }
+   .generalFooter {
+      display:flex; 
+      justify-content: space-between;
+      padding:0rem 4rem 2rem;
+
+      ul {
+         display:flex;
+         list-style-type: none;
+         
+         li {
+            margin:0 5rem;
+         }
+      }
+   }
+}
