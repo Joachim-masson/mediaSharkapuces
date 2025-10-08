@@ -1,31 +1,32 @@
 footer {
-   background-color: grey;
+   background-color: var(--color-dark-gray);
 
    header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 2rem 4rem;
 
-      img {}
+      img {
+         width: 9rem;
+
+      }
 
       input {
-         padding: 0.8rem;
-         width: 22rem;
+         padding: 0.7rem;
+         width: 24rem;
       }
 
-      button {
-         background-color: orangered;
-         padding: 0.8rem;
-         border-style: none;
-         color: beige;
-         margin: 0.8rem;
-      }
    }
 
    .generalFooter {
       display: flex;
       justify-content: space-between;
       padding: 0rem 4rem 2rem;
+
+      p {
+         color: var(--color-light-brown);
+      }
 
       ul {
          display: flex;
