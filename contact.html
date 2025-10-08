@@ -4,34 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Site de médiatèque connectée">
-    <link rel="stylesheet" href="styles.css/contact.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="styles/contact.css" type="text/css" media="screen" />
     <title>Contact</title>
 </head>
-
-<Header class="header">
-    <img src="images/Bannière-contact.png" alt="Fond" class="Fond d'écran shark contact">
-</Header>
 <body>
-<section class="grid-formulaire">
-        <h2 class="titre-contact">Un petit mot pour nous contacter ?</h2>
-        <p> Il suffit de remplir notre formulaire de contact</p>
-    <div class="head-formulaire">
-     <form class="formulaire">
-         <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" id="prenom" placeholder="Prénom">
+    <nav class="navbar">
+        <img src="navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
+        <ul class="nav-list">
+            <li><a href="">Home</a></li>
 
+<!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
+            <li class="dropdown">
+                <a href="#">Livres ▾</a>
+                <ul class="dropdown-menu">
+                <li><a href="">Comics</a></li>
+                <li><a href="">Fantastiques</a></li>
+                <li><a href="">Nature</a></li>
+                <li><a href="">Manga</a></li>
+                </ul>
+            </li>
+  
+          
+                <li><a href="">Musique</a></li>
+                <li><a href="">DVD</a></li>
+                <li><a href="">Jeux Vidéos</a></li>
+                <li><a href="">A propos de nous</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        <div class="shopping">
+            <img src="navbar/images/heart.svg" alt="Favoris" class="favoris"/>
+            <img src="navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+        </div>
+
+    </nav>
+<Header class="header">
+    <h1 class="titre-principal">Contactez-nous</h1>
+    <img src="images/Banniere-contact.png" alt="Fond" class="Fond d'écran shark contact">
+</Header>
+<section class="grid-formulaire">
+  <div class="texte-contact">
+    <h2 class="titre-contact">Un petit mot pour nous contacter ?</h2>
+    <p>Il suffit de remplir notre formulaire de contact ou bien vous pouvez nous contacter : <br><br>
+        - Par téléphone : +33606060606<br>
+        - Par email : Sharkapuces@wcs.fr<br>
+        - Par courrier : 2 rue de l'échappée 75010 PARIS </p>
+  </div>
+
+<div class="head-formulaire">
+    <form class="formulaire">
+      <!-- Ligne 1 : Prénom / Nom -->
+      <div class="champ">
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Prénom">
+      </div>
+      <div class="champ">
         <label for="nom">Nom</label>
         <input type="text" name="nom" id="nom" placeholder="Nom">
+      </div>
 
+      <!-- Ligne 2 : Email / Téléphone -->
+      <div class="champ">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Email">
+      </div>
+      <div class="champ">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" name="telephone" id="telephone" placeholder="Téléphone">
+      </div>
 
+      <!-- Ligne 3 : Message (2 colonnes) -->
+      <div class="champ message">
         <label for="message">Message</label>
         <textarea name="message" id="message" placeholder="Votre message ici..."></textarea>
+      </div>
 
-        <input type="submit" value="Envoyer" class="Envoyer">
+      <!-- Bouton -->
+      <input type="submit" value="Envoyer" class="Envoyer">
     </form>
-</div>
+  </div>
 </section>
+
+<footer>
+      <header>
+         <img src="images/logoBlack1.png" alt="Logo de la médiathèque"/>
+         <form action="" method="get">
+            <input type="email" id="email" name="email" placeholder="Renseigner votre email ici pour recevoir notre news letter" required>
+            <button type="submit">Souscrire</button>
+         </form> 
+      </header>
+      <div class="generalFooter">
+         <p>	&#169;  2025 Best Team EVER !!!</p>
+         <ul>
+            <li><a href="">mentions légales</a></li>
+            <li><a href="">Contact</a></li>
+         </ul>
+      </div>
+   </footer>
 </body>
 </html>
