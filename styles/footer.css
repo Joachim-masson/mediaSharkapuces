@@ -1,36 +1,39 @@
-footer{
+footer {
    background-color: var(--color-dark-gray);
 
-   header{
-      display:flex;
+   header {
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      padding:2rem 4rem;
+      padding: 2rem 4rem;
 
       img {
          width: 9rem;
 
       }
+
       input {
-         padding:0.7rem;
+         padding: 0.7rem;
          width: 24rem;
       }
 
    }
+
    .generalFooter {
-      display:flex; 
+      display: flex;
       justify-content: space-between;
-      padding:0rem 4rem 2rem;
+      padding: 0rem 4rem 2rem;
 
       p {
-         color:var(--color-light-brown);
+         color: var(--color-light-brown);
       }
+
       ul {
-         display:flex;
+         display: flex;
          list-style-type: none;
-         
+
          li {
-            margin:0 5rem;
+            margin: 0 5rem;
          }
       }
    }
