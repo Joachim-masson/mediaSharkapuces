@@ -6,6 +6,9 @@ footer{
       justify-content: space-between;
       padding:2rem 4rem;
 
+      img {
+         
+      }
       input {
          padding:0.8rem;
          width: 22rem;
