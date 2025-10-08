@@ -1,0 +1,81 @@
+.body {
+    margin: 0;
+}
+
+.information {
+    width: 100vw;
+    background-color: #E7D9C7;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 150px;
+
+}
+
+.information2 {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+}
+
+
+
+.imageheader img {
+    width: 500px;
+    height: 300px;
+}
+
+#titre1 {
+    margin: 0;
+    padding: 0px 0px;
+    --font-family-title: 'Quicksand', sans-serif;
+}
+
+/* header en haut  */
+
+
+#titre {
+    margin: 0;
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    --font-family-title: 'Quicksand', sans-serif;
+}
+
+/* titre répartie sur ma page */
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 400px);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    justify-content: center;
+}
+
+/* section 1 */
+
+.container4 {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 400px);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    justify-content: center;
+}
+
+/* section 2 */
+
+.imgcontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* image grid section 1 et 2 */

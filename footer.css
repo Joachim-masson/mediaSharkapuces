@@ -1,37 +1,38 @@
-footer{
-   background-color:grey;
+footer {
+   background-color: grey;
 
-   header{
-      display:flex;
+   header {
+      display: flex;
       justify-content: space-between;
-      padding:2rem 4rem;
+      padding: 2rem 4rem;
 
-      img {
-         
-      }
+      img {}
+
       input {
-         padding:0.8rem;
+         padding: 0.8rem;
          width: 22rem;
       }
+
       button {
          background-color: orangered;
-         padding : 0.8rem;
+         padding: 0.8rem;
          border-style: none;
-         color : beige;
+         color: beige;
          margin: 0.8rem;
       }
    }
+
    .generalFooter {
-      display:flex; 
+      display: flex;
       justify-content: space-between;
-      padding:0rem 4rem 2rem;
+      padding: 0rem 4rem 2rem;
 
       ul {
-         display:flex;
+         display: flex;
          list-style-type: none;
-         
+
          li {
-            margin:0 5rem;
+            margin: 0 5rem;
          }
       }
    }
