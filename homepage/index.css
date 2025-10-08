@@ -5,24 +5,61 @@
   margin: 0;
   border: none;
 }
-
-main {
-  background-image: url("/homepage/image/joliebiblie.jpg");
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
 }
 
-.mainpage {
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  background-image: url("/homepage/image/joliebiblie.jpg");
+  height: 25em;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: var(--font-family-title);
+  color: var(--color-dark-gray);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* === LINKS === */
+a {
+  text-decoration: none;
+  color: var(--color-red);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.headermain {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 80px 120px;
   margin: 0 auto;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #1f1f1f;
-  margin-bottom: 20px;
 }
 
 .texth1 {
@@ -39,33 +76,18 @@ main {
 }
 
 button {
-  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  background-color: var(--color-red);
   font-weight: 600;
-  border-radius: 4px;
+  color: var(--color-bg);
   cursor: pointer;
-  padding: 12px 24px;
-}
+  text-align: center;
+  transition: all 0.2s ease;
 
-.primary-btn {
-  background-color: #c15b3c;
-  border: none;
-  color: white;
-  box-shadow: 0 0 0 2px #b94e34;
-}
-
-.primary-btn:hover {
-  background-color: #b94e34;
-}
-
-.secondary-btn {
-  background-color: transparent;
-  border: 2px solid #b94e34;
-  color: #b94e34;
-}
-
-.secondary-btn:hover {
-  background-color: #b94e34;
-  color: white;
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .manette {
@@ -76,8 +98,7 @@ button {
 
 .titleproduct {
   font-size: 2em;
-  margin-top: 1, 5em;
-  margin-bottom: 1em;
+  margin-top: 1em;
   border-color: #1f1f1f;
   display: flex;
   justify-content: center;
@@ -94,21 +115,40 @@ button {
 .box4 {
   margin: 2em;
   border: 2px solid #333;
-  border-radius: 10px;
   padding: 1em;
+  border-radius: 10px;
   text-align: center;
   background-color: #f9f9f9;
+  box-shadow: var(--shadow-lg);
 }
 .third-btn {
   margin: 2em;
-  background-color: #3498db;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+}
+.question1,
+.question2,
+.question3,
+.question4 {
+  box-shadow: var(--shadow-lg);
 }
 
-.third-btn:hover {
-  background-color: #2176bd;
+article {
+  background-color: #e8dbc7; /* couleur beige clair du fond */
+  height: 30em;
+}
+
+.question {
+  padding-top: 1em;
+}
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+  margin: 2em auto;
+  border: 2px solid #333;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  font-size: 0.8em;
 }
