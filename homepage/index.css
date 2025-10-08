@@ -1,5 +1,6 @@
-@import url(../styles.css/graphic_chart.css);
+@import url(../styles/graphic_chart.css);
 @import url(../navbar/navbar.css);
+@import url(../styles/footer.css);
 
 * {
   margin: 0;
@@ -18,7 +19,7 @@ body {
   min-height: 100vh;
 }
 
-header {
+.headertop {
   background-image: url("/homepage/image/joliebiblie.jpg");
   height: 25em;
 }
@@ -131,24 +132,73 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
-article {
-  background-color: #e8dbc7; /* couleur beige clair du fond */
-  height: 30em;
+.faq-section {
+  background: var(--color-light-brown);
+  padding: var(--space-xl) var(--space-md);
 }
 
-.question {
-  padding-top: 1em;
+.faq-section h2 {
+  margin-bottom: var(--space-lg);
 }
 
-.faq-container {
-  display: flex;
-  justify-content: center;
-  margin: 2em auto;
-  border: 2px solid #333;
-  padding: 1em;
-  border-radius: 10px;
-  background-color: var(--color-bg);
-  box-shadow: var(--shadow-lg);
-  max-width: 600px;
-  font-size: 0.8em;
+.faq-item {
+  max-width: 800px;
+  margin: 0 auto var(--space-md);
+  background: var(--color-bg);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.75rem 0.25rem;
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: var(--font-weight-bold);
+  transition: transform 0.3s ease;
+}
+
+.faq-item p {
+  padding: 0 0 0.9rem 0.25rem;
+  color: hsl(0 0% 45%);
+  border-top: 1px solid #e5e7eb;
+  margin-top: 0.5rem;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  margin: 3em;
+  padding-right : 8em;
+}
+
+.event img {
+  width: 80%;
+  height: auto;
+  grid-row: span 2; 
+  padding: 2em;
+}
+
+.titleevent{
+  margin-top: 2em;
 }
