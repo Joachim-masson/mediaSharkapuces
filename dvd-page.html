@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE AND ICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.svg">
+    <title>Dvd-box</title>
+    <!-- GENERAL CSS -->
+    <link rel="stylesheet" href="styles/graphic_chart.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="styles/footer.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="navbar/navbar.css" type="text/css" media="screen" />
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="styles/dvd-page.css" type="text/css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="images/logo.svg" alt="Logo du site" class="logo" />
+            <ul class="nav-list">
+                <li><a href="">Home</a></li>
+
+                <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
+                <li class="dropdown">
+                    <a href="#">Livres ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Comics</a></li>
+                        <li><a href="">Fantastiques</a></li>
+                        <li><a href="">Nature</a></li>
+                        <li><a href="">Manga</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">Musique</a></li>
+                <li><a href="">DVD</a></li>
+                <li><a href="">Jeux Vidéos</a></li>
+                <li><a href="">A propos de nous</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+            <div class="shopping">
+                <img src="navbar/images/heart.svg" alt="Favoris" class="favoris" />
+                <img src="navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <article>
+                <h1>Le monde des DVD</h1>
+                <p>L'utilisation des films en bibliothèque est soumise à de nombreuses contraintes juridiques à
+                    connaître avant d'envisager toute forme de diffusion auprès des publics.</p>
+                <p>
+                    <button>Retourner à l'accueil</button>
+                    <button>Voir les dernières sorties</button>
+                </p>
+            </article>
+
+            <figure>
+
+            </figure>
+        </section>
+
+        <section>
+            <h2>Les dernières sorties</h2>
+
+            <a href="#page1" aria-label="Précédent">‹</a>
+
+            <ul>
+                <li id="page1">
+                    <figure><img src="https://picsum.photos/300/180?1" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?2" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?3" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?4" alt=""></figure>
+                </li>
+                <li id="page2">
+                    <figure><img src="https://picsum.photos/300/180?5" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?6" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?7" alt=""></figure>
+                </li>
+                <li>
+                    <figure><img src="https://picsum.photos/300/180?8" alt=""></figure>
+                </li>
+            </ul>
+            <a href="#page2" aria-label="Suivant">›</a>
+
+            <button>voir dernière sortie</button>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <header>
+            <a href="index.html"><img src="images/logoFooter.png" alt="Logo de la médiathèque" /></a>
+            <form action="" method="get">
+                <input type="email" id="email" name="email"
+                    placeholder="Renseigner votre email ici pour recevoir notre news letter" required>
+                <button type="submit">Souscrire</button>
+            </form>
+        </header>
+        <div class="generalFooter">
+            <p> &#169; 2025 Sharkapuce group</p>
+            <ul>
+                <li><a href="">Mentions légales</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
