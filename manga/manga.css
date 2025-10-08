@@ -1,0 +1,98 @@
+@import url(../navbar/navbar.css);
+@import url(../styles/footer.css);
+@import url(../styles/graphic_chart.css);
+
+* {
+  margin: 0;
+  border: none;
+}
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.headertop {
+  background-image: url("/homepage/image/joliebiblie.jpg");
+  height: 25em;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: var(--font-family-title);
+  color: var(--color-dark-gray);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* === LINKS === */
+a {
+  text-decoration: none;
+  color: var(--color-red);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.headermain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 120px;
+  margin: 0 auto;
+}
+
+.texth1 {
+  max-width: 500px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  background-color: var(--color-red);
+  font-weight: 600;
+  color: var(--color-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.manette {
+  width: 350px;
+  height: auto;
+  border-radius: 16px;
+}
