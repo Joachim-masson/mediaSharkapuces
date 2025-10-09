@@ -30,6 +30,20 @@ footer {
       li {
         margin: 0 5rem;
       }
-    }
-  }
+   }
+}
+
+@media screen and (max-width: 992px) {
+   footer{
+      header {
+         flex-direction:column;
+      }
+      .generalFooter {
+         flex-direction: column-reverse;
+         align-items: center;
+         ul {
+            flex-wrap: wrap;
+         }
+      }
+   }
 }
