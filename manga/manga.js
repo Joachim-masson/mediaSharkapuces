@@ -78,3 +78,27 @@ const images = {
       });
     }
     showImages('shonen');
+
+
+const slides = document.querySelectorAll('.carousel-slide');
+
+slides.forEach(function(slide) {
+  slide.addEventListener('click', function(event) {
+    event.stopPropagation();
+
+    const Active = slide.classList.contains('active');
+
+    slides.forEach(function(otherSlide) {
+      otherSlide.classList.remove('active');
+    });
+
+    if (!Active) {
+      slide.classList.add('active');
+    }
+  });
+});
+document.addEventListener('click', function() {
+  slides.forEach(function(slide) {
+    slide.classList.remove('active');
+  });
+});
