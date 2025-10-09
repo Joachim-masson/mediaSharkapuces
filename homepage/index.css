@@ -184,21 +184,21 @@ button {
 
 .event {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   align-items: center;
   justify-items: center;
   margin: 3em;
-  padding-right : 8em;
+  padding-right: 8em;
 }
 
 .event img {
   width: 80%;
   height: auto;
-  grid-row: span 2; 
+  grid-row: span 2;
   padding: 2em;
 }
 
-.titleevent{
+.titleevent {
   margin-top: 2em;
 }
