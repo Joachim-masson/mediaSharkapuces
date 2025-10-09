@@ -1,0 +1,217 @@
+@import url(../styles/graphic_chart.css);
+@import url(../styles/index.css);
+@import url(../navbar/navbar.css);
+@import url(../styles/footer.css);
+
+* {
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   HEADER
+========================== */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: var(--padding-base);
+  background-color: rgb(188, 222, 231);
+}
+
+/* ==========================
+   SECTION FORMULAIRE
+========================== */
+.grid-formulaire {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: 80vh;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Texte à gauche */
+.grid-formulaire h2,
+.grid-formulaire p {
+  grid-column: 1;
+  text-align: left;
+  max-width: 500px;
+}
+
+.grid-formulaire h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.grid-formulaire p {
+  font-size: var(--font-size-base);
+  color: var(--color-dark-gray);
+}
+
+/* ==========================
+   FORMULAIRE
+========================== */
+.head-formulaire {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+
+}
+
+.formulaire {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+  width: 500px;
+  background: var(--color-light-brown);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+/* Les champs en général */
+.champ {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Champ message occupe 2 colonnes */
+.champ.message {
+  grid-column: 1 / 3;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Bouton Envoyer sur deux colonnes */
+.Envoyer {
+  grid-column: 1 / 3;
+  justify-self: end;
+  padding: 10px 20px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Envoyer:hover {
+  background-color: #8c413c;
+}
+
+/* Inputs & textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0.2em;
+}
+
+
+#prenom {
+  grid-column: 1;
+}
+
+#nom {
+  grid-column: 2; 
+}
+
+#email {
+  grid-column: 1;
+}
+
+#message {
+  grid-column: 1/3;
+  width: 100%;
+  resize: none;
+}
+
+
+.Envoyer {
+  grid-column: 1 / 3;
+  justify-self: end;
+  padding: 10px 20px;
+  background-color: #C15C54;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Envoyer:hover {
+  background-color: #8c413c;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* Tablettes (max 992px) */
+@media screen and (max-width: 992px) {
+  .grid-formulaire {
+    grid-template-columns: 1fr; /* tout sur une seule colonne */
+    text-align: center;
+    height: auto;
+  }
+
+  .grid-formulaire h2,
+  .grid-formulaire p {
+    grid-column: 1;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .head-formulaire {
+    grid-column: 1;
+    justify-content: center;
+  }
+
+  .formulaire {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobiles (max 600px) */
+@media screen and (max-width: 600px) {
+  .formulaire {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    width: 100%;
+  }
+
+  label {
+    text-align: left;
+  }
+
+  #prenom,
+  #nom,
+  #email{
+    grid-column: 1;
+  }
+
+  #message {
+    grid-column-start : 1;
+    grid-column-end: 2;
+  }
+
+  .Envoyer {
+    justify-self: center;
+    width: fit-content;
+  }
+}
