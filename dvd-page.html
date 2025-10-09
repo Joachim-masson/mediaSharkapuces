@@ -55,52 +55,46 @@
                 <p>L'utilisation des films en bibliothèque est soumise à de nombreuses contraintes juridiques à
                     connaître avant d'envisager toute forme de diffusion auprès des publics.</p>
                 <p>
-                    <button>Retourner à l'accueil</button>
-                    <button>Voir les dernières sorties</button>
+                    <button class="btn active-red" href="index.html">Retourner à l'accueil</button>
+                    <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
                 </p>
             </article>
-
-            <figure>
-
-            </figure>
         </section>
 
-        <section>
+        <section class="carousel" aria-labelledby="carouselheading">
             <h2>Les dernières sorties</h2>
-
-            <a href="#page1" aria-label="Précédent">‹</a>
-
-            <ul>
-                <li id="page1">
-                    <figure><img src="https://picsum.photos/300/180?1" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?2" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?3" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?4" alt=""></figure>
-                </li>
-                <li id="page2">
-                    <figure><img src="https://picsum.photos/300/180?5" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?6" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?7" alt=""></figure>
-                </li>
-                <li>
-                    <figure><img src="https://picsum.photos/300/180?8" alt=""></figure>
-                </li>
-            </ul>
-            <a href="#page2" aria-label="Suivant">›</a>
-
-            <button>voir dernière sortie</button>
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide current-slide"><img src="images/dvd001.png" alt="John Wick Ballerina">
+                    </li>
+                    <li class="carousel-slide"><img src="images/dvd002.jpg" alt="28 ans plus tard"></li>
+                    <li class="carousel-slide"><img src="images/dvd003.jpeg" alt="Mission impossible"></li>
+                    <li class="carousel-slide"><img src="images/dvd004.jpg" alt="Dragons"></li>
+                    <li class="carousel-slide"><img src="images/dvd005.jpg" alt="Lilo Stitch"></li>
+                    <li class="carousel-slide"><img src="images/dvd006.png" alt="La venue de l'avenir"></li>
+                    <li class="carousel-slide"><img src="images/dvd007.jpg" alt="Avignon"></li>
+                    <li class="carousel-slide"><img src="images/dvd008.jpg" alt="Elio"></li>
+                    <li class="carousel-slide"><img src="images/dvd009.jpg" alt="Les 4 fantastiques"></li>
+                </ul>
+            </div>
+            <button class="carousel-button next">&#10095;</button>
         </section>
+        <section>
+            <h2>Notre Dvdthèque</h2>
+            <article class="typeOfDVD">
+                <h3>Les films français</h3>
 
+                <div class="boutonselector">
+                    <button class="btn active-red" data-category="comédie">Comédie</button>
+                    <button class="btn border-red" data-category="drame">Drame</button>
+                    <button class="btn active-dark" data-category="thriller">Thriller</button>
+                    <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div id="gallery" class="gallery"></div>
+            </article>
+        </section>
     </main>
 
 
@@ -121,7 +115,7 @@
             </ul>
         </div>
     </footer>
-
+    <script src="JS/dvd-page.js" defer></script>
 </body>
 
 </html>
