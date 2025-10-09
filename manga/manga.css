@@ -253,6 +253,34 @@ button {
   border-radius: 10px;
 }
 
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-slide img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("image/mangatèque.png") center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.carousel-slide.active img {
+  opacity: 0.2;
+}
+
+.carousel-slide.active img::before {
+  opacity: 0.3;
+}
 .name,
 .price {
   position: absolute;
@@ -262,15 +290,7 @@ button {
   opacity: 0;
   text-align: center;
   transition: opacity 0.3s ease;
-}
-
-.carousel-slide img {
-  border-radius: 10px;
-  transition: opacity 0.3s ease;
-}
-
-.carousel-slide.active img {
-  opacity: 0;
+  z-index: 3;
 }
 
 .carousel-slide.active .name {
@@ -283,46 +303,36 @@ button {
   top: 50%;
 }
 
-.carousel-slide::before {
+.img-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.carousel-slide::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("image/mangatèque.png") center/cover no-repeat;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  background: url("image/fond-manga.jpg") center/cover no-repeat;
   z-index: 0;
 }
-
-.carousel-slide.active::before {
-  opacity: 0.3;
-}
-.shopping,
-.favorite {
+.img-wrapper::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
   opacity: 0;
-  text-align: center;
-  transition: opacity 0.3s ease;
-  padding-top: 1em;
-  width: 35px;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-shopping {
-  right: 50px;
-}
-
-.favorite {
-  right: 10px;
-}
-
-.carousel-slide.active .shopping,
-.carousel-slide.active .favorite {
+.carousel-slide.active .img-wrapper::before {
   opacity: 1;
-}
-.shopping:hover,
-.favorite:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  cursor: pointer;
 }
