@@ -321,3 +321,8 @@ shopping {
 .carousel-slide.active .favorite {
   opacity: 1;
 }
+.shopping:hover,
+.favorite:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  cursor: pointer;
+}
