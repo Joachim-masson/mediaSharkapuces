@@ -7,11 +7,9 @@
 /*========== SECTION 1: HEADER ========== */
 main>header:nth-of-type(1) {
     min-height: 50vh;
-    background:
-        linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-        url("https://images.pexels.com/photos/22845394/pexels-photo-22845394.jpeg") center/cover no-repeat;
+    background-color: hsl(168, 33%, 69%);
     display: grid;
-    grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
+    grid-template-columns: minmax(300px, 570px) minmax(400px, 1fr);
     gap: var(--space-xl);
     align-items: center;
     justify-content: center;
@@ -36,9 +34,8 @@ main>header:nth-of-type(1) {
             color: var(--color-bg);
             text-align: left;
         }
-    }
 }
-
+}
 
 .liste-livres {
     display: grid;
@@ -175,4 +172,75 @@ main>header:nth-of-type(1) {
     overflow: hidden;
     clip: rect(0, 0, 0, 0); 
     border: 0;
+}
+.badge{
+  display:inline-block;
+  min-width:20px;
+  padding:2px 6px;
+  font-size:0.8rem;
+  line-height:1;
+  border-radius:999px;
+  background:#e53e3e;
+  color:white;
+  margin-left:6px;
+}
+
+#toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+
+.toast {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  opacity: 0.97;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.toast.success { background: #2f855a; }
+.toast.info    { background: #3182ce; }
+.toast.warn    { background: #dd6b20; }
+
+.shopping {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* espace entre les deux icônes */
+  position: relative;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-wrapper img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-wrapper img:hover {
+  transform: scale(1.1);
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: #e53e3e;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 999px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
 }
