@@ -1,0 +1,266 @@
+{
+  "categories": {
+    "livres": {
+      "Panier": {
+      "id": 1,
+      "titre": "Panier",
+      "image": "../navbar/images/shopping_cart.svg"
+    },
+      "favoris": {
+      "id": 2,
+      "titre": "Favoris",
+      "image": "../navbar/images/heart.svg"
+      },
+      "Animaux": [
+        {
+          "id": 1,
+          "titre": "Le Chat Qui Voulait Être Un Lion",
+          "auteur": "Félix Ronron",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1025",
+          "Prix": 13.99,
+          "synopsis": "Un chat domestique rêve de devenir le roi de la jungle et part à l'aventure pour découvrir son vrai potentiel. Entre croquettes et gazelles, il devra choisir entre son canapé douillet et la savane hostile."
+        },
+        {
+          "id": 2,
+          "titre": "Les Chiens Ont Du Nez Pour Les Affaires",
+          "auteur": "Rex Dubois",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1074",
+          "Prix": 11.50,
+          "synopsis": "Un golden retriever devient PDG d'une startup et révolutionne le monde des affaires à coups de pattes. Son secret ? Renifler les bonnes opportunités avant tout le monde."
+        },
+        {
+          "id": 3,
+          "titre": "Mouton Academy : L'École Des Blagounettes",
+          "auteur": "Bertrand Laineux",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1043",
+          "Prix": 12.00,
+          "synopsis": "Dans cette école pas comme les autres, les moutons apprennent l'art du stand-up et du timing parfait. Attention, fou rires garantis et jeux de mots laineux à foison !"
+        },
+        {
+          "id": 4,
+          "titre": "Un Dauphin Dans Ma Baignoire",
+          "auteur": "Marine Bulle",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=663",
+          "Prix": 15.20,
+          "synopsis": "Quand Sophie trouve un dauphin dans sa baignoire un matin, elle ne s'attendait pas à devoir lui apprendre les règles de vie en appartement. Entre éclaboussures et factures d'eau astronomiques, la cohabitation s'annonce mouvementée."
+        },
+        {
+          "id": 5,
+          "titre": "Les Fourmis Ont Le Dernier Mot",
+          "auteur": "Antoine Millepattes",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1085",
+          "Prix": 9.99,
+          "synopsis": "Un thriller microscopique où une colonie de fourmis décide de prendre le pouvoir lors d'un pique-nique familial. Suspense, stratégie militaire et miettes de gâteau au programme !"
+        },
+        {
+          "id": 6,
+          "titre": "Le Canard Philosophe",
+          "auteur": "Donald Plume",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1036",
+          "Prix": 10.50,
+          "synopsis": "Marcel, un canard col-vert, s'interroge sur le sens profond du 'coin-coin' et la nature de l'étang. Entre existentialisme et pain rassis, une réflexion pleine de profondeur... et d'eau."
+        },
+        {
+          "id": 7,
+          "titre": "Lapin & Compagnie : Chroniques D'un Rongeur Moderne",
+          "auteur": "Carotte Lagrande",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1062",
+          "Prix": 14.75,
+          "synopsis": "Les aventures urbaines de Bugs, un lapin hipster qui jongle entre son blog lifestyle, ses séances de yoga et sa passion pour les carottes bio. La vie moderne vue par de grandes oreilles !"
+        },
+        {
+          "id": 8,
+          "titre": "Le Paresseux Qui Courait Après Le Temps",
+          "auteur": "Léo Lento",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1073",
+          "Prix": 12.60,
+          "synopsis": "Germain, un paresseux stressé, décide de changer de vie en devenant coach en productivité. Le problème ? Il met trois heures à descendre de son arbre chaque matin."
+        },
+        {
+          "id": 9,
+          "titre": "Cochon D'Inde Superstar",
+          "auteur": "Ginette Roussette",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1068",
+          "Prix": 11.80,
+          "synopsis": "Roméo, un cochon d'Inde ordinaire, devient une star des réseaux sociaux du jour au lendemain. Entre paparazzi félins et contrats publicitaires pour croquettes, sa vie bascule complètement !"
+        }
+      ],
+      "Plantes": [
+        {
+          "id": 1,
+          "titre": "Cactus et Sentiments Piquants",
+          "auteur": "Aloès Véran",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1084",
+          "Prix": 10.90,
+          "synopsis": "Une romance épineuse entre deux cactus voisins qui n'osent pas se rapprocher. Un conte d'amour qui prouve que même les relations les plus piquantes peuvent s'épanouir."
+        },
+        {
+          "id": 2,
+          "titre": "Le Chêne Qui Racontait Des Histoires",
+          "auteur": "Olivier Racine",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1083",
+          "Prix": 12.70,
+          "synopsis": "Albert, un chêne centenaire, décide d'écrire ses mémoires. 200 ans de potins forestiers, de bûcherons maladroits et de pique-niques mémorables au pied de son tronc."
+        },
+        {
+          "id": 3,
+          "titre": "Orchidée Mon Amour",
+          "auteur": "Flore Béat",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1080",
+          "Prix": 13.99,
+          "synopsis": "Une orchidée capricieuse et son propriétaire désespéré tentent de communiquer. Entre arrosages ratés et engrais mystérieux, une histoire d'amour compliquée mais touchante."
+        },
+        {
+          "id": 4,
+          "titre": "Le Basilic Qui Aimait Le Rock",
+          "auteur": "Herbert Son",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1082",
+          "Prix": 9.95,
+          "synopsis": "Basile, un basilic rebelle, pousse mieux au son du hard rock qu'avec de la musique classique. Son propriétaire découvre que les herbes aromatiques ont aussi leurs préférences musicales !"
+        },
+        {
+          "id": 5,
+          "titre": "Les Plantes Ont La Main Verte (Et L'Humour Aussi)",
+          "auteur": "Rose Bouton",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1077",
+          "Prix": 14.40,
+          "synopsis": "Un recueil hilarant de blagues et anecdotes racontées par les plantes elles-mêmes. Découvrez ce que pensent vraiment vos plantes d'intérieur de votre façon de les arroser !"
+        },
+        {
+          "id": 6,
+          "titre": "La Jungle de Mon Salon",
+          "auteur": "Phil Dendron",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1079",
+          "Prix": 16.10,
+          "synopsis": "Quand la passion pour les plantes tourne à l'obsession, un appartement de 30m² se transforme en forêt tropicale. Une comédie verte sur l'art de vivre avec 247 plantes d'intérieur."
+        },
+        {
+          "id": 7,
+          "titre": "Pissenlit Superstar",
+          "auteur": "Léo Champêtre",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=1081",
+          "Prix": 8.99,
+          "synopsis": "L'histoire inspirante d'un pissenlit qui refuse d'être considéré comme une mauvaise herbe. De pelouse en pelouse, il mène une révolution botanique pour la reconnaissance de toutes les plantes."
+        },
+        {
+          "id": 8,
+          "titre": "Mon Cactus M'a Dit Bonjour",
+          "auteur": "Véra Plante",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1078",
+          "Prix": 11.75,
+          "synopsis": "Après 5 ans de silence, le cactus de bureau de Martine prononce son premier mot. S'ensuit une amitié improbable entre une comptable solitaire et une plante bavarde."
+        },
+        {
+          "id": 9,
+          "titre": "Le Pot de Fleur En Colère",
+          "auteur": "Gérard Terreau",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=1076",
+          "Prix": 10.50,
+          "synopsis": "Un pot de fleur en a marre d'être déplacé sans arrêt et décide de se rebeller. Une satire sociale vue du rebord de fenêtre, entre terreau et révolution."
+        }
+      ],
+      "Voyages": [
+        {
+          "id": 1,
+          "titre": "Ma Valise A Disparu À Tokyo",
+          "auteur": "Camille Globe",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=290",
+          "Prix": 14.60,
+          "synopsis": "Perdue dans Tokyo sans bagages ni notion du japonais, Claire doit survivre avec un guide touristique de 1987 et beaucoup d'imagination. Le début d'un voyage inoubliable... ou cauchemardesque !"
+        },
+        {
+          "id": 2,
+          "titre": "Tongs, Soleil et Quiproquos",
+          "auteur": "Lucie Palmiers",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=267",
+          "Prix": 12.90,
+          "synopsis": "Des vacances de rêve aux Caraïbes se transforment en série de malentendus hilarants. Entre mauvaises traductions et situations embarrassantes, le soleil n'est pas le seul à faire rougir !"
+        },
+        {
+          "id": 3,
+          "titre": "L'Itinéraire D'un Touriste Fatigué",
+          "auteur": "Jean Bagage",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=250",
+          "Prix": 13.80,
+          "synopsis": "Après 40 ans de tourisme intensif, Georges décide de tout plaquer pour des vacances... dans son jardin. Une réflexion douce-amère sur l'art de voyager sans bouger de chez soi."
+        },
+        {
+          "id": 4,
+          "titre": "Le GPS Qui Me Parlait Mal",
+          "auteur": "Michel Carte",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=225",
+          "Prix": 9.95,
+          "synopsis": "Un GPS défectueux développe une personnalité sarcastique et guide son propriétaire vers les pires endroits. Road trip infernal garanti avec un système de navigation qui a du caractère !"
+        },
+        {
+          "id": 5,
+          "titre": "Voyage au Bout du Canapé",
+          "auteur": "Odile Fainéante",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=190",
+          "Prix": 8.99,
+          "synopsis": "Un guide complet du tourisme d'intérieur. Découvrez comment explorer votre salon comme un continent inconnu, avec carte détaillée de la télécommande et itinéraire vers le frigo."
+        },
+        {
+          "id": 6,
+          "titre": "Perdu En Bretagne (Sans GPS)",
+          "auteur": "Gwenn Armer",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=165",
+          "Prix": 11.60,
+          "synopsis": "Trois jours d'errance entre crêperies et menhirs pour retrouver la route de Quimper. Une odyssée bretonne où chaque habitant donne des indications différentes et où la pluie devient un personnage à part entière."
+        },
+        {
+          "id": 7,
+          "titre": "Safari Sans Filet",
+          "auteur": "Pauline Brousse",
+          "disponible": false,
+          "image": "https://picsum.photos/500/700?image=155",
+          "Prix": 15.30,
+          "synopsis": "Quand votre téléphone tombe en panne en plein safari africain, la vraie aventure commence. Entre selfies ratés avec des lions et Wi-Fi inexistant, redécouvrez le voyage à l'ancienne."
+        },
+        {
+          "id": 8,
+          "titre": "Week-end À Trifouillis-les-Oies",
+          "auteur": "Armand Valise",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=130",
+          "Prix": 10.75,
+          "synopsis": "Guide non officiel du village le plus ennuyeux de France. Entre festival de l'asperge et musée du bouton, découvrez comment survivre à un week-end en famille dans la France profonde."
+        },
+        {
+          "id": 9,
+          "titre": "Un Avion Nommé Désir",
+          "auteur": "Julie Escale",
+          "disponible": true,
+          "image": "https://picsum.photos/500/700?image=120",
+          "Prix": 12.50,
+          "synopsis": "Romance en altitude entre une hôtesse de l'air blasée et un pilote qui a peur de l'avion. Entre turbulences sentimentales et retards techniques, l'amour trouvera-t-il son chemin à 10 000 mètres ?"
+        }
+      ]
+    }
+  }
+  
+}
