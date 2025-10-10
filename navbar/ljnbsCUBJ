@@ -1,0 +1,34 @@
+//  JSON  ===
+import { fantastiquesData } from './fantastiques.js';
+
+    console.log("JSON chargé :", data);
+    
+    const allImages = document.querySelectorAll('.carousel img');
+
+    allImages.forEach(img => {
+      const livreId = parseInt(img.id);
+      const livre = data.find(l => l.id === livreId);
+
+      if (livre) {
+        const infoBox = document.createElement('div');
+        infoBox.classList.add('info-box');
+        infoBox.innerHTML = `
+          <strong>${livre.titre}</strong><br>
+          Auteur : ${livre.auteur}<br>
+          Année : ${livre.annee}<br>
+          Prix : €${livre.prix_location}<br>
+          <em>${livre.synopsis}</em>
+        `;
+        infoBox.style.display = 'none';
+        img.parentElement.style.position = 'relative';
+        img.parentElement.appendChild(infoBox);
+
+        img.addEventListener('mouseenter', () => {
+          infoBox.style.display = 'block';
+        });
+
+        img.addEventListener('mouseleave', () => {
+          infoBox.style.display = 'none';
+        });
+      }
+    });

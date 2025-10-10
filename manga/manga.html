@@ -11,36 +11,33 @@
 
 <body>
     <nav class="navbar">
-        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
+        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo" />
         <ul class="nav-list">
-            <li><a href="../homepage/index.html">Home</a></li>
+            <li><a href="">Home</a></li>
+
+            <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
             <li class="dropdown">
                 <a href="#">Livres ▾</a>
                 <ul class="dropdown-menu">
-                <li><a href="">Comics</a></li>
-                <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
-                <li><a href="../nature/nature.html">Nature</a></li>
-                <li><a href="../manga/manga.html">Manga</a></li>
+                    <li><a href="">Comics</a></li>
+                    <li><a href="">Fantastiques</a></li>
+                    <li><a href="">Nature</a></li>
+                    <li><a href="">Manga</a></li>
                 </ul>
             </li>
-                <li><a href="../musique/musique.html">Musique</a></li>
-                <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
-                <li><a href="">Jeux Vidéos</a></li>
-                <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-            </ul>
 
-            <div class="shopping">
-                <div class="icon-wrapper">
-                  <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
-                  <span class="badge" id="favoris-count">0</span>
-                </div>
-              
-                <div class="icon-wrapper">
-                  <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
-                  <span class="badge" id="panier-count">0</span>
-                </div>
-              </div>
+
+            <li><a href="">Musique</a></li>
+            <li><a href="">DVD</a></li>
+            <li><a href="">Jeux Vidéos</a></li>
+            <li><a href="">A propos de nous</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+
+        <div class="shopping">
+            <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
+            <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+        </div>
     </nav>
     <main>
 
@@ -55,7 +52,7 @@
                 </p>
             </article>
         </header>
-        
+
         <section class="carousel" aria-labelledby="carouselheading">
             <h2 class="lastrelease">Les dernières sorties</h2>
             <button class="carousel-button prev">&#10094;</button>
@@ -133,6 +130,46 @@
                             <img class=favorite src="image/heart.svg" alt="favoris">
                         </div>
                     </li>
+
+                    <li class="carousel-slide">
+                        <div class="img-wrapper">
+                            <img src="image/36000_seconds_in_a_day_-_Tome_9_-_Vega_medium.webp"
+                                alt="36000 seconds in a day">
+                        </div>
+                        <p class="name">36000 seconds in a day</p>
+                        <p class="price">3,99€</p>
+                        <div class="shop">
+                            <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                            <img class=favorite src="image/heart.svg" alt="favoris">
+                        </div>
+                    </li>
+
+                    <li class="carousel-slide">
+                        <div class="img-wrapper">
+                            <img src="image/Centuria_-_Tome_2_-_Kurokawa_medium.webp" alt="Centuria - Tome 2">
+                        </div>
+                        <p class="name">Centuria - Tome 2</p>
+                        <p class="price">3,99€</p>
+                        <div class="shop">
+                            <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                            <img class=favorite src="image/heart.svg" alt="favoris">
+                        </div>
+                    </li>
+                    <li class="carousel-slide">
+                        <div class="img-wrapper">
+                            <img src="image/FINAL_FANTASY_XIV_Chroniques_de_la_Lumi_re_Volume_-_Kurokawa_medium.webp"
+                                alt="FINAL FANTASY XIV: Chroniques de la Lumière - Volume 1">
+                        </div>
+                        <p class="name"> FANTASY XIV: <br>Chroniques de <br>la Lumière </p>
+                        <p class="price">3,99€</p>
+                        <div class="shop">
+                            <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                            <img class=favorite src="image/heart.svg" alt="favoris">
+                        </div>
+                    </li>
+
+
+
                 </ul>
             </div>
             <button class="carousel-button next">&#10095;</button>
@@ -191,11 +228,14 @@
                             </div>
                         </li>
 
-                        <li class="carousel-slide"><img src="image/snkok.webp" alt="L'Attaque des Titans">
-                            <p class="name">L'Attaque des Titans </p>
+                        <li class="carousel-slide">
+                            <div class="img-wrapper">
+                                <img src="image/snk pop.webp" alt="L'Attaque des Titans">
+                            </div>
+                            <p class="name">L'Attaque des Titans</p>
                             <p class="price">3,99€</p>
                             <div class="shop">
-                                <img class="shopping" class="shooping" src="image/shopping_cart.svg" alt="panier">
+                                <img class="shopping" src="image/shopping_cart.svg" alt="panier">
                                 <img class=favorite src="image/heart.svg" alt="favoris">
                             </div>
                         </li>
@@ -204,6 +244,42 @@
                                 <img src="image/naruto pop.webp" alt="Naruto">
                             </div>
                             <p class="name">Naruto</p>
+                            <p class="price">3,99€</p>
+                            <div class="shop">
+                                <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                                <img class=favorite src="image/heart.svg" alt="favoris">
+                            </div>
+                        </li>
+
+                        <li class="carousel-slide">
+                            <div class="img-wrapper">
+                                <img src="image/bleach.jpg" alt="Bleach">
+                            </div>
+                            <p class="name">Bleach</p>
+                            <p class="price">3,99€</p>
+                            <div class="shop">
+                                <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                                <img class=favorite src="image/heart.svg" alt="favoris">
+                            </div>
+                        </li>
+
+                        <li class="carousel-slide">
+                            <div class="img-wrapper">
+                                <img src="image/gto.png" alt="GTO">
+                            </div>
+                            <p class="name">GTO</p>
+                            <p class="price">3,99€</p>
+                            <div class="shop">
+                                <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                                <img class=favorite src="image/heart.svg" alt="favoris">
+                            </div>
+                        </li>
+
+                        <li class="carousel-slide">
+                            <div class="img-wrapper">
+                                <img src="image/hunter_x_hunter (1).jpg" alt="Hunter x Hunter">
+                            </div>
+                            <p class="name">Hunter x Hunter</p>
                             <p class="price">3,99€</p>
                             <div class="shop">
                                 <img class="shopping" src="image/shopping_cart.svg" alt="panier">

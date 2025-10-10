@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../styles/index.css" type="text/css" media="screen" />
    <link rel="stylesheet" href="../navbar/navbar.html" type="text/css" media="screen" />
+   <link rel="stylesheet" href="../index.html" type="text/css" media="screen" />
    <link rel="stylesheet" href="" type="text/css" media="screen" />
    <link rel="stylesheet" href="fantastique.css" type="text/css" media="screen" />
    <script src="fantastique.js" defer></script>
@@ -52,10 +53,13 @@
             <h1>Le monde fantastique</h1>
             <p>Entre rêve et réalité, le fantastique dévoile des mondes où la magie, le mystère et l’inconnu se mêlent. Des héros ordinaires y affrontent l’extraordinaire, dans des récits où chaque page ouvre une porte vers l’impossible.</p>
             <p>
-                <button class="btn active-red" href="index.html">Retourner à l'accueil</button>
+                <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
                 <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
             </p>
         </article>
+        <div class="header-image">
+            <img src="images/fantasy.jpg" alt="Illustration fantastique" />
+          </div>
     </section>
 </header>
 
@@ -102,15 +106,13 @@
         </div>
 
         <div id="gallery"></div>
-
-
     </article>
 
 </main>
 
-<footer class="footer">
-    <header>
-       <a href="index.html"><img src="../images/logoFooter.png" alt="Logo de la médiathèque"/></a>
+<footer>
+    <header class="footer">
+       <a href="../index.html"><img src="../images/logoFooter.png" alt="Logo de la médiathèque"/></a>
        <form action="" method="get">
           <input type="email" id="email" name="email" placeholder="Renseigner votre email ici pour recevoir notre news letter" required>
           <button type="submit">Souscrire</button>
@@ -119,8 +121,8 @@
     <div class="generalFooter">
        <p>	&#169;  2025 Sharkapuce group</p>
        <ul>
-          <li><a href="">Mentions légales</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="../mentionLegales.html">Mentions légales</a></li>
+          <li><a href="../contact.html">Contact</a></li>
        </ul>
     </div>
  </footer>
