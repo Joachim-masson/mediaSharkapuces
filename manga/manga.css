@@ -1,0 +1,338 @@
+@import url(../navbar/navbar.css);
+@import url(../styles/footer.css);
+@import url(../styles/graphic_chart.css);
+
+* {
+  margin: 0;
+  border: none;
+}
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.headertop {
+  background-image: url("image/mangatèque.png");
+  height: 25em;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font-family: var(--font-family-title);
+  color: var(--color-dark-gray);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+/* === LINKS === */
+a {
+  text-decoration: none;
+  color: var(--color-red);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+main > header:nth-of-type(1) {
+  min-height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("image/mangatèque.png") center/cover no-repeat;
+  display: grid;
+  grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
+  gap: var(--space-xl);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) calc(var(--space-xl) * 2);
+  color: var(--color-bg);
+  text-shadow: 2px 2px 2px var(--color-red);
+
+  article {
+    max-width: 52ch;
+    justify-self: start;
+
+    h1 {
+      font-size: calc(var(--font-size-h1) * 2);
+      margin-bottom: var(--space-md);
+      text-align: left;
+      color: var(--color-bg);
+      white-space: nowrap;
+    }
+
+    p:first-of-type {
+      margin-bottom: calc(var(--space-lg) * 2);
+      color: var(--color-bg);
+      text-align: left;
+    }
+  }
+}
+
+.texth1 {
+  max-width: 500px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: red;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  background-color: var(--color-red);
+  font-weight: 600;
+  color: var(--color-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.manette {
+  width: 350px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 calc((100% - 40px) / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 47px; */
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.carousel-button.prev {
+  left: 15px;
+}
+.carousel-button.next {
+  right: 15px;
+}
+
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.lastrelease {
+  margin-bottom: 1em;
+}
+
+.backgroundsection2 {
+  background-color: var(--color-light-brown);
+  height: 30em;
+}
+.populaire {
+  margin: 1em;
+}
+
+.typeOfManga {
+  margin-top: 3em;
+  background-color: var(--color-light-brown);
+}
+
+.titlelibrairie {
+  padding-top: 1em;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(2, 400px);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  justify-content: center;
+}
+
+.imgcontainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.boutonselector {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+#gallery {
+  display: flex;
+  gap: 3em;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+}
+
+#gallery img {
+  width: 13em;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-slide img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("image/mangatèque.png") center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.carousel-slide.active img {
+  opacity: 0.2;
+}
+
+.carousel-slide.active img::before {
+  opacity: 0.3;
+}
+.name,
+.price {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.carousel-slide.active .name {
+  opacity: 1;
+  top: 30%;
+}
+
+.carousel-slide.active .price {
+  opacity: 1;
+  top: 50%;
+}
+
+.img-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.carousel-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("image/fond-manga.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+.img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-slide.active .img-wrapper::before {
+  opacity: 1;
+}
