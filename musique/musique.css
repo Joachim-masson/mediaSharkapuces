@@ -3,7 +3,7 @@ main>section:nth-of-type(1) {
     min-height: 50vh;
     background:
         linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-        url("/images/musiquesImages/musiqueHeader.jpg" ) center/cover no-repeat;
+        url("../images/musiquesImages/musiqueHeader.jpg" ) center/cover no-repeat;
     display: grid;
     grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
     gap: var(--space-xl);
@@ -33,7 +33,7 @@ main>section:nth-of-type(1) {
     }
 }
 
-/*-----------------\CAROUSEL/----------------------- */
+/*-----------------\CAROUSEL-CAROUSEL/----------------------- */
 .carousel {
     position: relative;
     width: 100%;
@@ -96,7 +96,7 @@ main>section:nth-of-type(1) {
     clip: rect(0, 0, 0, 0); 
     border: 0;
 }
-/*-----------------/CAROUSEL\----------------------- */
+/*-----------------/CAROUSEL+STYLE\----------------------- */
 
 .carousel {
   margin : 2rem 2rem 6rem 2rem;
@@ -194,20 +194,28 @@ main>section:nth-of-type(1) {
 }
 /*-----\MUSIQUE RECHERCHE/-----------------------*/
 
+#musiqueRecherche {
+  h2 {
+    padding-top : 2rem;
+    padding-bottom : 1rem;
+  }
+}
 .containerSearch {
   display:flex;
   justify-content: space-evenly;
   align-items: center;
   padding:3rem;
   background-color: var(--color-light-brown);
+  .containerSearch input {
+    border-style: solid;
+  }
+  .containerSearch select {
+  border-style: solid;
+  }
 }
 
-.containerSearch input {
-  border-style: solid;
-}
 
-.containerSearch select {
-  border-style: solid;
-}
+
+
 
 
