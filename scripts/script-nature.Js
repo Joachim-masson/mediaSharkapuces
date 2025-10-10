@@ -9,8 +9,8 @@ fetch('./assets/livre.json')
     const favorisImg = livresData.favoris.image;
 
     // clés localStorage
-    const PANIER_KEY = 'mes_livres_panier_v1';
-    const FAVORIS_KEY = 'mes_livres_favoris_v1';
+    const PANIER_KEY = 'Panier';
+    const FAVORIS_KEY = 'Favoris';
 
     // Charger depuis localStorage (si existant)
     let panier = JSON.parse(localStorage.getItem(PANIER_KEY)) || [];
