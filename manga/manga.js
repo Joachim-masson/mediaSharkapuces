@@ -7,7 +7,7 @@ carousels.forEach(carousel => {
     const prevButton = carousel.querySelector('.carousel-button.prev');
 
     let currentIndex = 0;
-    const slidesToShow =3;
+    const slidesToShow = 3;
 
     function updateSlidePosition() {
         const slideWidth = slides[0].getBoundingClientRect().width;
