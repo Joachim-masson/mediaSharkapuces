@@ -8,9 +8,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.svg">
     <title>Dvd-box</title>
     <!-- GENERAL CSS -->
-    <link rel="stylesheet" href="styles/graphic_chart.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="styles/footer.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="navbar/navbar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../styles/graphic_chart.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../styles/footer.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../navbar/navbar.css" type="text/css" media="screen" />
     <!-- PAGE CSS -->
     <link rel="stylesheet" href="styles/dvd-page.css" type="text/css" media="screen" />
 </head>
@@ -18,7 +18,7 @@
 <body>
     <header>
         <nav class="navbar">
-            <img src="images/logo.svg" alt="Logo du site" class="logo" />
+            <img src="../images/logo.svg" alt="Logo du site" class="logo" />
             <ul class="nav-list">
                 <li><a href="">Home</a></li>
 
@@ -41,8 +41,10 @@
             </ul>
 
             <div class="shopping">
-                <img src="navbar/images/heart.svg" alt="Favoris" class="favoris" />
-                <img src="navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+                <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
+                <span id="favCount" aria-live="polite">0</span>
+                <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+                <span id="cartCount" aria-live="polite">0</span>
             </div>
         </nav>
     </header>
@@ -76,6 +78,17 @@
                     <li class="carousel-slide"><img src="images/dvd007.jpg" alt="Avignon"></li>
                     <li class="carousel-slide"><img src="images/dvd008.jpg" alt="Elio"></li>
                     <li class="carousel-slide"><img src="images/dvd009.jpg" alt="Les 4 fantastiques"></li>
+                    <li class="carousel-slide"><img src="images/dvd010.jpg" alt="Thunderbolt"></li>
+                    <li class="carousel-slide"><img src="images/dvd011.jpg" alt="Exhuma"></li>
+                    <li class="carousel-slide"><img src="images/dvd012.jpg" alt="The apprentice"></li>
+                    <li class="carousel-slide"><img src="images/dvd013.jpg" alt="En fanfare"></li>
+                    <li class="carousel-slide"><img src="images/dvd014.jpg" alt="Jane Austen a gâche ma vie"></li>
+                    <li class="carousel-slide"><img src="images/dvd015.jpg" alt="The crow"></li>
+                    <li class="carousel-slide"><img src="images/dvd016.jpg" alt="The insider"></li>
+                    <li class="carousel-slide"><img src="images/dvd017.jpg" alt="The Pitt"></li>
+                    <li class="carousel-slide"><img src="images/dvd018.jpg" alt="Chernobyl"></li>
+                    <li class="carousel-slide"><img src="images/dvd019.jpeg" alt="L'opéra"></li>
+                    <li class="carousel-slide"><img src="images/dvd020.jpg" alt="Dans l'ombre"></li>
                 </ul>
             </div>
             <button class="carousel-button next">&#10095;</button>
@@ -100,7 +113,7 @@
 
     <footer>
         <header>
-            <a href="index.html"><img src="images/logoFooter.png" alt="Logo de la médiathèque" /></a>
+            <a href="../index.html"><img src="../images/logoFooter.png" alt="Logo de la médiathèque" /></a>
             <form action="" method="get">
                 <input type="email" id="email" name="email"
                     placeholder="Renseigner votre email ici pour recevoir notre news letter" required>
