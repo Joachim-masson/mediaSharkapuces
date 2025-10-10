@@ -9,6 +9,38 @@
   box-sizing: border-box;
 }
 
+main > header:nth-of-type(1) {
+  min-height: 50vh;
+  background-color: hsl(192, 46%, 82%);
+  display: grid;
+  grid-template-columns: minmax(300px, 800px) minmax(400px, 1fr);
+  gap: var(--space-xl);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) calc(var(--space-xl) * 2);
+  color: var(--color-bg);
+  text-shadow: 2px 2px 2px var(--color-red);
+}
+
+main > header:nth-of-type(1) article {
+  max-width: 52ch;
+  justify-self: start;
+}
+
+main > header:nth-of-type(1) h1 {
+  font-size: calc(var(--font-size-h1) * 2);
+  margin-bottom: var(--space-md);
+  text-align: left;
+  color: var(--color-bg);
+  white-space: nowrap;
+}
+
+main > header:nth-of-type(1) p:first-of-type {
+  margin-bottom: calc(var(--space-lg) * 2);
+  color: var(--color-bg);
+  text-align: left;
+}
+
 /* ==========================
    HEADER
 ========================== */
