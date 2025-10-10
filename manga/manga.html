@@ -11,33 +11,36 @@
 
 <body>
     <nav class="navbar">
-        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo" />
+        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
         <ul class="nav-list">
-            <li><a href="">Home</a></li>
-
-            <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
+            <li><a href="../homepage/index.html">Home</a></li>
             <li class="dropdown">
                 <a href="#">Livres ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="">Comics</a></li>
-                    <li><a href="">Fantastiques</a></li>
-                    <li><a href="">Nature</a></li>
-                    <li><a href="">Manga</a></li>
+                <li><a href="">Comics</a></li>
+                <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
+                <li><a href="../nature/nature.html">Nature</a></li>
+                <li><a href="../manga/manga.html">Manga</a></li>
                 </ul>
             </li>
+                <li><a href="../musique/musique.html">Musique</a></li>
+                <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
+                <li><a href="">Jeux Vidéos</a></li>
+                <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
 
-
-            <li><a href="">Musique</a></li>
-            <li><a href="">DVD</a></li>
-            <li><a href="">Jeux Vidéos</a></li>
-            <li><a href="">A propos de nous</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-
-        <div class="shopping">
-            <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
-            <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
-        </div>
+            <div class="shopping">
+                <div class="icon-wrapper">
+                  <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
+                  <span class="badge" id="favoris-count">0</span>
+                </div>
+              
+                <div class="icon-wrapper">
+                  <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+                  <span class="badge" id="panier-count">0</span>
+                </div>
+              </div>
     </nav>
     <main>
 
@@ -52,10 +55,7 @@
                 </p>
             </article>
         </header>
-
-
-
-
+        
         <section class="carousel" aria-labelledby="carouselheading">
             <h2 class="lastrelease">Les dernières sorties</h2>
             <button class="carousel-button prev">&#10094;</button>
@@ -65,15 +65,15 @@
                         <div class="img-wrapper">
                             <img src="image/Goblin Slayer - Dai Katana Vol.8.webp"
                                 alt="Goblin Slayer - Dai Katana Vol.8" class="imageoui">
-                        </div>
-
-                        <p class="name"> Spy x Family</p>
-                        <p class="price">3,99€</p>
-                        <div class="shop">
-                            <img class="shopping" src="image/shopping_cart.svg" alt="panier">
-                            <img class=favorite src="image/heart.svg" alt="favoris">
+                            <p class="name">Spy x Family</p>
+                            <p class="price">3,99€</p>
+                            <div class="shop">
+                                <img class="shopping" src="image/shopping_cart.svg" alt="panier">
+                                <img class="favorite" src="image/heart.svg" alt="favoris">
+                            </div>
                         </div>
                     </li>
+
                     <li class="carousel-slide">
                         <div class="img-wrapper">
                             <img src="image/py X Family Vol.15.webp" alt="SPy x Family">

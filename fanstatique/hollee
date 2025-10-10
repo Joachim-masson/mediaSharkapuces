@@ -1,0 +1,330 @@
+CODE HTML :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../styles/index.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="../navbar/navbar.html" type="text/css" media="screen" />
+   <link rel="stylesheet" href="fantastique.css" type="text/css" media="screen" />
+   <script src="fantastique.js" defer></script>
+
+
+   <title>MediaSharkapuces</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
+        <ul class="nav-list">
+            <li><a href="">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Livres ▾</a>
+                <ul class="dropdown-menu">
+                <li><a href="">Comics</a></li>
+                <li><a href="">Fantastiques</a></li>
+                <li><a href="">Nature</a></li>
+                <li><a href="">Manga</a></li>
+                </ul>
+            </li>
+                <li><a href="">Musique</a></li>
+                <li><a href="">DVD</a></li>
+                <li><a href="">Jeux Vidéos</a></li>
+                <li><a href="">A propos de nous</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        <div class="shopping">
+            <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris"/>
+            <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+        </div>
+    </nav>
+<header>
+    <section>
+        <article>
+            <h1>Le monde fantastique</h1>
+            <p>Entre rêve et réalité, le fantastique dévoile des mondes où la magie, le mystère et l’inconnu se mêlent. Des héros ordinaires y affrontent l’extraordinaire, dans des récits où chaque page ouvre une porte vers l’impossible.</p>
+            <p>
+                <button class="btn active-red" href="index.html">Retourner à l'accueil</button>
+                <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
+            </p>
+        </article>
+    </section>
+</header>
+
+<main>
+    <section class="carousel" aria-labelledby="carouselheading">
+        <h2>Les dernières sorties</h2>
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-track-container">
+            <ul  class="carousel-track">
+                <li class="carousel-slide current-slide"><img src="images/fant1.jpg" alt="Image 1"></li>
+                <li class="carousel-slide"><img src="images/fant3.jpg" alt="Image 3"></li>
+                <li class="carousel-slide"><img src="images/fant5.jpg" alt="Image 5"></li>
+                <li class="carousel-slide"><img src="images/fant11.jpg" alt="Image 11"></li>
+                <li class="carousel-slide"><img src="images/fant6.jpg" alt="Image 6"></li>
+                <li class="carousel-slide"><img src="images/fant10.jpg" alt="Image 10"></li>
+                <li class="carousel-slide"><img src="images/fant9.jpg" alt="Image 9"></li>
+                <li class="carousel-slide"><img src="images/fant3.jpg" alt="Image 3"></li>
+                <li class="carousel-slide"><img src="images/fant7.jpg" alt="Image 7"></li>
+            </ul>
+        </div>
+        <button class="carousel-button next">&#10095;</button>
+    </section>
+
+    <section class="carousel" aria-labelledby="carouselheading">
+        <h3>Nos coups de coeurs</h3>
+        <button class="carousel-button prev">&#10094;</button>
+        <ul  class="carousel-track">
+            <li class="carousel-slide current-slide"><img src="images/H3.jpg" alt="Image 1"></li>
+            <li class="carousel-slide"><img src="images/hobb.png" alt="Image 2"></li>
+            <li class="carousel-slide"><img src="images/roue.jpg" alt="Image 3"></li>
+            <li class="carousel-slide"><img src="images/seign.jpg" alt="Image 5"></li>
+            <li class="carousel-slide"><img src="images/HP2.webp" alt="Image 4"></li>
+            <li class="carousel-slide"><img src="images/hobb2.jpg" alt="Image 6"></li>
+        </ul>
+    </div>
+    <button class="carousel-button next">&#10095;</button>
+    </section>
+
+    <article class="library">
+        <h4>Notre librairie</H2>
+        <div class="boutonselector">
+              <button class="btn active-red" onclick="showImages('magie')">Magie</button>
+              <button class="btn border-red" onclick="showImages('fantastique')">Fantastiques épiques</button>
+        </div>
+
+        <div id="gallery"></div>
+    </article>
+
+</main>
+
+
+</body>
+</html>
+
+
+CODE CSS : 
+
+@import url('../styles/graphic_chart.css');
+@import url('../navbar/navbar.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+header>section:nth-of-type(1) {
+    min-height: 50vh;
+    background:
+    linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+    url(images/couverture.jpg) center/cover no-repeat;
+    display: grid;
+    grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
+    gap: var(--space-xl);
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) calc(var(--space-xl) * 2);
+    color: var(--color-bg);
+    text-shadow: 2px 2px 2px var(--color-red);
+
+    article {
+        max-width: 52ch;
+        justify-self: start;
+
+        h1 {
+            font-size: calc(var(--font-size-h1) *2);
+            margin-bottom: var(--space-md);
+            text-align: left;
+            color: var(--color-bg);
+            white-space: nowrap;
+        }
+
+        p:first-of-type {
+            margin-bottom: calc(var(--space-lg) *2);
+            color: var(--color-bg);
+            text-align: left;
+        }
+    }
+}
+
+.carousel h2, h3 {
+    text-align: center;
+    font-family: var(--font-family-title);
+    color: black;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
+    margin-bottom: 20px; 
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px; 
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 calc((100% - 40px) / 3); 
+    display: flex;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;   
+    max-height: 300px;  
+    object-fit: cover;  
+    border-radius: 10px; 
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.carousel-button.prev { 
+    left: 15px; 
+}
+.carousel-button.next { 
+    right: 15px; 
+}
+
+.visuallyhidden {
+    position: absolute; 
+    width: 1px;        
+    height: 1px;      
+    margin: -1px;     
+    padding: 0;       
+    overflow: hidden;   
+    clip: rect(0, 0, 0, 0); 
+    border: 0;      
+}
+
+.library{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.library, h4{
+    font-family: var(--font-family-title);    
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
+    justify-content: center;
+}
+
+
+#gallery {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 4em;
+  }
+  
+  #gallery img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+  CODE JAVASCRIPT : 
+
+document.querySelectorAll('.carousel').forEach(carousel => {
+
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = carousel.querySelector('.carousel-button.next');
+    const prevButton = carousel.querySelector('.carousel-button.prev');
+
+    let currentIndex = 0;
+    const slidesToShow = 3;
+
+    function updateSlidePosition() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slides.length - slidesToShow) {
+            currentIndex += slidesToShow;
+        } else {
+            currentIndex = 0; 
+        }
+        updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex -= slidesToShow;
+        } else {
+            currentIndex = slides.length - slidesToShow; 
+        }
+        updateSlidePosition();
+    });
+});
+
+
+const images = {
+    magie: [
+      "images/magie/roue2.jpg",
+      "images/magie/bannis.jpeg",
+      "images/magie/animaux.jpeg"
+    ],
+    fantastique: [
+      "images/fantastique/seign2.jpg",
+      "images/fantastique/seign3.jpg",
+    ]
+  };
+  
+
+  function showImages(category) {
+    const gallery = document.getElementById("gallery");
+    gallery.innerHTML = ""; 
+  
+    images[category].forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = category;
+      gallery.appendChild(img);
+    });
+  }
+
+  showImages('magie');
