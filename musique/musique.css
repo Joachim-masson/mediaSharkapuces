@@ -3,7 +3,7 @@ main>section:nth-of-type(1) {
     min-height: 50vh;
     background:
         linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-        url("/images/musiquesImages/musiqueHeader.jpg" ) center/cover no-repeat;
+        url("../images/musiquesImages/musiqueHeader.jpg" ) center/cover no-repeat;
     display: grid;
     grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
     gap: var(--space-xl);
@@ -107,7 +107,7 @@ main>section:nth-of-type(1) {
 
 /*-----------------\MUSIQUE TOP 5 /--------------------*/
 .musiqueTop5{
-  background-image: url("/images/musiquesImages/musiqueTop5v2.jpg");
+  background-image: url("../images/musiquesImages/musiqueTop5v2.jpg");
   background-size: cover;
   h2 {
     padding-top: 2rem;
@@ -209,5 +209,4 @@ main>section:nth-of-type(1) {
 .containerSearch select {
   border-style: solid;
 }
-
 
