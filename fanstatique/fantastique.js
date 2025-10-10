@@ -12,26 +12,26 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   const slidesToShow = 3;
 
   function updateSlidePosition() {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
   }
 
   nextButton.addEventListener('click', () => {
-      if (currentIndex < slides.length - slidesToShow) {
-          currentIndex += slidesToShow;
-      } else {
-          currentIndex = 0; 
-      }
-      updateSlidePosition();
+    if (currentIndex < slides.length - slidesToShow) {
+      currentIndex += slidesToShow;
+    } else {
+      currentIndex = 0;
+    }
+    updateSlidePosition();
   });
 
   prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-          currentIndex -= slidesToShow;
-      } else {
-          currentIndex = slides.length - slidesToShow; 
-      }
-      updateSlidePosition();
+    if (currentIndex > 0) {
+      currentIndex -= slidesToShow;
+    } else {
+      currentIndex = slides.length - slidesToShow;
+    }
+    updateSlidePosition();
   });
 });
 
@@ -51,7 +51,7 @@ const images = {
 
 function showImages(category) {
   const gallery = document.getElementById("gallery");
-  gallery.innerHTML = ""; 
+  gallery.innerHTML = "";
 
   images[category].forEach(src => {
     const img = document.createElement("img");
