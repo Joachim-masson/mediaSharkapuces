@@ -16,3 +16,4 @@ HTML | CSS | JavaScript
 Camille Bujotzek, Pierre Fourdin, Lea François, Remi Karlesking, Nicolas Malafosse, Joachim Masson.
 Project from Code Wild School.
 October 2025.
+

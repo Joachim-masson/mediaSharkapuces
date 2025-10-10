@@ -303,6 +303,11 @@ button {
   top: 50%;
 }
 
+.carousel-slide.active .shop {
+  opacity: 1;
+  top: 50%;
+}
+
 .img-wrapper {
   position: relative;
   border-radius: 10px;
@@ -335,4 +340,69 @@ button {
 
 .carousel-slide.active .img-wrapper::before {
   opacity: 1;
+}
+
+.price,
+.name {
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s ease, top 0.4s ease;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-wrapper .name,
+.img-wrapper .price {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.img-wrapper .name {
+  top: 30%;
+}
+
+.img-wrapper .price {
+  top: 45%;
+}
+
+.shop {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  align-items: center;
+  width: 5em;
+}
+
+.shop :hover {
+  transform: scale(1.1);
+  width: 50px;
 }

@@ -97,8 +97,4 @@ slides.forEach(function(slide) {
     }
   });
 });
-document.addEventListener('click', function() {
-  slides.forEach(function(slide) {
-    slide.classList.remove('active');
-  });
-});
+
