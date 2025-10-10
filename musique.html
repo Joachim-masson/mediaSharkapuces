@@ -15,25 +15,26 @@
 </head>
 
 <body>
+   <!--LA BARRE DE NAVIGATION-->
    <nav class="navbar">
       <img src="navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
       <ul class="nav-list">
-         <li><a href="">Home</a></li>
+         <li><a href="index.html">Home</a></li>
    <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
          <li class="dropdown">
          <a href="#">Livres ▾</a>
             <ul class="dropdown-menu">
                <li><a href="">Comics</a></li>
                <li><a href="">Fantastiques</a></li>
-               <li><a href="">Nature</a></li>
-               <li><a href="">Manga</a></li>
+               <li><a href="livres.html">Nature</a></li>
+               <li><a href="manga.html">Manga</a></li>
             </ul>
          </li>
             
-         <li><a href="">Musique</a></li>
-         <li><a href="">DVD</a></li>
-         <li><a href="">Jeux Vidéos</a></li>
-         <li><a href="">A propos de nous</a></li>
+         <li><a href="musique.html">Musique</a></li>
+         <li><a href="dvd-page.html">DVD</a></li>
+         <li><a href="jeuxvideo.html">Jeux Vidéos</a></li>
+         <li><a href="about-us.html">A propos de nous</a></li>
          <li><a href="contact.html">Contact</a></li>
       </ul>
 
@@ -43,17 +44,18 @@
       </div>
    </nav>
    <main>
+   <!-- LE HEADER GENERAL-->
       <section>
          <article>
             <h1>Musique</h1>
-            <p>Parce que cela reste rigolo de connaître quand même l'équipe derrière ce beau site de sharkapuce</p>
+            <p>Envie de découvrir de nouveaux sons ou de retrouver vos artistes préférés ? La médiathèque vous propose un large choix de CD à emprunter : rock, jazz, classique, musiques du monde, bandes originales, variétés et bien plus encore. Laissez-vous guider par vos envies et explorez notre collection musicale pour tous les goûts et tous les âges.</p>
             <p>
-               <button class="btn active-red" href="index.html">Retourner à l'accueil</button>
-               <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
+               <a href="index.html"><button class="btn active-red" >Retourner à l'accueil</button></a>
+               <a href="#musiqueRecherche"><button class="btn border-red">Rechercher dans le catalogue</button></a>
             </p>
          </article>
       </section>
-      
+   <!--SECTION DERNIERS AJOUTS (CAROUSEL)-->   
       <section class="carousel" aria-labelledby="carouselheading">
          <h2>Derniers ajouts</h2>
          <button class="carousel-button prev">&#10094;</button>
@@ -72,7 +74,7 @@
          </div>
          <button class="carousel-button next">&#10095;</button>
       </section>
-
+   <!--SECTION TOP 5-->
       <section class="musiqueTop5">
          <h2>Top 5 des emprunts</h2>
          <ul class="musiqueEnEcoute">
@@ -80,7 +82,7 @@
                <img src ="images/musiquesImages/Pochette1.jpg" alt="Pochette de l'album World Demise d'Obituary"/>
                <div class="description">
                   <h3>Obituary - World demise</h3>
-                  <p>Sorti en 1994 chez <strong>Roadrunner Records</strong>, World Demise marque une évolution pour <strong>Obituary</strong>, qui mêle à son death metal brutal des influences <strong>groove</strong> et <strong>industrielles</strong>. Porté par la voix unique de <strong>John Tardy</strong> et une production massive de <strong>Scott Burns</strong>, l’album dépeint un monde en ruine, entre <strong>violence</strong>, <strong>décadence</strong> et <strong>désillusion</strong>.</p>
+                  <p>Sorti en 1994 chez <strong>Roadrunner Records</strong>, World Demise marque une évolution pour <strong>Obituary</strong>, qui mêle à son death metal brutal des influences <strong>groove</strong> et <strong>industrielles</strong>. Porté par la voix unique de <strong>John Tardy</strong> et une production massive de <strong>Scott Burns</strong>, l’album dépeint un monde en ruine, entre violence, décadence et désillusion.</p>
                </div>
                <div class="audio">
                   <h5>Ecouter un extrait</h5>
@@ -91,7 +93,7 @@
                <img src="images/musiquesImages/Pochette2.jpg" alt="Pochette de l'album Retribution de Malevolent Creation">
                <div class="description">
                   <h3>Malevolent Creation - Retribution</h3>
-                  <p>Sorti en 1992 chez <strong>Roadrunner</strong>, Retribution confirme Malevolent Creation comme une locomotive du death metal floridien : produit par <strong>Scott Burns</strong>, l’album privilégie des riffs rapides et implacables, une rythmique entraînante et une agressivité brute qui en font un classique sombre et sans concession.</p>
+                  <p>Sorti en 1992 chez <strong>Roadrunner</strong>, Retribution confirme <strong>Malevolent Creation</strong> comme une locomotive du death metal floridien : produit par <strong>Scott Burns</strong>, l’album privilégie des riffs rapides et implacables, une rythmique entraînante et une agressivité brute qui en font un classique sombre et sans concession.</p>
                </div>
                <div class="audio">
                   <h5>Ecouter un extrait</h5>
@@ -102,7 +104,7 @@
                <img src="images/musiquesImages/Pochette3.jpg" alt="Pochette de l'album éponyme de Massacra">
                <div class="description">
                   <h3>Massacra - Massacra</h3>
-                  <p>Sorti en 1990 sur <strong>Shark Records</strong>, l'album éponyme impose <stronger>Massacra</stronger> comme fer de lance du death/thrash français. Brutal et sans compromis, l’album mêle riffs tranchants, intensité guerrière et atmosphère apocalyptique, affirmant une identité européenne puissante au sein de la scène extrême.</p>
+                  <p>Sorti en 1990 sur <strong>Shark Records</strong>, l'album éponyme impose <strong>Massacra</strong> comme fer de lance du death/thrash français. Brutal et sans compromis, l’album mêle riffs tranchants, intensité guerrière et atmosphère apocalyptique, affirmant une identité européenne puissante au sein de la scène extrême.</p>
                </div>
                <div class="audio">
                   <h5>Ecouter un extrait</h5>
@@ -133,7 +135,12 @@
             </li>
          </ul>
       </section>
+   <!--SECTION RECHERCHER DANS LE CATALOGUE-->
+      <section id="musiqueRecherche">
+         <h2>Rechercher dans le catalogue</h2>
+      </section>   
    </main>
+   <!-- BAS DE PAGE-->
    <footer>
       <header class="footer">
          <a href="index.html"><img src="images/logoFooter.png" alt="Logo de la médiathèque"/></a>
