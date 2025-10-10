@@ -99,7 +99,7 @@ main>section:nth-of-type(1) {
 /*-----------------/CAROUSEL+STYLE\----------------------- */
 
 .carousel {
-  margin : 2rem 2rem 6rem 2rem;
+  margin : 2rem 0 6rem 0;
   h2 {
     margin : 1rem;
   }
@@ -206,11 +206,11 @@ main>section:nth-of-type(1) {
   align-items: center;
   padding:3rem;
   background-color: var(--color-light-brown);
-  .containerSearch input {
-    border-style: solid;
-  }
-  .containerSearch select {
-  border-style: solid;
-  }
+ 
 }
-
+.containerSearch input {
+  height: 1.5rem;    
+  }
+.boxSearch select {
+  height: 1.5rem;
+}
