@@ -31,3 +31,29 @@ document.querySelectorAll('.carousel').forEach(carousel => {
         updateSlidePosition();
     });
 });
+
+
+let mesImages = document.querySelectorAll('.container2 img');
+
+// 2. Définir les catégories
+let categories = {
+    fps: ["", "images/fps2.jpg", "images/fps3.jpg", "images/fps4.jpg", "images/fps5.jpg", "images/fps6.jpg"],
+    rpg: ["images/rpg1.jpg", "images/rpg2.jpg", "images/rpg3.jpg", "images/rpg4.jpg", "images/rpg5.jpg", "images/rpg6.jpg"]
+
+};
+
+let mesBoutons = document.querySelectorAll('.bouton button');
+
+mesBoutons.forEach(function (unBouton) {
+    unBouton.addEventListener('click', function () {
+
+
+        let categorie = unBouton.dataset.category;
+
+        // 6. Boucle pour changer les 6 images
+        for (let i = 0; i < 6; i++) {
+            mesImages[i].src = categories[categorie][i];
+        }
+
+    });
+});

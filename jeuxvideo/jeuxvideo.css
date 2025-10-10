@@ -1,7 +1,5 @@
 .body {
     background-color: hsl(187, 18%, 63%);
-    ;
-    ;
 }
 
 #titre {
@@ -35,6 +33,14 @@
 }
 
 /* image grid section 1 et 2 */
+
+.boutons {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    gap: 20px;
+}
 
 
 .carousel {
@@ -115,7 +121,7 @@ main>section:nth-of-type(1) {
     min-height: 50vh;
     background:
         linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-        url("https://images.pexels.com/photos/22845394/pexels-photo-22845394.jpeg") center/cover no-repeat;
+        url("https://www.iledefrance.fr/sites/default/files/styles/main_banner_hp_desktop/public/2024-10/istock-1560833158.jpg.webp?itok=1bbqySsk") center/cover no-repeat;
     display: grid;
     grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
     gap: var(--space-xl);
@@ -159,9 +165,7 @@ main>section:nth-of-type(1) {
 }
 
 .tournois1 img {
-    width: 400px;
-    height: 500px;
+    width: 600px;
+    height: 800px;
     padding: 50px;
 }
-
-#tours {}
