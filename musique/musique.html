@@ -19,15 +19,15 @@
    <nav class="navbar">
       <img src="navbar/images/logomedia.png" alt="Logo du site" class="logo"/>
       <ul class="nav-list">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="homepage/index.html">Home</a></li>
    <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
          <li class="dropdown">
          <a href="#">Livres ▾</a>
             <ul class="dropdown-menu">
                <li><a href="">Comics</a></li>
                <li><a href="">Fantastiques</a></li>
-               <li><a href="livres.html">Nature</a></li>
-               <li><a href="manga.html">Manga</a></li>
+               <li><a href="nature.html">Nature</a></li>
+               <li><a href="manga/manga.html">Manga</a></li>
             </ul>
          </li>
             
@@ -138,6 +138,35 @@
    <!--SECTION RECHERCHER DANS LE CATALOGUE-->
       <section id="musiqueRecherche">
          <h2>Rechercher dans le catalogue</h2>
+         <div class="containerSearch">
+            <div class="boxSearch">
+               <label id="genreSearch">Par genre :</label>
+               <select name="genreSearch" id="genreSearch">
+                  <option value="">--Choisissez un genre--</option>
+                  <option value="Metal">Metal</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Musique Classique">Musique classique</option>
+                  <option value="Rock">Rock</option>
+                  <option value="Blues">Blues</option>
+               </select>
+            </div>
+            <div class="boxSearch">
+               <label id="artistSearch">Par artiste :</label>
+               <input type="search" id="artistSearch" name="artistSearch"/>
+               <button>Rechercher</button>
+            </div>
+            <div class="boxSearch">
+               <label id="albumSearch">Par album :</label>
+               <input type="search" id="albumSearch" name="albumSearch"/>
+               <button>Rechercher</button>
+            </div>
+            <div class="boxSearch">
+               <label id="titreSearch">Par titre :</label>
+               <input type="search" id="titreSearch" name="titreSearch"/>
+               <button>Rechercher</button>
+            </div>
+         </div>
+         <div class="resultatRechercheMusique"></div>
       </section>   
    </main>
    <!-- BAS DE PAGE-->
