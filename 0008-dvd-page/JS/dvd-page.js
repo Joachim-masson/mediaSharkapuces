@@ -1,41 +1,7 @@
-document.querySelectorAll('.carousel').forEach(carousel => {
-
-    const track = carousel.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = carousel.querySelector('.carousel-button.next');
-    const prevButton = carousel.querySelector('.carousel-button.prev');
-
-    let currentIndex = 0;
-    const slidesToShow = 3;
-
-    function updateSlidePosition() {
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
-    }
-
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < slides.length - slidesToShow) {
-            currentIndex += slidesToShow;
-        } else {
-            currentIndex = 0; // on revient au début
-        }
-        updateSlidePosition();
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex -= slidesToShow;
-        } else {
-            currentIndex = slides.length - slidesToShow;
-        }
-        updateSlidePosition();
-    });
-});
-
 
 //FRENCH MOVIES
 
-// ================== DONNÉES ==================
+// Base données
 const frenchmovie = {
     comédie: [
         {
@@ -171,7 +137,7 @@ const frenchmovie = {
             id: "grave",
             title: "Grave",
             year: 2016,
-            duration: 98, 
+            duration: 98,
             img: "images/grave.jpg",
             desc: "Justine, étudiante vétérinaire végétarienne, découvre une faim nouvelle après un bizutage carné. Corps, pulsions et identité déraillent dans un coming-of-age viscéral."
         },
@@ -179,7 +145,7 @@ const frenchmovie = {
             id: "martyrs",
             title: "Martyrs",
             year: 2008,
-            duration: 100, 
+            duration: 100,
             img: "images/martyrs.jpg",
             desc: "Deux jeunes femmes hantées par un trauma d'enfance s'enfoncent dans une vengeance qui révèle un projet aussi fanatique que dérangeant. Extrême, radical et tragique."
         },
@@ -211,7 +177,7 @@ const frenchmovie = {
 };
 
 
-// ================== ÉTATS & HELPERS ==================
+
 const favs = new Set();
 const cart = [];
 
@@ -242,7 +208,7 @@ function updateBadges() {
     if (cartEl) cartEl.textContent = cart.length;
 }
 
-// ================== RENDU ==================
+
 function showImages(category) {
     const gallery = document.getElementById("gallery");
     if (!gallery) return;
@@ -255,7 +221,6 @@ function showImages(category) {
         return;
     }
 
-    // 2 rangées x 3 colonnes => 6 items max
     list.slice(0, 6).forEach(raw => {
         const film = normalizeMovie(raw);
 
@@ -286,7 +251,7 @@ function showImages(category) {
         <button class="icon-btn add-cart"
                 type="button"
                 data-id="${film.id}"> 
-                <img class="icon" src="../navbar/images/shopping_cart.svg" alt="" aria-hidden="true">
+                <img class="icon" src="images/shopping-cart-white.svg" alt="" aria-hidden="true">
                 </button>
       </div>
     `;
@@ -296,7 +261,7 @@ function showImages(category) {
     });
 }
 
-// ================== LISTENERS (UNE SEULE FOIS) ==================
+// Une fois
 document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.getElementById("gallery");
     if (gallery) {
