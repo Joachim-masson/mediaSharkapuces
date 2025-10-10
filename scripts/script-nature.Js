@@ -1,4 +1,4 @@
-fetch('./assets/livre.json')
+fetch('../assets/livre.json')
   .then(response => response.json())
   .then(data => {
     const livresData = data.categories.livres;
