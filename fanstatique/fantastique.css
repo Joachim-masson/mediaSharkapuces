@@ -13,14 +13,30 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     min-height: 100vh;
-}
+    background-image: url('images/magie.jpg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: white;                 
+    min-height: 100vh;            
+    position: relative;
+    overflow-x: hidden;          
+  }
+  
+
+  body::before {
+    content: "";
+    position: fixed; 
+    inset: 0;        
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: -1;      
+  }
 
 
 header>section:nth-of-type(1) {
     min-height: 50vh;
-    background:
-    linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
-    url(images/couverture.jpg) center/cover no-repeat;
+    background: rgb(69, 22, 22);
     display: grid;
     grid-template-columns: minmax(300px, 520px) minmax(280px, 1fr);
     gap: var(--space-xl);
@@ -50,10 +66,36 @@ header>section:nth-of-type(1) {
     }
 }
 
+header > section:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding: var(--space-xl) calc(var(--space-xl) * 2);
+    position: relative; 
+    overflow: hidden;   
+  }
+  
+  header > section:nth-of-type(1) .header-image {
+    grid-column: 2;              
+    justify-self: end;           
+    align-self: start;           
+    margin-top: var(--space-md); 
+  }
+  
+  header > section:nth-of-type(1) .header-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-lg, 16px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
 .carousel h2, h3 {
     text-align: center;
     font-family: var(--font-family-title);
-    color: black;
+    color: var(--color-bg);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-h2);
     margin-bottom: 20px; 
@@ -146,6 +188,7 @@ header>section:nth-of-type(1) {
     margin-top: 3em;
     margin-bottom: 4em;
   }
+
   
   #gallery img {
     width: 150px;
@@ -187,4 +230,5 @@ header>section:nth-of-type(1) {
   .book-card:hover .book-info {
     opacity: 1;
   }
-  
+
+
