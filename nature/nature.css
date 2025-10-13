@@ -281,3 +281,28 @@ main > header:nth-of-type(1) p:first-of-type {
     padding: 8px 10px;
   }
 }
+.dropdown {
+      position: absolute;
+      top: 120%;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      display: none;
+      min-width: 250px;
+      z-index: 100;
+    }
+
+    .dropdown.visible {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-item:last-child {
+      border-bottom: none;
+    }

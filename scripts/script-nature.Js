@@ -8,11 +8,15 @@ fetch('../assets/livre.json')
     const panierImg = livresData.Panier.image;
     const favorisImg = livresData.favoris.image;
 
-    // clés localStorage
+    // --- Références DOM ---
+    const panierContainer = document.getElementById('panier-container');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    // --- Clés localStorage ---
     const PANIER_KEY = 'Panier';
     const FAVORIS_KEY = 'Favoris';
 
-    // Charger depuis localStorage (si existant)
+    // --- Chargement depuis localStorage ---
     let panier = JSON.parse(localStorage.getItem(PANIER_KEY)) || [];
     let favoris = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
 
@@ -27,10 +31,31 @@ fetch('../assets/livre.json')
     function updateBadges() {
       const panierCountEl = document.getElementById('panier-count');
       const favorisCountEl = document.getElementById('favoris-count');
-      if (panierCountEl) panierCountEl.textContent = panier.length;
-      if (favorisCountEl) favorisCountEl.textContent = favoris.length;
+      if (panierCountEl) panierCountEl.textContent = panier.length || 0;
+      if (favorisCountEl) favorisCountEl.textContent = favoris.length || 0;
     }
 
+    // --- Dropdown panier ---
+    function afficherDropdown() {
+      if (panier.length === 0) {
+        dropdownMenu.innerHTML = "<p>Aucun article dans le panier.</p>";
+      } else {
+        const total = panier.reduce((sum, livre) => sum + parseFloat(livre.Prix || 0), 0);
+        dropdownMenu.innerHTML = panier.map(livre => `
+          <div class="dropdown-item">${livre.titre} — ${livre.Prix}€</div>
+        `).join('') + `<div class="dropdown-total">Total : ${total.toFixed(2)}€</div>`;
+      }
+      dropdownMenu.classList.add('visible');
+    }
+
+    function cacherDropdown() {
+      dropdownMenu.classList.remove('visible');
+    }
+
+    panierContainer.addEventListener('mouseenter', afficherDropdown);
+    panierContainer.addEventListener('mouseleave', cacherDropdown);
+
+    // --- Toast notifications ---
     function showToast(message, type = 'info', duration = 2000) {
       const container = document.getElementById('toast-container') || (() => {
         const d = document.createElement('div');
@@ -44,7 +69,6 @@ fetch('../assets/livre.json')
       t.textContent = message;
       container.appendChild(t);
 
-      // disparition automatique
       setTimeout(() => {
         t.style.opacity = '0';
         t.style.transform = 'translateY(-6px)';
@@ -52,7 +76,6 @@ fetch('../assets/livre.json')
       }, duration);
     }
 
-    // si tu veux permettre suppression par second clic => toggle behaviour
     function isInArrayById(arr, id) {
       return arr.some(item => item.id === id);
     }
@@ -81,49 +104,43 @@ fetch('../assets/livre.json')
           </div>
         </div>
       `).join('');
-
-      // Attacher événements (après rendu)
-      document.querySelectorAll('.icon-panier').forEach(img => {
-        img.addEventListener('click', (e) => {
-          const idLivre = parseInt(e.currentTarget.dataset.id, 10);
-          const livreAjoute = listeLivres.find(l => l.id === idLivre);
-          if (!livreAjoute) return;
-
-          if (!isInArrayById(panier, idLivre)) {
-            panier.push(livreAjoute);
-            savePanier();
-            updateBadges();
-            showToast(`"${livreAjoute.titre}" ajouté au panier !`, 'success');
-          } else {
-            showToast(`"${livreAjoute.titre}" est déjà dans le panier.`, 'info');
-          }
-        });
-      });
-
-      document.querySelectorAll('.icon-favoris').forEach(img => {
-        img.addEventListener('click', (e) => {
-          const idLivre = parseInt(e.currentTarget.dataset.id, 10);
-          const livreAjoute = listeLivres.find(l => l.id === idLivre);
-          if (!livreAjoute) return;
-
-          // toggle dans favoris : si présent on enlève, sinon on ajoute
-          if (!isInArrayById(favoris, idLivre)) {
-            favoris.push(livreAjoute);
-            saveFavoris();
-            updateBadges();
-            showToast(`"${livreAjoute.titre}" ajouté aux favoris !`, 'success');
-          } else {
-            // suppression
-            favoris = favoris.filter(l => l.id !== idLivre);
-            saveFavoris();
-            updateBadges();
-            showToast(`"${livreAjoute.titre}" retiré des favoris.`, 'info');
-          }
-        });
-      });
     }
 
-    // Événement des boutons de sous-catégorie
+    // --- Délégation d’événements pour les icônes ---
+    affichage.addEventListener('click', (e) => {
+      const icon = e.target;
+      const idLivre = parseInt(icon.dataset.id, 10);
+      const tousLesLivres = Object.keys(livresData)
+        .filter(key => key !== "Panier" && key !== "favoris")
+        .flatMap(key => livresData[key]);
+      const livreAjoute = tousLesLivres.find(l => l.id === idLivre);
+      if (!livreAjoute) return;
+
+      if (icon.classList.contains('icon-panier')) {
+        if (!isInArrayById(panier, idLivre)) {
+          panier.push(livreAjoute);
+          savePanier();
+          updateBadges();
+          showToast(`"${livreAjoute.titre}" ajouté au panier !`, 'success');
+        } else {
+          showToast(`"${livreAjoute.titre}" est déjà dans le panier.`, 'info');
+        }
+      } else if (icon.classList.contains('icon-favoris')) {
+        if (!isInArrayById(favoris, idLivre)) {
+          favoris.push(livreAjoute);
+          saveFavoris();
+          updateBadges();
+          showToast(`"${livreAjoute.titre}" ajouté aux favoris !`, 'success');
+        } else {
+          favoris = favoris.filter(l => l.id !== idLivre);
+          saveFavoris();
+          updateBadges();
+          showToast(`"${livreAjoute.titre}" retiré des favoris.`, 'info');
+        }
+      }
+    });
+
+    // --- Boutons de sous-catégorie ---
     boutons.forEach(bouton => {
       bouton.addEventListener('click', () => {
         const sousCategorie = bouton.dataset.categorie;
@@ -132,26 +149,22 @@ fetch('../assets/livre.json')
       });
     });
 
-    // Affichage par défaut : tous les livres (sauf images Panier/Favoris)
+    // --- Affichage initial ---
     const tousLesLivres = Object.keys(livresData)
       .filter(key => key !== "Panier" && key !== "favoris")
       .flatMap(key => livresData[key]);
 
-    // Mettre à jour badges initialement (après chargement localStorage)
     updateBadges();
-
     afficherLivres(tousLesLivres);
 
-    // --- Optionnel : sync entre onglets (si l'utilisateur ouvre plusieurs onglets) ---
+    // --- Synchronisation multi-onglets ---
     window.addEventListener('storage', (e) => {
       if (e.key === PANIER_KEY) {
         panier = JSON.parse(e.newValue) || [];
-        updateBadges();
       } else if (e.key === FAVORIS_KEY) {
         favoris = JSON.parse(e.newValue) || [];
-        updateBadges();
       }
+      updateBadges();
     });
-
   })
   .catch(error => console.error("Erreur lors du chargement du JSON :", error));
