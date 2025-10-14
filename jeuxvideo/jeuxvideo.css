@@ -40,6 +40,7 @@
     padding-top: 70px;
     padding-bottom: 30px;
     gap: 20px;
+
 }
 
 
@@ -167,5 +168,10 @@ main>section:nth-of-type(1) {
 .tournois1 img {
     width: 600px;
     height: 800px;
+    padding: 50px;
+}
+.container1 {
+    display: flex;
+    justify-content:center ;
     padding: 50px;
 }
