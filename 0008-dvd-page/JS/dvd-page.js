@@ -177,132 +177,213 @@ const frenchmovie = {
 };
 
 
+// Clés de stockage
+const PANIER_KEY  = 'dvd.panier';
+const FAVORIS_KEY = 'dvd.favoris';
 
-const favs = new Set();
-const cart = [];
+// Local storage
+let panier  = JSON.parse(localStorage.getItem(PANIER_KEY))  || []; 
+let favoris = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
 
-function slugify(str) {
-    return String(str)
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '');
-}
+// Éléments DOM
+const gallery   = document.getElementById('gallery');
+const selector  = document.querySelector('.boutonselector');
+const favPanel  = document.getElementById('favPanel');
+const favBtn    = document.getElementById('favBtn');
+const favBadge  = document.getElementById('favBadge');
+const cartBadge = document.getElementById('cartBadge');
 
-function normalizeMovie(movie) {
-    const id = movie.id ?? slugify(movie.title || crypto.randomUUID());
-    return {
-        id,
-        title: movie.title ?? "Titre inconnu",
-        year: movie.year ?? "—",
-        duration: movie.duration ?? "?",
-        img: movie.img ?? "",
-        desc: movie.desc ?? "Résumé indisponible."
-    };
-}
+// Récupérer tous les films dans une seule liste
+const toutesCategories = Object.keys(frenchmovie);
+const tousLesFilms = toutesCategories.flatMap(cat =>
+  frenchmovie[cat].map(f => ({ ...f, category: cat }))
+);
 
-function updateBadges() {
-    const favEl = document.getElementById("favCount");
-    const cartEl = document.getElementById("cartCount");
-    if (favEl) favEl.textContent = favs.size;
-    if (cartEl) cartEl.textContent = cart.length;
-}
+const filmIndex = new Map(tousLesFilms.map(f => [String(f.id), f]));
 
+// Fonctions utilitaires
+const savePanier  = () => localStorage.setItem(PANIER_KEY,  JSON.stringify(panier));
+const saveFavoris = () => localStorage.setItem(FAVORIS_KEY, JSON.stringify(favoris));
 
-function showImages(category) {
-    const gallery = document.getElementById("gallery");
-    if (!gallery) return;
+const updateBadges = () => {
+  cartBadge.textContent = panier.length  || 0;
+  favBadge.textContent  = favoris.length || 0;
 
-    gallery.innerHTML = "";
+  for (const el of [cartBadge, favBadge]) {
+    el.classList.remove('bump');
+    void el.offsetWidth;
+    el.classList.add('bump');
+    el.toggleAttribute('hidden', Number(el.textContent) === 0);
+  }
 
-    const list = frenchmovie[category];
-    if (!list) {
-        gallery.textContent = "Catégorie introuvable.";
-        return;
-    }
+  const countEl = favPanel?.querySelector('header .count');
+  if (countEl) countEl.textContent = `(${favoris.length})`;
+};
 
-    list.slice(0, 6).forEach(raw => {
-        const film = normalizeMovie(raw);
+const showToast = (message, type = 'info', duration = 2200) => {
+  const container = document.getElementById('toast') || (() => {
+    const d = document.createElement('div'); d.id = 'toast'; document.body.appendChild(d); return d;
+  })();
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = message;
+  container.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateY(-6px)'; setTimeout(() => t.remove(), 300); }, duration);
+};
 
-        const figure = document.createElement("figure");
-        figure.tabIndex = 0;
-        figure.dataset.id = film.id;
+const isInArrayById = (arr, id) => arr.some(item => String(item.id) === String(id));
 
-        const img = document.createElement("img");
-        img.src = film.img;
-        img.alt = `Affiche du film ${film.title}`;
-
-        const caption = document.createElement("figcaption");
-        caption.textContent = film.title;
-
-        const overlay = document.createElement("div");
-        overlay.className = "overlay";
-        overlay.innerHTML = `
-      <h4>${film.title}</h4>
-      <div class="meta">${film.year} • ${film.duration} min</div>
-      <p class="desc">${film.desc}</p>
-      <div class="actions">
-        <button class="icon-btn fav"
-                type="button"
-                aria-pressed="${favs.has(film.id)}"
-                data-id="${film.id}">
-                <img class="icon" src="../navbar/images/heart.svg" alt="" aria-hidden="true">
-                </button>
-        <button class="icon-btn add-cart"
-                type="button"
-                data-id="${film.id}"> 
-                <img class="icon" src="images/shopping-cart-white.svg" alt="" aria-hidden="true">
-                </button>
+// Rendu de la galerie
+const renderFilms = (liste) => {
+  if (!gallery) return;
+  if (!liste || !liste.length) {
+    gallery.innerHTML = `<p>Aucune donnée trouvée.</p>`;
+    return;
+  }
+  gallery.innerHTML = liste.slice(0, 6).map(film => `
+    <figure data-id="${film.id}" tabindex="0">
+      <img src="${film.img}" alt="Affiche du film ${film.title}">
+      <figcaption>${film.title}</figcaption>
+      <div class="overlay">
+        <h4>${film.title}</h4>
+        <div class="meta">${film.year} • ${film.duration} min</div>
+        <p class="desc">${film.desc}</p>
+        <div class="actions">
+          <button class="icon-btn action-favoris" type="button" data-id="${film.id}"
+                  aria-pressed="${isInArrayById(favoris, film.id)}" title="Ajouter aux favoris">
+            <img class="icon" src="../navbar/images/heart.svg" alt="" aria-hidden="true">
+          </button>
+          <button class="icon-btn action-panier" type="button" data-id="${film.id}"
+                  aria-pressed="${isInArrayById(panier, film.id)}" title="Ajouter au panier">
+            <img class="icon" src="images/shopping-cart-white.svg" alt="" aria-hidden="true">
+          </button>
+        </div>
       </div>
-    `;
+    </figure>
+  `).join('');
+};
 
-        figure.append(img, caption, overlay);
-        gallery.appendChild(figure);
-    });
+// Rendu du dropdown favoris
+const renderFavDropdown = () => {
+  if (!favPanel) return;
+  const ul    = favPanel.querySelector('.fav-list');
+  const empty = favPanel.querySelector('.empty');
+  const count = favPanel.querySelector('header .count');
+
+  ul.innerHTML = '';
+  count.textContent = `(${favoris.length})`;
+
+  if (favoris.length === 0) {
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  ul.innerHTML = favoris.map(f => `
+    <li data-id="${f.id}">
+      <img src="${f.img}" alt="Affiche de ${f.title}">
+      <div>
+        <div class="title">${f.title}</div>
+        <div class="meta">${f.year} • ${f.duration} min</div>
+      </div>
+      <button class="remove" type="button" aria-label="Retirer ${f.title}" data-id="${f.id}">×</button>
+    </li>
+  `).join('');
+};
+
+// Événements
+if (gallery) {
+  gallery.addEventListener('click', (e) => {
+    const btnFav  = e.target.closest('.action-favoris');
+    const btnCart = e.target.closest('.action-panier');
+    if (!btnFav && !btnCart) return;
+
+    const id = (btnFav || btnCart).dataset.id;
+    const film = filmIndex.get(String(id));
+    if (!film) return;
+
+    // Gestion du toast et du stockage
+    if (btnFav) {
+      if (!isInArrayById(favoris, id)) {
+        favoris.push(film);
+        btnFav.setAttribute('aria-pressed', 'true');
+        showToast(`"${film.title}" ajouté aux favoris !`, 'success');
+      } else {
+        favoris = favoris.filter(f => String(f.id) !== String(id));
+        btnFav.setAttribute('aria-pressed', 'false');
+        showToast(`"${film.title}" retiré des favoris.`, 'info');
+      }
+      saveFavoris();
+      updateBadges();
+      renderFavDropdown();
+    }
+// Gestion du panier
+    if (btnCart) {
+      if (!isInArrayById(panier, id)) {
+        panier.push(film);
+        btnCart.setAttribute('aria-pressed', 'true');
+        showToast(`"${film.title}" ajouté au panier !`, 'success');
+      } else {
+        panier = panier.filter(p => String(p.id) !== String(id));
+        btnCart.setAttribute('aria-pressed', 'false');
+        showToast(`"${film.title}" retiré du panier.`, 'info');
+      }
+      savePanier();
+      updateBadges();
+    }
+  });
 }
 
-// Une fois
-document.addEventListener("DOMContentLoaded", () => {
-    const gallery = document.getElementById("gallery");
-    if (gallery) {
-        gallery.addEventListener("click", (e) => {
-            const favBtn = e.target.closest(".fav");
-            const cartBtn = e.target.closest(".add-cart");
+// 2) Sélecteur de catégorie
+if (selector) {
+  selector.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-category]');
+    if (!btn) return;
+    const cat = btn.dataset.category;
+    const liste = frenchmovie[cat] || [];
+    renderFilms(liste);
+  });
+}
 
-            if (favBtn) {
-                const id = favBtn.dataset.id;
-                if (favs.has(id)) {
-                    favs.delete(id);
-                    favBtn.setAttribute("aria-pressed", "false");
-                } else {
-                    favs.add(id);
-                    favBtn.setAttribute("aria-pressed", "true");
-                }
-                updateBadges();
-            }
+// 3) Dropdown favoris (ouverture clic + fermeture off-panel)
+if (favBtn && favPanel) {
+  favBtn.addEventListener('click', () => {
+    const opened = !favPanel.hasAttribute('hidden');
+    favPanel.toggleAttribute('hidden', opened);
+    favBtn.setAttribute('aria-expanded', String(!opened));
+  });
 
-            if (cartBtn) {
-                const id = cartBtn.dataset.id;
-                cart.push(id);
-                updateBadges();
-                cartBtn.textContent = "Ajouté";
-            }
-        });
-
-
+  document.addEventListener('click', (e) => {
+    if (!favPanel.contains(e.target) && !favBtn.contains(e.target)) {
+      favPanel.setAttribute('hidden', '');
+      favBtn.setAttribute('aria-expanded', 'false');
     }
+  });
 
-    // Boutons de catégories
-    const selector = document.querySelector(".boutonselector");
-    if (selector) {
-        selector.addEventListener("click", (e) => {
-            const btn = e.target.closest("button[data-category]");
-            if (!btn) return;
-            showImages(btn.dataset.category);
-        });
-    }
-
-    // Init par défaut
-    showImages("comédie");
+  // Retirer depuis le dropdown (délégation)
+  favPanel.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('.remove');
+    if (!removeBtn) return;
+    const id = removeBtn.dataset.id;
+    const item = favoris.find(f => String(f.id) === String(id));
+    favoris = favoris.filter(f => String(f.id) !== String(id));
+    saveFavoris();
     updateBadges();
+    renderFavDropdown();
+    const btnFavInGrid = document.querySelector(`.action-favoris[data-id="${CSS.escape(String(id))}"]`);
+    if (btnFavInGrid) btnFavInGrid.setAttribute('aria-pressed', 'false');
+    showToast(`"${item?.title || 'Article'}" retiré des favoris.`, 'info');
+  });
+}
+
+// 4) Synchronisation multi-onglets
+window.addEventListener('storage', (e) => {
+  if (e.key === PANIER_KEY)  { try { panier  = JSON.parse(e.newValue) || []; } catch { panier = []; } }
+  if (e.key === FAVORIS_KEY) { try { favoris = JSON.parse(e.newValue) || []; } catch { favoris = []; } }
+  updateBadges();
+  renderFavDropdown();
 });
+// Initialisation
+updateBadges();
+renderFilms(frenchmovie['comédie']);   // catégorie par défaut
+renderFavDropdown();
