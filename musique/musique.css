@@ -195,6 +195,7 @@ main>section:nth-of-type(1) {
 /*-----\MUSIQUE RECHERCHE/-----------------------*/
 
 #musiqueRecherche {
+  background-color: var(--color-light-brown);
   h2 {
     padding-top : 2rem;
     padding-bottom : 1rem;
@@ -214,3 +215,53 @@ main>section:nth-of-type(1) {
 .boxSearch select {
   height: 1.5rem;
 }
+
+/* .resultatRechercheMusique {
+  display:flex;
+  flex-direction: column;
+  width: 60%;
+  margin:0 auto;
+  img{
+    height: 9rem;
+    border-style: solid;
+  }
+  .description {
+    background-color: var(--color-bg);
+    border-radius: 0 25px 25px 0;
+    h3 {
+      text-align: start;
+      margin-left: 1rem;
+    }
+    p {
+      margin : 0 1rem;
+      width : 45rem;
+    }
+  }
+} */
+.resRech {
+    display:flex;
+    flex-direction: column;
+    width: 60%;
+    margin:0 auto;
+    img{
+      margin:0 auto;
+      height: 9rem;
+      width: auto;
+      border-style: solid;
+    }
+    .resultatRechercheMusique {
+      padding-bottom: 1rem;
+      .description {
+        background-color: var(--color-bg);
+        border-radius: 25px;
+        h3 {
+          text-align: start;
+          margin-left: 1rem;
+        }
+        p {
+          margin : 0 1rem;
+          width : 45rem;
+        }
+      }
+    }
+  }

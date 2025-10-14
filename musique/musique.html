@@ -170,7 +170,6 @@
          <h2>Rechercher dans le catalogue</h2>
          <div class="containerSearch">
             <div class="boxSearch">
-               <label id="genreSearch">Par genre :</label>
                <select name="genreSearch" id="genreSearch">
                   <option value="">--Choisissez un genre--</option>
                   <option value="Metal">Metal</option>
@@ -179,24 +178,24 @@
                   <option value="Rock">Rock</option>
                   <option value="Blues">Blues</option>
                </select>
+               <button id="btnSearchGenre">Rechercher</button>
             </div>
             <div class="boxSearch">
-               <label id="artistSearch">Par artiste :</label>
-               <input type="search" id="artistSearch" name="artistSearch" />
-               <button>Rechercher</button>
+               <input type="text" id="artistSearch" name="artistSearch" placeholder="Par Artiste"/>
+               <button id="btnSearchArtist">Rechercher</button>
             </div>
             <div class="boxSearch">
-               <label id="albumSearch">Par album :</label>
-               <input type="search" id="albumSearch" name="albumSearch" />
-               <button>Rechercher</button>
+               <input type="text" id="albumSearch" name="albumSearch" placeholder="Par Album"/>
+               <button id="btnSearchAlbum">Rechercher</button>
             </div>
             <div class="boxSearch">
-               <label id="titreSearch">Par titre :</label>
-               <input type="search" id="titreSearch" name="titreSearch" />
-               <button>Rechercher</button>
+               <input type="text" id="titreSearch" name="titreSearch" placeholder="Par Titre"/>
+               <button id="btnSearchTitre">Rechercher</button>
             </div>
          </div>
-         <div class="resultatRechercheMusique"></div>
+         <div class="resRech">
+            <div class="resultatRechercheMusique"></div>
+         </div>
       </section>
    </main>
    <!-- BAS DE PAGE-->
