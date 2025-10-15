@@ -34,18 +34,15 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     });
 });
 
-// ---------------Recherche par Artist---------------
+// ---------------Rechercher dans le Catalogue ---------------
 const resultatRechercheMusique = document.querySelector(".resultatRechercheMusique");
 
-const btnSearchArtist = document.getElementById("btnSearchArtist")
-btnSearchArtist.addEventListener("click", () => {
-   const artistSearch = document.getElementById("artistSearch").value.toLowerCase();
-	
-
+// fonction de recherche et d'affichage dans le DOM
+function searchAndDisplay(categorieValue, valueSearch){
 	// Vide les résultats précédents
   resultatRechercheMusique.innerHTML = "";
 
-  // Chargement du fichier JSON
+  	// Chargement du fichier JSON
   fetch("musique.json")
     .then(response => {
       if (!response.ok) {
@@ -55,49 +52,72 @@ btnSearchArtist.addEventListener("click", () => {
     })
     .then(data => {
       // Filtrage des artistes correspondant à la recherche
-      const filteredArtists = data.filter(artist =>
-        artist.artist.toLowerCase().includes(artistSearch)
-      );
-		//Affichage du résultat
-      if (filteredArtists.length > 0) {
-        filteredArtists.forEach(artist => {
-			const resultatImagePochette = document.createElement("img");
-			resultatImagePochette.src=artist.image;
-			resultatRechercheMusique.appendChild(resultatImagePochette);
+      const filteredCatalogue = data.filter(artist => artist[categorieValue].toLowerCase().includes(valueSearch));
+      
+     //Affichage du résultat
+      if (filteredCatalogue.length > 0) {
+        filteredCatalogue.forEach(artist => {
+          const resultatImagePochette = document.createElement("img");
+          resultatImagePochette.src=artist.image;
+          resultatRechercheMusique.appendChild(resultatImagePochette);
 
-			const resultatContenu = document.createElement("div");
-			resultatContenu.classList.add("description");
-			const resultatTitre = document.createElement("h3");
-			resultatTitre.textContent = `${artist.artist} - ${artist.album}`;
-			resultatContenu.appendChild(resultatTitre);
-			const resultatDescription = document.createElement("p");
-			resultatDescription.textContent = `${artist.description}`;
-			resultatContenu.appendChild(resultatDescription);
-			resultatRechercheMusique.appendChild(resultatContenu);
+          const resultatContenu = document.createElement("div");
+          resultatContenu.classList.add("description");
+          const resultatTitre = document.createElement("h3");
+          resultatTitre.textContent = `${artist.artist} - ${artist.album}`;
+          resultatContenu.appendChild(resultatTitre);
+          const resultatDescription = document.createElement("p");
+          resultatDescription.textContent = `${artist.description}`;
+          resultatContenu.appendChild(resultatDescription);
+          resultatRechercheMusique.appendChild(resultatContenu);
 
-			const resultatAudio = document.createElement("div");
-			resultatAudio.classList.add("audio");
-			const resultatTitleAudio = document.createElement("h5");
-			resultatTitleAudio.textContent = "Ecouter un extrait";
-			resultatAudio.appendChild(resultatTitleAudio);
-			const extraitAudio = document.createElement("audio");
-			extraitAudio.src=artist.music;
-			extraitAudio.controls = true;
-			resultatAudio.appendChild(extraitAudio);
-			resultatRechercheMusique.appendChild(resultatAudio);
+          const resultatAudio = document.createElement("div");
+          resultatAudio.classList.add("audio");
+          const resultatTitleAudio = document.createElement("h5");
+          resultatTitleAudio.textContent = "Ecouter un extrait";
+          resultatAudio.appendChild(resultatTitleAudio);
+          const extraitAudio = document.createElement("audio");
+          extraitAudio.src=artist.music;
+          extraitAudio.controls = true;
+          resultatAudio.appendChild(extraitAudio);
+          resultatRechercheMusique.appendChild(resultatAudio);
         });
       } else {
-        resultatRechercheMusique.textContent = "Aucun artiste trouvé.";
+        resultatRechercheMusique.textContent = `aucun ${categorieValue} trouvé.`;
       }
     })
     .catch(error => {
       console.error(error);
       resultatRechercheMusique.textContent = "Une erreur est survenue lors du chargement des données.";
     });
+};
+
+//Recherche par Artiste
+const btnSearchArtist = document.getElementById("btnSearchArtist")
+btnSearchArtist.addEventListener("click", () => {
+  const artistSearch = document.getElementById("artistSearch").value.toLowerCase();
+	searchAndDisplay("artist", artistSearch);	
 });
 
 // Recherche par Album
 const btnSearchAlbum = document.getElementById("btnSearchAlbum")
 btnSearchAlbum.addEventListener("click", () => {
-   const albumSearch = document.getElementById("albumSearch").value.toLowerCase();
+  const albumSearch = document.getElementById("albumSearch").value.toLowerCase();
+	searchAndDisplay("album", albumSearch);
+});
+
+// Recherche par Titre
+const btnSearchTitle = document.getElementById("btnSearchTitle")
+btnSearchTitle.addEventListener("click", () => {
+  const titleSearch = document.getElementById("titleSearch").value.toLowerCase();
+	searchAndDisplay("title", titleSearch);
+});
+
+// Recherche par Genre
+const btnSearchGenre = document.getElementById("btnSearchGenre")
+btnSearchGenre.addEventListener("click", () => {
+  const genreSearch = document.getElementById("genreSearch").options[document.getElementById('genreSearch').selectedIndex].text.toLowerCase();
+  searchAndDisplay("genre", genreSearch);
+});
+
 
