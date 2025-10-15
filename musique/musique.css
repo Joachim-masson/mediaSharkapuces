@@ -200,6 +200,9 @@ main>section:nth-of-type(1) {
     padding-top : 2rem;
     padding-bottom : 1rem;
   }
+  input {
+    padding: 0.8rem;
+  }
 }
 .containerSearch {
   display:flex;

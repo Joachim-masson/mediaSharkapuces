@@ -51,8 +51,15 @@ function searchAndDisplay(categorieValue, valueSearch){
 		return response.json();
     })
     .then(data => {
-      // Filtrage des artistes correspondant à la recherche
-      const filteredCatalogue = data.filter(artist => artist[categorieValue].toLowerCase().includes(valueSearch));
+      // Vérification du type de catégorie (entre tableau et chaîne de caractères) puis Filtrage correspondant à la recherche
+      const filteredCatalogue = data.filter(artist => {
+        const value = artist[categorieValue];
+        if (Array.isArray(value)){
+          return value.some(t => t.toLowerCase().includes(valueSearch))
+        } else if (typeof value === "string") {
+          return value.toLowerCase().includes(valueSearch);
+        }
+      });  
       
      //Affichage du résultat
       if (filteredCatalogue.length > 0) {
