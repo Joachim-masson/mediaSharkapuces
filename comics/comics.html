@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="../styles/index.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../navbar/navbar.html" type="text/css" media="screen" />
     <link rel="stylesheet" href="" type="text/css" media="screen" />
-    <link rel="stylesheet" href="fantastique.css" type="text/css" media="screen" />
-    <script src="fantastique.js" defer></script>
+    <link rel="stylesheet" href="comics.css" type="text/css" media="screen" />
+    <script src="comics.js" defer></script>
 
 
     <title>MediaSharkapuces</title>
@@ -56,66 +56,54 @@
             </div>
         </div>
     </nav>
-    <header>
-        <div class="header-bg"></div>
-        <!-- Overlay sombre -->
-        <div class="overlay"></div>
-        <section>
-            <article>
-                <h1>Le monde fantastique</h1>
-                <p>Entre rêve et réalité, le fantastique dévoile des mondes où la magie, le mystère et l’inconnu se
-                    mêlent. Des héros ordinaires y affrontent l’extraordinaire, dans des récits où chaque page ouvre une
-                    porte vers l’impossible.</p>
-                <p>
-                    <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
-                    <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
-                </p>
-            </article>
-        </section>
-    </header>
+        <header>
+            <div class="header-bg"></div>
+            <!-- Overlay sombre -->
+            <div class="overlay"></div>
+
+            <section>
+                <article>
+                    <h1>Les comics</h1>
+                    <p>
+                        Ce sont des livres illustrés qui racontent des histoires à travers des images et des mots. 
+                        On y trouve toutes sortes d’aventures : super-héros, fantastique, science-fiction, humour… 
+                        Chaque case fait avancer l’intrigue et plonge le lecteur dans un univers unique et immersif.
+                    </p>
+                    <p>
+                        <button class="btn active-red" onclick="location.href='../homepage/index.html'">Retourner à l'accueil</button>
+                        <button class="btn border-red" onclick="location.href='last-exit.html'">Voir les dernières sorties</button>
+                    </p>
+                </article>
+            </section>
+        </header>
+        
 
     <main>
         <section class="carousel" aria-labelledby="carouselheading">
-            <h2>Les dernières sorties</h2>
-            <button class="carousel-button prev">&#10094;</button>
-            <div class="carousel-track-container">
-                <ul class="carousel-track">
-                    <li class="carousel-slide current-slide"><img src="images/fant1.jpg" alt="Image 1" id="3"></li>
-                    <li class="carousel-slide"><img src="images/fant3.jpg" alt="Image 3" id="4"></li>
-                    <li class="carousel-slide"><img src="images/fant5.jpg" alt="Image 5" id="5"></li>
-                    <li class="carousel-slide"><img src="images/fant11.jpg" alt="Image 11" id="6"></li>
-                    <li class="carousel-slide"><img src="images/fant6.jpg" alt="Image 6" id="7"></li>
-                    <li class="carousel-slide"><img src="images/fant10.jpg" alt="Image 10" id="8"></li>
-                    <li class="carousel-slide"><img src="images/fant8.jpg" alt="Image 8" id="9"></li>
-                    <li class="carousel-slide"><img src="images/fant9.jpg" alt="Image 9" id="10"></li>
-                    <li class="carousel-slide"><img src="images/fant7.jpg" alt="Image 7" id="11"></li>
-                </ul>
-            </div>
-            <button class="carousel-button next">&#10095;</button>
-        </section>
-
-        <section class="carousel" aria-labelledby="carouselheading">
-            <h3>Nos coups de coeurs</h3>
+            <h2>Nos coups de coeurs</h2>
             <button class="carousel-button prev">&#10094;</button>
             <ul class="carousel-track">
-                <li class="carousel-slide current-slide"><img src="images/H3.jpg" alt="Image 1" id="1"></li>
-                <li class="carousel-slide"><img src="images/hobb.png" alt="Image 2" id="12"></li>
-                <li class="carousel-slide"><img src="images/roue.jpg" alt="Image 3" id="14"></li>
-                <li class="carousel-slide"><img src="images/seign.jpg" alt="Image 5" id="15"></li>
-                <li class="carousel-slide"><img src="images/HP2.webp" alt="Image 4" id="2"></li>
-                <li class="carousel-slide"><img src="images/hobb2.jpg" alt="Image 6" id="13"></li>
+                <li class="carousel-slide current-slide"><img src="images/dc/dc1.webp" alt="Image 1" ></li>
+                <li class="carousel-slide"><img src="images/marvel/marvel1.jpg" alt="Image 2" ></li>
+                <li class="carousel-slide"><img src="images/dc/dc2.jpg" alt="Image 3" ></li>
+                <li class="carousel-slide"><img src="images/marvel/marvel2.jpg" alt="Image 4" ></li>
+                <li class="carousel-slide"><img src="images/dc/dc3.jpg" alt="Image 5" ></li>
+                <li class="carousel-slide"><img src="images/marvel/marvel3.webp" alt="Image 6" ></li>
             </ul>
             </div>
             <button class="carousel-button next">&#10095;</button>
         </section>
 
         <article class="library">
-            <h4>Notre librairie</h4>
+            <h3>Notre librairie</h3>
                 <div class="boutonselector">
-                    <button class="btn active-red" onclick="showImages('magie')">Magie</button>
-                    <button class="btn border-red" onclick="showImages('fantastique')">Fantastiques épiques</button>
+                    <button class="btn active-red" onclick="showImages('marvel')">Marvel</button>
+                    <button class="btn border-red" onclick="showImages('DC')">DC</button>
                 </div>
+
                 <div id="gallery"></div>
+
+
         </article>
 
     </main>
