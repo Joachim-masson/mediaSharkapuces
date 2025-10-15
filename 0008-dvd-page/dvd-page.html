@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITLE AND ICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/logo.svg">
     <title>Dvd-box</title>
     <!-- GENERAL CSS -->
     <link rel="stylesheet" href="../styles/graphic_chart.css" type="text/css" media="screen" />
@@ -109,7 +109,7 @@
         </section>
         <section>
             <h2>Notre Dvdthèque</h2>
-            <article class="typeOfDVD">
+            <article class="typeOfDVD movie-section" id="french">
                 <h3>Les films français</h3>
 
                 <div class="boutonselector">
@@ -121,6 +121,45 @@
 
                 <div id="gallery" class="gallery"></div>
             </article>
+
+            <article class="typeOfDVD movie-section" id="american">
+                <h3>Les films américains</h3>
+    
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+    
+                <div class="gallery"></div>
+              </article>
+  
+              <article class="typeOfDVD movie-section" id="european">
+                <h3>Les films européens</h3>
+
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div class="gallery"></div>
+              </article>
+
+              <article class="typeOfDVD movie-section" id="asian">
+                <h3>Les films asiatiques</h3>
+
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div class="gallery"></div>
+              </article>
         </section>
     </main>
 
