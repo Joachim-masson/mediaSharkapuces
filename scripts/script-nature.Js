@@ -31,7 +31,7 @@ fetch('../assets/livre.json')
       document.getElementById('favoris-count').textContent = favoris.length || 0;
     };
 
-    const showToast = (message, type = 'info', duration = 2000) => {
+    const showToast = (message, type = 'info', duration = 1000) => {
       const container = document.getElementById('toast-container') || (() => {
         const d = document.createElement('div');
         d.id = 'toast-container';
@@ -133,17 +133,38 @@ fetch('../assets/livre.json')
       const deleteBtn = e.target.closest('.delete-item');
       const viderBtn = e.target.closest('#vider-panier-btn');
 
-      if (deleteBtn) {
+    if (deleteBtn) {
         const idToRemove = parseInt(deleteBtn.dataset.id, 10);
         if (Number.isNaN(idToRemove)) return;
-        if (!confirm("Voulez-vous supprimer cet article du panier ?")) return;
-        const itemRemoved = panier.find(p => p.id === idToRemove);
-        panier = panier.filter(p => p.id !== idToRemove);
-        savePanier();
-        updateBadges();
-        afficherDropdown();
-        if (itemRemoved) showToast(`"${itemRemoved.titre}" supprimé du panier.`, 'info');
-      }
+
+        // Récupère la popup et les boutons
+        const popup = document.getElementById('confirm-popup-uni');
+        const yesBtn = document.getElementById('confirm-yes-uni');
+        const noBtn = document.getElementById('confirm-no-uni');
+
+        // Affiche la popup
+        popup.style.display = 'flex';
+
+        // Définit ce que fait le bouton "Oui"
+        yesBtn.onclick = () => {
+            popup.style.display = 'none'; // Cache la popup
+            const itemRemoved = panier.find(p => p.id === idToRemove);
+            panier = panier.filter(p => p.id != idToRemove); // Supprime l'article
+            
+            // Met à jour l'interface
+            savePanier();
+            updateBadges();
+            afficherDropdown();
+            if (itemRemoved) {
+                showToast(`"${itemRemoved.titre}" supprimé du panier.`, 'info');
+            }
+        };
+
+        // Définit ce que fait le bouton "Non"
+        noBtn.onclick = () => {
+            popup.style.display = 'none'; // Cache simplement la popup
+        };
+    }
 
       if (viderBtn) {
         const popup = document.getElementById('confirm-popup');
@@ -172,13 +193,15 @@ fetch('../assets/livre.json')
       if (!livreAjoute) return;
 
       if (icon.classList.contains('icon-panier')) {
-        if (!isInArrayById(panier, idLivre)) {
+        if (livreAjoute.disponible) {
+          if (!isInArrayById(panier, idLivre)) {
           panier.push(livreAjoute);
           savePanier();
           updateBadges();
           showToast(`"${livreAjoute.titre}" ajouté au panier !`, 'success');
         } else showToast(`"${livreAjoute.titre}" est déjà dans le panier.`, 'info');
-      } else if (icon.classList.contains('icon-favoris')) {
+      } else { showToast(`"${livreAjoute.titre}" est indisponible.`, 'info') }
+    } else if (icon.classList.contains('icon-favoris')) {
         if (!isInArrayById(favoris, idLivre)) {
           favoris.push(livreAjoute);
           saveFavoris();
