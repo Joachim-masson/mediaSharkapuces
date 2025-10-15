@@ -39,14 +39,14 @@ function checkForMatch() {
       const finalMessageDiv = document.getElementById("final-message");
 
       if (attempts <= 12) {
-        finalMessageDiv.textContent = "Tu es le GOAT ! Le roi du memory !";
+        finalMessageDiv.textContent = "Tu es le GOAT ! Le roi du memorie !";
       } else if (attempts <= 20) {
         finalMessageDiv.textContent =
           "Bien joué tu es dans une bonne moyenne ! ";
       } else if (attempts <= 30) {
-        finalMessageDiv.textContent = "Mouai on peut dire que çà passe ...";
+        finalMessageDiv.textContent = "Mouai on peut dire que ça passe ...";
       } else {
-        finalMessageDiv.textContent = "Change de jeux,c'est pas fais pour toi!";
+        finalMessageDiv.textContent = "Change de jeu, c'est pas fait pour toi!";
       }
 
       winMessage.classList.remove("hidden");
