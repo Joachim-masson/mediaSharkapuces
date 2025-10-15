@@ -263,6 +263,74 @@ const renderFilms = (liste) => {
   `).join('');
 };
 
+//animation de la galerie
+let __isSwitching = false;
+
+function switchCategory(cat) {
+  if (!gallery || __isSwitching) return;
+  __isSwitching = true;
+
+  const liste = frenchmovie[cat] || [];
+
+// Calcul du timing des transitions CSS
+  const cs = getComputedStyle(gallery);
+  const dur = Math.max(...cs.transitionDuration.split(',').map(s => parseFloat(s) || 0));
+  const delay = Math.max(...cs.transitionDelay.split(',').map(s => parseFloat(s) || 0));
+  const totalMs = (dur + delay) * 1000;
+
+  // anime la sortie
+  const prevH = gallery.offsetHeight;
+  gallery.style.height = prevH + 'px';
+  gallery.classList.add('is-leaving');
+
+  //reflow
+  void gallery.offsetWidth;
+
+  let leftPhaseDone = false;
+
+  const proceedToSwap = () => {
+    if (leftPhaseDone) return;
+    leftPhaseDone = true;
+
+    // contenu remplacé
+    renderFilms(liste);
+
+    // animation entrée
+    const nextH = gallery.scrollHeight;
+    gallery.style.height = nextH + 'px';
+
+    gallery.classList.remove('is-leaving');
+    gallery.classList.add('is-entering');
+
+    let cleaned = false;
+    const cleanUp = (ev) => {
+      if (ev && ev.propertyName && ev.propertyName !== 'height') return;
+      if (cleaned) return;
+      cleaned = true;
+      gallery.removeEventListener('transitionend', cleanUp);
+      gallery.style.height = '';
+      gallery.classList.remove('is-entering');
+      __isSwitching = false;
+    };
+
+    // nettoyage
+    gallery.addEventListener('transitionend', cleanUp);
+    setTimeout(cleanUp, Math.max(220, totalMs + 80)); 
+  };
+
+  // fin de l'animation de sortie
+  const onLeave = (e) => {
+    if (e.target !== gallery) return;
+    gallery.removeEventListener('transitionend', onLeave);
+    proceedToSwap();
+  };
+  gallery.addEventListener('transitionend', onLeave, { once: true });
+
+  // fallback si pas de transition (ou si event perdu)
+  setTimeout(proceedToSwap, Math.max(220, totalMs + 80));
+}
+
+
 // Rendu du dropdown favoris
 const renderFavDropdown = () => {
   if (!favPanel) return;
@@ -334,18 +402,17 @@ if (gallery) {
   });
 }
 
-// 2) Sélecteur de catégorie
+// catégorie selection
 if (selector) {
   selector.addEventListener('click', (e) => {
-    const btn = e.target.closest('button[data-category]');
-    if (!btn) return;
+      const btn = e.target.closest('button[data-category]');
+        if (!btn) return;
     const cat = btn.dataset.category;
-    const liste = frenchmovie[cat] || [];
-    renderFilms(liste);
+    switchCategory(cat);
   });
 }
 
-// 3) Dropdown favoris (ouverture clic + fermeture off-panel)
+// Dropdown favoris (ouverture clic + fermeture off-panel)
 if (favBtn && favPanel) {
   favBtn.addEventListener('click', () => {
     const opened = !favPanel.hasAttribute('hidden');
@@ -376,7 +443,7 @@ if (favBtn && favPanel) {
   });
 }
 
-// 4) Synchronisation multi-onglets
+// Synchronisation multi-onglets
 window.addEventListener('storage', (e) => {
   if (e.key === PANIER_KEY)  { try { panier  = JSON.parse(e.newValue) || []; } catch { panier = []; } }
   if (e.key === FAVORIS_KEY) { try { favoris = JSON.parse(e.newValue) || []; } catch { favoris = []; } }

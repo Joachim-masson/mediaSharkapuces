@@ -294,6 +294,8 @@ main>section:nth-of-type(1) {
     margin-top: var(--space-lg);
     justify-items: center;
     animation: fadeIn 0.8s ease;
+    transition: opacity .22s ease, transform .22s ease, height .22s ease;
+    will-change: opacity, transform, height;
 
     figure {
         text-align: center;
@@ -398,6 +400,62 @@ main>section:nth-of-type(1) {
         text-transform: uppercase;
         color: var(--color-red);
     }
+}
+.gallery.is-leaving {
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+}
+
+.gallery.is-entering figure {
+    opacity: 0;
+    animation: cardIn .35s ease forwards;
+}
+
+
+.gallery.is-entering figure:nth-child(1) { 
+    animation-delay: 40ms; 
+}
+
+.gallery.is-entering figure:nth-child(2) { 
+    animation-delay: 80ms;
+ }
+
+.gallery.is-entering figure:nth-child(3) {
+    animation-delay: 120ms; 
+    }
+
+.gallery.is-entering figure:nth-child(4) { 
+    animation-delay: 160ms; 
+}
+
+.gallery.is-entering figure:nth-child(5) {
+    animation-delay: 200ms; 
+    }
+
+.gallery.is-entering figure:nth-child(6) {
+    animation-delay: 240ms; 
+    }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery { 
+    transition: none !important; 
+}
+
+  .gallery.is-entering figure { 
+    animation: none !important; 
+    opacity: 1 !important; 
+}
+
+  .gallery.is-leaving { 
+    opacity: 1; 
+    transform: none; 
+}
 }
 
 .typeOfDVD {
