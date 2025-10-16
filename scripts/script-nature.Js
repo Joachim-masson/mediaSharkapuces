@@ -103,7 +103,6 @@ fetch('../assets/livre.json')
           <thead>
             <tr>
               <th>Titre</th>
-              <th>Prix</th>
               <th>Supprimer</th>
             </tr>
           </thead>
@@ -111,7 +110,6 @@ fetch('../assets/livre.json')
             ${panier.map(livre => `
               <tr data-id="${livre.id}">
                 <td>${livre.titre}</td>
-                <td>${livre.Prix ? livre.Prix + '€' : '-'}</td>
                 <td class="col-delete">
                   <button class="delete-item" data-id="${livre.id}" aria-label="Supprimer ${livre.titre}">
                     <img src="../navbar/images/trash.svg" alt="Supprimer" width="18" height="18">

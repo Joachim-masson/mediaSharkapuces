@@ -434,7 +434,7 @@ main > header:nth-of-type(1) p:first-of-type {
 /* --- Style du Tableau Panier --- */
 
 /* 1. Conteneur principal du tableau */
-table {
+.tableau-panier-page{
     width: 50%; /* Le tableau prend toute la largeur disponible */
     border-collapse: collapse; /* Fusionne les bordures des cellules pour un look net */
     margin: 25px auto; /* Ajoute de l'espace au-dessus et en dessous */
@@ -448,15 +448,15 @@ table {
 }
 
 /* 2. Style des cellules (communs aux en-têtes et au corps) */
-table th,
-table td {
+.tableau-panier-page th,
+.tableau-panier-page td {
     padding: 12px 15px; /* Espace intérieur pour aérer le contenu */
     text-align: left; /* Alignement du texte à gauche par défaut */
     vertical-align: middle; /* Centre le contenu verticalement */
 }
 
 /* 3. Style de l'en-tête (thead) */
-table thead tr {
+.tableau-panier-page thead tr {
     background-color: var(--color-light-blue); /* Couleur de fond distinctive pour l'en-tête */
     color: #ffffff; /* Texte blanc pour un bon contraste */
     text-align: left;
@@ -464,34 +464,34 @@ table thead tr {
 }
 
 /* 4. Style des lignes du corps du tableau (tbody) */
-table tbody tr {
+.tableau-panier-page tbody tr {
     border-bottom: 1px solid #dddddd; /* Ligne de séparation fine entre les rangées */
 }
 
 /* Couleur de fond pour une ligne sur deux (zébrures) pour améliorer la lisibilité */
-table tbody tr:nth-of-type(even) {
+.tableau-panier-page tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
 
 /* Met en surbrillance la ligne au survol de la souris */
-table tbody tr:hover {
+.tableau-panier-page tbody tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
 }
 
 /* Style de la dernière ligne du corps pour qu'elle s'arrondisse en bas */
-table tbody tr:last-of-type {
+.tableau-panier-page tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
 
 /* 5. Style du pied de page (tfoot) pour le total */
-table tfoot tr {
+.tableau-panier-page tfoot tr {
     font-weight: bold; /* Texte du total en gras */
     color: #333;
     background-color: #f3f3f3;
 }
 
-table tfoot td {
+.tableau-panier-page tfoot td {
     font-size: 1.1em; /* Total légèrement plus grand */
     text-align: right; /* Aligne le texte du total à droite */
     padding-right: 50px;
@@ -521,4 +521,33 @@ table tfoot td {
 
 .btn-supprimer:hover {
     background-color: #c0392b; /* Rouge plus foncé au survol */
+}
+/*
+ * Conteneur pour les actions du panier
+ * Le place au centre et ajoute de l'espace au-dessus.
+*/
+.panier-actions {
+    text-align: center; /* ▲▲▲ La propriété clé pour centrer le bouton ▲▲▲ */
+    margin-top: 25px;   /* Espace entre le total et le bouton */
+    padding-bottom: 20px; /* Un peu d'espace en dessous */
+}
+
+/*
+ * Style du bouton "Vider le panier"
+ * Le rend plus visible et attractif.
+*/
+.btn-vider {
+    padding: 10px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #e74c3c; /* Un rouge pour indiquer une action de suppression */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vider:hover {
+    background-color: #c0392b; /* Une couleur plus foncée au survol */
 }
