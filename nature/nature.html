@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,42 +10,53 @@
     <link rel="stylesheet" href="../styles/footer.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../navbar/navbar.css" type="text/css" media="screen" />
     
-    <script src="../scripts/script-nature.Js" defer></script>
-    <script src="../scripts/script-caroussel.js" defer></script>
+    <script src="../scripts/script-nature.js" defer></script>
     
-    <title>MediaSharkapuces</title>
+    <title>MediaSharkapuces - Nature</title>
 </head>
 <body>
     <nav class="navbar">
         <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo" />
         <ul class="nav-list">
             <li><a href="../homepage/index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Livres ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Comics</a></li>
-                    <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
-                    <li><a href="../nature/nature.html">Nature</a></li>
-                    <li><a href="../manga/manga.html">Manga</a></li>
-                </ul>
-            </li>
-            <li><a href="../musique/musique.html">Musique</a></li>
-            <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
-            <li><a href="../jeuxvideo/jeuxvideo.html">Jeux Vidéos</a></li>
-            <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-        </ul>
+                     <li class="dropdown">
+            <a href="#">Livres ▾</a>
+            <ul class="dropdown-menu">
+               <li><a href="../comics/comics.html">Comics</a></li>
+               <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
+               <li><a href="../nature/nature.html">Nature</a></li>
+               <li><a href="../manga/manga.html">Manga</a></li>
+            </ul>
+         </li>
+
+
+         <li><a href="../musique/musique.html">Musique</a></li>
+         <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
+         <li><a href="../jeuxvideo/jeuxvideo.html">Jeux Vidéos</a></li>
+         <li class="dropdown">
+            <a href="#">Mini Game ▾</a>
+            <ul class="dropdown-menu">
+               <li><a href="../memoriManga/memorimanga.html">Memories Manga</a></li>
+               <li><a href="../memories/memories.html">Memories Poulet</a></li>
+               <li><a href="../dactylographie/dactylographie.html">Dactylographie</a></li>
+               <li><a href="../hangman/hangman.html">Hangman</a></li>
+            </ul>
+         </li>
+         <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
+         <li><a href="../contact.html">Contact</a></li>
+      </ul>
         <div class="shopping">
-            <div class="icon-wrapper">
+            <div class="icon-wrapper" id="favoris-container">
                 <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
                 <span class="badge" id="favoris-count">0</span>
+                <div class="dropdown" id="dropdown-menu-favoris">
+                    </div>
             </div>
             <div class="icon-wrapper" id="panier-container">
-                <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
+                <a href="../panier/Panier.html"><img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" /></a>
                 <span class="badge" id="panier-count">0</span>
                 <div class="dropdown" id="dropdown-menu">
-                    <p>Aucun article dans le panier.</p>
-                </div>
+                    </div>
             </div>
         </div>
     </nav>
@@ -56,21 +67,21 @@
                 <h1>Nature</h1>
                 <p>Plantez-vous devant un bon livre… c’est la seule pousse qui ne demande pas d’arrosage !</p>
                 <p>
-                    <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
-                    <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
+                    <button class="btn active-red" onclick="location.href='../homepage/index.html'">Retourner à l'accueil</button>
+                    <button class="btn border-red" onclick="location.href='last-exit.html'">Voir les dernières sorties</button>
                 </p>
             </article>
             <img src="../images/banniere-nature.png" alt="banniere nature" class="img-nature" />
         </header>
 
-<section class="carousel" aria-labelledby="carouselheading">
-    <h2>Les dernières sorties</h2>
-    <button class="carousel-button prev">&#10094;</button>
-    <div class="carousel-track-container">
-        <ul class="carousel-track" id="carousel-track"></ul>
-    </div>
-    <button class="carousel-button next">&#10095;</button>
-</section>
+        <section class="carousel" aria-labelledby="carouselheading">
+            <h2>Les dernières sorties</h2>
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track" id="carousel-track"></ul>
+            </div>
+            <button class="carousel-button next">&#10095;</button>
+        </section>
 
         <h2>Livres</h2>
         <section class="boutons-sous-categorie">
@@ -80,8 +91,7 @@
         </section>
 
         <section id="affichage-livres" class="liste-livres">
-            <!-- Les livres seront insérés ici dynamiquement -->
-        </section>
+            </section>
     </main>
 
     <footer>
