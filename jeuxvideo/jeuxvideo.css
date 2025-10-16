@@ -1,5 +1,5 @@
 .body {
-    background-color: hsl(187, 18%, 63%);
+    background:linear-gradient(#91AEB2, #3B5254);
 }
 
 #titre {
@@ -19,7 +19,8 @@
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     justify-content: center;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
+    padding-top: 50px;
 }
 
 /* section 1 */
@@ -40,6 +41,7 @@
     padding-top: 70px;
     padding-bottom: 30px;
     gap: 20px;
+
 }
 
 
@@ -56,6 +58,7 @@
     overflow: hidden;
     display: flex;
     width: 100%;
+    margin-bottom: 80px;
 }
 
 .carousel-track {
@@ -110,7 +113,8 @@
 .carousel {
     h2 {
 
-        padding: 4rem;
+        padding-top: 1rem;
+        padding-bottom: 4rem;
     }
 }
 
@@ -157,15 +161,46 @@ main>section:nth-of-type(1) {
 
 .tournois1 {
     display: flex;
-    background-color: hsl(180, 4%, 14%);
+    background-color:var(--color-light-brown);
     /* border: solid 2px rgb(255, 255, 255); */
-    color: white;
+    color: rgb(0, 0, 0);
     align-items: center;
     justify-content: space-evenly;
+    font-size: 25px;
+    h2 {
+        margin-bottom: 80px ;
+        text-transform: uppercase;
+    }
+    
 }
+
+.inscription{
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+
+        #insc {
+        margin-top: 80px;
+    }
+    
+    }
 
 .tournois1 img {
     width: 600px;
     height: 800px;
-    padding: 50px;
+    margin-bottom: 200px;
+    margin-top: 200px;
 }
+.container1 {
+    display: flex;
+    justify-content:center ;
+    margin-top: 100px;
+}
+
+#planche{
+    
+    border: solid 10px;
+}
+
