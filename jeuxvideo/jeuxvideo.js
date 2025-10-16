@@ -32,32 +32,8 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     });
 });
 
+// carousel de ma page
 
-// let mesImages = document.querySelectorAll('.container2 img');
-
-// // 2. Définir les catégories
-// let categories = {
-// fps: ["images/grid/b4b87eb735d738ae903e018ea687de1778dc4b53d05b3edf.avif", "images/grid/apex-legends-1sze4.jpg", "images/grid/Capture d’écran 2025-10-10 151928.png", "images/grid/1696414021417.webp", "images/grid/iHZIqzxIpvLe8g-medium.jpg", "images/grid/za3pxrr77px31.jpg"],
-// rpg: ["clair-obscur.avif", "diablo4.webp", "dota2.jpg", "eldenring.avif", "hades2.jpeg", "wukong.avif"],
-// combat: [""],
-// aventure:[""]
-// };
-
-// let mesBoutons = document.querySelectorAll('.bouton button');
-
-// mesBoutons.forEach(function (unBouton) {
-//     unBouton.addEventListener('click', function () {
-
-
-//         let categorie = unBouton.dataset.categorie;
-
-//         // 6. Boucle pour changer les 6 images
-//         for (let i = 0; i < 6; i++) {
-//             mesImages[i].src = categories[categorie][i];
-//         }
-
-//     });
-// });
 let mesImages = document.querySelectorAll('.container2 img');
 
 const BASE_PATH = "images/grid/";
@@ -83,3 +59,5 @@ mesBoutons.forEach(function (unBouton) {
     }
   });
 });
+
+// grid dynamique qui change en fonction des catégories
