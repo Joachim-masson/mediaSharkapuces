@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../styles/graphic_chart.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../styles/index.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="../nature/nature.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../styles/footer.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../navbar/navbar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../panier/panier.css" type="text/css" media="screen" />
     
-    <script src="../scripts/script-nature.js" defer></script>
+    <script src="../scripts/script-nature.Js" defer></script>
+    <script src="../scripts/script-caroussel.js" defer></script>
+    <script src="../scripts/script-panier.js" defer></script>
     
-    <title>MediaSharkapuces - Nature</title>
+    <title>MediaSharkapuces</title>
 </head>
 <body>
     <nav class="navbar">
@@ -50,13 +52,15 @@
                 <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
                 <span class="badge" id="favoris-count">0</span>
                 <div class="dropdown" id="dropdown-menu-favoris">
-                    </div>
+                    <p>Aucun article dans les favoris.</p>
+                </div>
             </div>
             <div class="icon-wrapper" id="panier-container">
                 <a href="../panier/Panier.html"><img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" /></a>
                 <span class="badge" id="panier-count">0</span>
                 <div class="dropdown" id="dropdown-menu">
-                    </div>
+                    <p>Aucun article dans le panier.</p>
+                </div>
             </div>
         </div>
     </nav>
@@ -64,34 +68,30 @@
     <main>
         <header class="header">
             <article>
-                <h1>Nature</h1>
-                <p>Plantez-vous devant un bon livre… c’est la seule pousse qui ne demande pas d’arrosage !</p>
+                <h1>Panier</h1>
+                <p>Voici le contenu de votre panier !</p>
                 <p>
-                    <button class="btn active-red" onclick="location.href='../homepage/index.html'">Retourner à l'accueil</button>
-                    <button class="btn border-red" onclick="location.href='last-exit.html'">Voir les dernières sorties</button>
+                    <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
+                    <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
                 </p>
             </article>
-            <img src="../images/banniere-nature.png" alt="banniere nature" class="img-nature" />
         </header>
-
-        <section class="carousel" aria-labelledby="carouselheading">
-            <h2>Les dernières sorties</h2>
-            <button class="carousel-button prev">&#10094;</button>
-            <div class="carousel-track-container">
-                <ul class="carousel-track" id="carousel-track"></ul>
-            </div>
-            <button class="carousel-button next">&#10095;</button>
-        </section>
-
-        <h2>Livres</h2>
-        <section class="boutons-sous-categorie">
-            <button data-categorie="Animaux">Animaux</button>
-            <button data-categorie="Plantes">Plantes</button>
-            <button data-categorie="Voyages">Voyages</button>
-        </section>
-
-        <section id="affichage-livres" class="liste-livres">
-            </section>
+        <article>
+      <table class="tableau-panier-page">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Titre</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="panier-items-container">
+        </tbody>
+</table>
+<div class="panier-actions">
+    <button id="vider-panier-btn" class="btn-vider">Vider le panier</button>
+</div>
+        </article>
     </main>
 
     <footer>
