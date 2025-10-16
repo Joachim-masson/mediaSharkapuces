@@ -103,7 +103,8 @@ function searchAndDisplay(categorieValue, valueSearch){
 const btnSearchArtist = document.getElementById("btnSearchArtist")
 btnSearchArtist.addEventListener("click", () => {
   const artistSearch = document.getElementById("artistSearch").value.toLowerCase();
-	searchAndDisplay("artist", artistSearch);	
+  searchAndDisplay("artist", artistSearch);	
+  document.getElementById("artistSearch").value="";
 });
 
 // Recherche par Album
@@ -111,6 +112,7 @@ const btnSearchAlbum = document.getElementById("btnSearchAlbum")
 btnSearchAlbum.addEventListener("click", () => {
   const albumSearch = document.getElementById("albumSearch").value.toLowerCase();
 	searchAndDisplay("album", albumSearch);
+  document.getElementById("albumSearch").value="";
 });
 
 // Recherche par Titre
@@ -118,6 +120,7 @@ const btnSearchTitle = document.getElementById("btnSearchTitle")
 btnSearchTitle.addEventListener("click", () => {
   const titleSearch = document.getElementById("titleSearch").value.toLowerCase();
 	searchAndDisplay("title", titleSearch);
+  document.getElementById("titleSearch").value="";
 });
 
 // Recherche par Genre
@@ -125,6 +128,7 @@ const btnSearchGenre = document.getElementById("btnSearchGenre")
 btnSearchGenre.addEventListener("click", () => {
   const genreSearch = document.getElementById("genreSearch").options[document.getElementById('genreSearch').selectedIndex].text.toLowerCase();
   searchAndDisplay("genre", genreSearch);
+  document.getElementById("genreSearch").value="";
 });
 
 
