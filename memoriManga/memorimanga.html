@@ -11,36 +11,43 @@
 
 <body>
     <nav class="navbar">
-        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo">
+        <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo" />
         <ul class="nav-list">
-            <li><a href="../homepage/index.html">Home</a></li>
+            <li><a href="">Home</a></li>
+
+            <!--Ici on passe au menu déroulant de la catégories Livres avec dedans :comics, fantastique et nature-->
             <li class="dropdown">
                 <a href="#">Livres ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="">Comics</a></li>
+                    <li><a href="../comics/comics.html">Comics</a></li>
                     <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
                     <li><a href="../nature/nature.html">Nature</a></li>
                     <li><a href="../manga/manga.html">Manga</a></li>
                 </ul>
             </li>
+
+
             <li><a href="../musique/musique.html">Musique</a></li>
             <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
             <li><a href="../jeuxvideo/jeuxvideo.html">Jeux Vidéos</a></li>
+            <li class="dropdown">
+                <a href="#">Mini Game ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../memoriManga/memorimanga.html">Memories Manga</a></li>
+                    <li><a href="../memories/memories.html">Memories Poulet</a></li>
+                    <li><a href="../dactylographie/dactylographie.html">Dactylographie</a></li>
+                    <li><a href="../hangman/hangman.html">Hangman</a></li>
+                </ul>
+            </li>
             <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
             <li><a href="../contact.html">Contact</a></li>
         </ul>
 
         <div class="shopping">
-            <div class="icon-wrapper">
-                <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
-                <span class="badge" id="favoris-count">0</span>
-            </div>
-
-            <div class="icon-wrapper">
-                <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
-                <span class="badge" id="panier-count">0</span>
-            </div>
+            <img src="../navbar/images/heart.svg" alt="Favoris" class="favoris" />
+            <img src="../navbar/images/shopping_cart.svg" alt="Panier" class="panier" />
         </div>
+
     </nav>
 
     <h1>Le Memories Japonais</h1>

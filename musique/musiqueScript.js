@@ -1,3 +1,5 @@
+
+// ---------Carousel -----------
 document.querySelectorAll('.carousel').forEach(carousel => {
 
     const track = carousel.querySelector('.carousel-track');
@@ -31,3 +33,102 @@ document.querySelectorAll('.carousel').forEach(carousel => {
         updateSlidePosition();
     });
 });
+
+// ---------------Rechercher dans le Catalogue ---------------
+const resultatRechercheMusique = document.querySelector(".resultatRechercheMusique");
+
+// fonction de recherche et d'affichage dans le DOM
+function searchAndDisplay(categorieValue, valueSearch){
+	// Vide les résultats précédents
+  resultatRechercheMusique.innerHTML = "";
+
+  	// Chargement du fichier JSON
+  fetch("musique.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erreur de chargement du fichier JSON");
+		}
+		return response.json();
+    })
+    .then(data => {
+      // Vérification du type de catégorie (entre tableau et chaîne de caractères) puis Filtrage correspondant à la recherche
+      const filteredCatalogue = data.filter(artist => {
+        const value = artist[categorieValue];
+        if (Array.isArray(value)){
+          return value.some(t => t.toLowerCase().includes(valueSearch))
+        } else if (typeof value === "string") {
+          return value.toLowerCase().includes(valueSearch);
+        }
+      });  
+      
+     //Affichage du résultat
+      if (filteredCatalogue.length > 0) {
+        filteredCatalogue.forEach(artist => {
+          const resultatImagePochette = document.createElement("img");
+          resultatImagePochette.src=artist.image;
+          resultatRechercheMusique.appendChild(resultatImagePochette);
+
+          const resultatContenu = document.createElement("div");
+          resultatContenu.classList.add("description");
+          const resultatTitre = document.createElement("h3");
+          resultatTitre.textContent = `${artist.artist} - ${artist.album}`;
+          resultatContenu.appendChild(resultatTitre);
+          const resultatDescription = document.createElement("p");
+          resultatDescription.textContent = `${artist.description}`;
+          resultatContenu.appendChild(resultatDescription);
+          resultatRechercheMusique.appendChild(resultatContenu);
+
+          const resultatAudio = document.createElement("div");
+          resultatAudio.classList.add("audio");
+          const resultatTitleAudio = document.createElement("h5");
+          resultatTitleAudio.textContent = "Ecouter un extrait";
+          resultatAudio.appendChild(resultatTitleAudio);
+          const extraitAudio = document.createElement("audio");
+          extraitAudio.src=artist.music;
+          extraitAudio.controls = true;
+          resultatAudio.appendChild(extraitAudio);
+          resultatRechercheMusique.appendChild(resultatAudio);
+        });
+      } else {
+        resultatRechercheMusique.textContent = `aucun ${categorieValue} trouvé.`;
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      resultatRechercheMusique.textContent = "Une erreur est survenue lors du chargement des données.";
+    });
+};
+
+//Recherche par Artiste
+const btnSearchArtist = document.getElementById("btnSearchArtist")
+btnSearchArtist.addEventListener("click", () => {
+  const artistSearch = document.getElementById("artistSearch").value.toLowerCase();
+  searchAndDisplay("artist", artistSearch);	
+  document.getElementById("artistSearch").value="";
+});
+
+// Recherche par Album
+const btnSearchAlbum = document.getElementById("btnSearchAlbum")
+btnSearchAlbum.addEventListener("click", () => {
+  const albumSearch = document.getElementById("albumSearch").value.toLowerCase();
+	searchAndDisplay("album", albumSearch);
+  document.getElementById("albumSearch").value="";
+});
+
+// Recherche par Titre
+const btnSearchTitle = document.getElementById("btnSearchTitle")
+btnSearchTitle.addEventListener("click", () => {
+  const titleSearch = document.getElementById("titleSearch").value.toLowerCase();
+	searchAndDisplay("title", titleSearch);
+  document.getElementById("titleSearch").value="";
+});
+
+// Recherche par Genre
+const btnSearchGenre = document.getElementById("btnSearchGenre")
+btnSearchGenre.addEventListener("click", () => {
+  const genreSearch = document.getElementById("genreSearch").options[document.getElementById('genreSearch').selectedIndex].text.toLowerCase();
+  searchAndDisplay("genre", genreSearch);
+  document.getElementById("genreSearch").value="";
+});
+
+

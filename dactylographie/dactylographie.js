@@ -363,7 +363,7 @@ function startGame() {
   isPlaying = true;
   score = 0;
   scoreDisplay.innerText = score;
-  timeLeft = 10;
+  timeLeft = 60;
   timeDisplay.innerText = timeLeft;
   showNewWord();
 

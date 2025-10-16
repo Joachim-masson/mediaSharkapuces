@@ -1,0 +1,696 @@
+{
+  "french": {
+    "comédie": [
+      {
+        "id": "les-tuche",
+        "title": "Les Tuche",
+        "year": 2011,
+        "duration": 95,
+        "img": "images/lestuches.jpg",
+        "desc": "Dans une petite ville du Nord, une famille déjantée remporte le gros lot et débarque dans un univers de luxe qui ne lui ressemble pas. Entre gaffes, bonne humeur et esprit de clan, chacun tente de rester soi-même malgré la nouvelle vie."
+        },
+        {
+        "id": "bienvenue-chez-les-chtis",
+        "title": "Bienvenue chez les Ch'tis",
+        "year": 2008,
+        "duration": 106,
+        "img": "images/bienvenue.jpg",
+        "desc": "Muté à Bergues, un postier du Sud découvre le Nord qu'il imaginait hostile. De quiproquos en rencontres chaleureuses, il apprivoise l'accent, la pluie… et surtout l'amitié qui bouscule ses préjugés."
+        },
+        {
+        "id": "intouchables",
+        "title": "Intouchables",
+        "year": 2011,
+        "duration": 112,
+        "img": "images/intouchables.jpg",
+        "desc": "À la suite d'un accident, un aristocrate tétraplégique embauche un aide à domicile venu d'un milieu populaire. Leur duo improbable se nourrit d'humour et d'audace: chacun secoue l'autre, jusqu'à réinventer sa façon d'être au monde."
+        },
+        {
+        "id": "les-visiteurs",
+        "title": "Les Visiteurs",
+        "year": 1993,
+        "duration": 107,
+        "img": "images/visiteurs.jpg",
+        "desc": "Un chevalier et son écuyer sont propulsés du Moyen Âge à la France des années 1990. Percés d'armures et de jurons, ils affrontent l'électricité, l'ascenseur et la politesse moderne dans une suite de catastrophes réjouissantes."
+        },
+        {
+        "id": "le-diner-de-cons",
+        "title": "Le Dîner de Cons",
+        "year": 1998,
+        "duration": 80,
+        "img": "images/diner.jpg",
+        "desc": "Chaque semaine, des bourgeois organisent un dîner où chacun amène un « con ». Mais le champion du soir, naïf et attachant, retourne la situation à force de gaffes sincères et de bonté."
+        }
+    ],
+    "drame": [ 
+        {
+        "id": "la-haine",
+        "title": "La Haine",
+        "year": 1995,
+        "duration": 98,
+        "img": "images/haine.jpg",
+        "desc": "Au lendemain d'une bavure policière, trois amis de banlieue dérivent 24 heures durant, entre colère et désœuvrement. Un noir et blanc tendu qui questionne la spirale de la violence et le regard des institutions."
+        },
+        {
+        "id": "les-choristes",
+        "title": "Les Choristes",
+        "year": 2004,
+        "duration": 97,
+        "img": "images/choristes.jpg",
+        "desc": "Dans un internat austère de l'après-guerre, un surveillant rassemble des élèves difficiles autour d'un chœur. La musique fissure l'autoritarisme et redonne aux enfants une part d'innocence et d'élan."
+        },
+        {
+        "id": "un-prophete",
+        "title": "Un Prophète",
+        "year": 2009,
+        "duration": 155,
+        "img": "images/prophete.jpg",
+        "desc": "Jeune détenu sans repères, Malik apprend la loi du plus fort en prison. De petites missions en alliances dangereuses, il s'impose comme stratège et force d'ascension au cœur d'un système carcéral implacable."
+        },
+        {
+        "id": "amelie-poulain",
+        "title": "Le Fabuleux Destin d'Amélie Poulain",
+        "year": 2001,
+        "duration": 122,
+        "img": "images/amelie.jpg",
+        "desc": "À Montmartre, Amélie s'invente une vie faite de micro-bontés et de coïncidences poétiques. Quand elle croise Nino, collectionneur d'images oubliées, son imaginaire se frotte au risque du vrai rendez-vous."
+        },
+        {
+        "id": "de-rouille-et-dos",
+        "title": "De Rouille et d'Os",
+        "year": 2012,
+        "duration": 122,
+        "img": "images/rouille.jpg",
+        "desc": "Un père à la dérive et une dresseuse d'orques amputée s'apprivoisent dans une relation brute où se mêlent désir, survie et dignité. Deux corps cabossés cherchent un équilibre."
+        }
+     ],
+    "thriller": [ 
+        {
+        "id": "ne-le-dis-a-personne",
+        "title": "Ne le dis à personne",
+        "year": 2006,
+        "duration": 131,
+        "img": "images/personne.jpg",
+        "desc": "Huit ans après le meurtre de sa femme, un pédiatre reçoit un e-mail troublant. La piste rouvre: faux-semblants, flics et secrets familiaux se télescopent dans une cavale sous haute tension."
+        },
+        {
+        "id": "36-quai-des-orfevres",
+        "title": "36 Quai des Orfèvres",
+        "year": 2004,
+        "duration": 111,
+        "img": "images/orfevres.jpg",
+        "desc": "Deux flics rivaux chassent le même gang de braqueurs. Au 36, l'ambition dévore tout: loyautés fragiles, procédures qui vacillent, morale qui s'effrite au fil de la traque."
+        },
+        {
+        "id": "le-pacte-des-loups",
+        "title": "Le Pacte des loups",
+        "year": 2001,
+        "duration": 142,
+        "img": "images/pacte.jpg",
+        "desc": "Sous Louis XV, une « bête » terrorise le Gévaudan. Un naturaliste et un guerrier iroquois enquêtent, entre complots, superstition et scènes d'action baroques."
+        },
+        {
+        "id": "la-proie",
+        "title": "La Proie",
+        "year": 2011,
+        "duration": 102,
+        "img": "images/proie.jpg",
+        "desc": "Évadé pour sauver sa famille, un braqueur traque un ex-codétenu devenu tueur. Polar de poursuite nerveux où la police se retrouve prise entre les deux."
+        },
+        {
+        "id": "affaire-sk1",
+        "title": "L'Affaire SK1",
+        "year": 2015,
+        "duration": 120,
+        "img": "images/sk1.jpg",
+        "desc": "Dans les années 90, la brigade criminelle de Paris remonte, pièce par pièce, la piste d'un tueur en série. Chronique procédurale des années ADN naissantes."
+        }
+     ],
+    "horreur": [ 
+        {
+        "id": "grave",
+        "title": "Grave",
+        "year": 2016,
+        "duration": 98,
+        "img": "images/grave.jpg",
+        "desc": "Justine, étudiante vétérinaire végétarienne, découvre une faim nouvelle après un bizutage carné. Corps, pulsions et identité déraillent dans un coming-of-age viscéral."
+        },
+        {
+        "id": "martyrs",
+        "title": "Martyrs",
+        "year": 2008,
+        "duration": 100,
+        "img": "images/martyrs.jpg",
+        "desc": "Deux jeunes femmes hantées par un trauma d'enfance s'enfoncent dans une vengeance qui révèle un projet aussi fanatique que dérangeant. Extrême, radical et tragique."
+        },
+        {
+        "id": "frontieres",
+        "title": "Frontière(s)",
+        "year": 2007,
+        "duration": 108,
+        "img": "images/frontiere.jpeg",
+        "desc": "En fuite après un braquage, des jeunes tombent sur une famille néo-nazie dans une auberge isolée. Survival brutal qui dérape en cauchemar."
+        },
+        {
+        "id": "haute-tension",
+        "title": "Haute Tension",
+        "year": 2003,
+        "duration": 91,
+        "img": "images/tension.jpg",
+        "desc": "Deux amies révisent à la campagne; un tueur fait irruption dans la nuit. Course-poursuite suffocante et twist traumatique."
+        },
+        {
+        "id": "a-l-interieur",
+        "title": "À l'intérieur",
+        "year": 2007,
+        "duration": 83,
+        "img": "images/interieur.jpg",
+        "desc": "La veille de son accouchement, une femme enceinte est assiégée chez elle par une inconnue. Un huis clos gore et implacable."
+        }
+     ]
+  },
+
+  "american": {
+  "comédie": [
+    {
+      "id": "superbad",
+      "title": "Superbad",
+      "year": 2007,
+      "duration": 113,
+      "img": "images/superbad.jpg",
+      "desc": "Seth et Evan, deux amis d'enfance inséparables, veulent profiter de leur dernière année de lycée pour vivre une soirée inoubliable. Leur plan : acheter de l'alcool pour impressionner les filles. Mais entre faux papiers, policiers imprévisibles et situations absurdes, leur mission tourne à la comédie du passage à l'âge adulte."
+    },
+    {
+      "id": "the-mask",
+      "title": "The Mask",
+      "year": 1994,
+      "duration": 101,
+      "img": "images/themask.jpg",
+      "desc": "Stanley Ipkiss, employé de banque timide, découvre un masque magique qui réveille en lui un alter ego vert, drôle et surpuissant. Il devient le héros — ou le cauchemar — de la ville, mélangeant humour cartoonesque et chaos incontrôlable."
+    },
+    {
+      "id": "groundhog-day",
+      "title": "Un Jour sans fin",
+      "year": 1993,
+      "duration": 101,
+      "img": "images/groundhogday.jpg",
+      "desc": "Phil Connors, un présentateur météo désabusé, se retrouve coincé à revivre sans fin la même journée. Après avoir tout essayé pour s'en sortir, il découvre que la clé est peut-être de devenir une meilleure personne."
+    },
+    {
+      "id": "bridesmaids",
+      "title": "Bridesmaids",
+      "year": 2011,
+      "duration": 125,
+      "img": "images/bridesmaids.jpg",
+      "desc": "Annie, trentenaire malchanceuse, voit sa meilleure amie se marier. En tant que demoiselle d'honneur principale, elle affronte rivalités, désastres de mariage et crises existentielles dans une comédie pleine d'autodérision et de sororité."
+    },
+    {
+      "id": "ferris-bueller",
+      "title": "La Folle Journée de Ferris Bueller",
+      "year": 1986,
+      "duration": 103,
+      "img": "images/ferris.jpg",
+      "desc": "Ferris Bueller, lycéen charismatique, décide de sécher les cours pour passer une journée parfaite à Chicago avec ses amis. Entre escapades, courses-poursuites et malice, il incarne la liberté adolescente."
+    }
+  ],
+
+  "drame": [
+    {
+      "id": "shawshank-redemption",
+      "title": "Les Évadés",
+      "year": 1994,
+      "duration": 142,
+      "img": "images/shawshank.jpg",
+      "desc": "Andy Dufresne, banquier condamné à tort pour meurtre, apprend à survivre à la prison de Shawshank grâce à son intelligence et à son amitié avec Red. Un hymne à l'espoir, à la patience et à la liberté."
+    },
+    {
+      "id": "forrest-gump",
+      "title": "Forrest Gump",
+      "year": 1994,
+      "duration": 142,
+      "img": "images/forrestgump.jpg",
+      "desc": "Forrest Gump, homme au grand cœur et à l'esprit simple, traverse l'histoire américaine sans s'en rendre compte. De la guerre du Vietnam à la course à travers les États-Unis, il raconte la vie avec naïveté et sagesse."
+    },
+    {
+      "id": "american-beauty",
+      "title": "American Beauty",
+      "year": 1999,
+      "duration": 122,
+      "img": "images/americanbeauty.jpg",
+      "desc": "Lester Burnham, cadre en crise, s'éveille brutalement à la vacuité de sa vie familiale et professionnelle. Entre rébellion et fascination, il cherche un sens dans un monde de faux-semblants suburbains."
+    },
+    {
+      "id": "good-will-hunting",
+      "title": "Will Hunting",
+      "year": 1997,
+      "duration": 126,
+      "img": "images/goodwill.jpg",
+      "desc": "Will Hunting, jeune surdoué rebelle, travaille comme balayeur au MIT. Quand son talent mathématique est découvert, un professeur tente de le sauver de lui-même avec l'aide d'un psychologue bienveillant."
+    },
+    {
+      "id": "moonlight",
+      "title": "Moonlight",
+      "year": 2016,
+      "duration": 111,
+      "img": "images/moonlight.jpg",
+      "desc": "De l'enfance à l'âge adulte, Chiron grandit dans un quartier difficile de Miami. Il tente de trouver son identité entre solitude, marginalisation et quête d'amour dans un monde brutal."
+    }
+  ],
+
+  "thriller": [
+    {
+      "id": "se7en",
+      "title": "Se7en",
+      "year": 1995,
+      "duration": 127,
+      "img": "images/se7en.jpg",
+      "desc": "Deux inspecteurs, Somerset et Mills, enquêtent sur une série de meurtres inspirés des sept péchés capitaux. Plus ils avancent, plus ils s'enfoncent dans les ténèbres morales du tueur et d'eux-mêmes."
+    },
+    {
+      "id": "fight-club",
+      "title": "Fight Club",
+      "year": 1999,
+      "duration": 139,
+      "img": "images/fightclub.jpg",
+      "desc": "Un employé insomniaque rencontre Tyler Durden, vendeur de savon anarchiste. Ensemble, ils fondent un club de combat clandestin, qui dégénère en une organisation révolutionnaire incontrôlable."
+    },
+    {
+      "id": "zodiac",
+      "title": "Zodiac",
+      "year": 2007,
+      "duration": 157,
+      "img": "images/zodiac.jpg",
+      "desc": "À San Francisco dans les années 70, un dessinateur de presse et des journalistes obsédés tentent de démasquer le tueur du Zodiaque, laissant leur vie sombrer dans l'obsession et la peur."
+    },
+    {
+      "id": "gone-girl",
+      "title": "Gone Girl",
+      "year": 2014,
+      "duration": 149,
+      "img": "images/gonegirl.jpg",
+      "desc": "Le jour de son cinquième anniversaire de mariage, Amy disparaît. Son mari Nick devient le principal suspect, tandis qu'un jeu de manipulation et de secrets se met en place sous les projecteurs médiatiques."
+    },
+    {
+      "id": "prisoners",
+      "title": "Prisoners",
+      "year": 2013,
+      "duration": 153,
+      "img": "images/prisoners.jpg",
+      "desc": "Quand sa fille disparaît, Keller Dover prend les choses en main face à une enquête policière qui piétine. Son obsession pour la vérité le pousse à franchir les limites morales les plus sombres."
+    }
+  ],
+
+  "horreur": [
+    {
+      "id": "get-out",
+      "title": "Get Out",
+      "year": 2017,
+      "duration": 104,
+      "img": "images/getout.jpg",
+      "desc": "Chris, jeune Afro-Américain, visite la famille de sa petite amie blanche. L'accueil chaleureux cache une machination terrifiante où l'horreur sociale et la manipulation psychologique se mêlent."
+    },
+    {
+      "id": "us",
+      "title": "Us",
+      "year": 2019,
+      "duration": 116,
+      "img": "images/us.jpg",
+      "desc": "Une famille en vacances est confrontée à ses doubles maléfiques. Les sosies incarnent une société divisée, livrant un cauchemar symbolique et oppressant."
+    },
+    {
+      "id": "the-conjuring",
+      "title": "The Conjuring",
+      "year": 2013,
+      "duration": 112,
+      "img": "images/conjuring.jpg",
+      "desc": "Les enquêteurs paranormaux Ed et Lorraine Warren affrontent une entité démoniaque qui hante une ferme isolée. Inspiré d'une histoire vraie, ce film mêle tension classique et possession terrifiante."
+    },
+    {
+      "id": "it",
+      "title": "Ça",
+      "year": 2017,
+      "duration": 135,
+      "img": "images/it.jpg",
+      "desc": "Dans la petite ville de Derry, un groupe d'enfants affronte leurs peurs les plus profondes incarnées par un clown démoniaque, Pennywise. L'amitié devient leur seule arme contre la terreur."
+    },
+    {
+      "id": "hereditary",
+      "title": "Hérédité",
+      "year": 2018,
+      "duration": 127,
+      "img": "images/hereditary.jpg",
+      "desc": "Après la mort de sa mère, Annie découvre de sombres secrets familiaux. Peu à peu, une malédiction démoniaque s'installe, transformant le deuil en descente aux enfers."
+    }
+  ]
+},
+
+ "european": {
+  "comédie": [
+    {
+      "id": "the-full-monty",
+      "title": "The Full Monty",
+      "year": 1997,
+      "duration": 91,
+      "img": "images/fullmonty.jpg",
+      "desc": "À Sheffield, six ouvriers au chômage décident de monter un numéro de strip-tease pour gagner un peu d'argent. Sans expérience ni confiance en eux, ils apprennent la solidarité et l'auto-dérision. Une comédie sociale sur la dignité, l'amitié et le courage d'oser."
+    },
+    {
+      "id": "good-bye-lenin",
+      "title": "Good Bye Lenin!",
+      "year": 2003,
+      "duration": 121,
+      "img": "images/goodbyelenin.jpg",
+      "desc": "À Berlin-Est, Alex cache à sa mère, fervente communiste plongée dans le coma avant la chute du mur, que l'Allemagne est réunifiée. Il recrée une RDA fictive pour préserver sa santé. Entre tendresse et absurde, un film sur la mémoire et les illusions."
+    },
+    {
+      "id": "pride",
+      "title": "Pride",
+      "year": 2014,
+      "duration": 120,
+      "img": "images/pride.jpg",
+      "desc": "En 1984, des militants LGBT britanniques soutiennent la grève des mineurs gallois. L'alliance improbable de deux mondes opposés devient un symbole de lutte et de solidarité. Inspiré d'une histoire vraie, entre rires, chansons et émotion."
+    },
+    {
+      "id": "love-actually",
+      "title": "Love Actually",
+      "year": 2003,
+      "duration": 135,
+      "img": "images/loveactually.jpg",
+      "desc": "À Londres, plusieurs histoires d'amour se croisent pendant les fêtes de Noël : couples, solitudes et maladresses s'entremêlent dans un récit choral chaleureux et drôle sur les multiples visages de l'amour."
+    },
+    {
+      "id": "bienvenue-mister-chance",
+      "title": "Bienvenue Mister Chance",
+      "year": 1979,
+      "duration": 130,
+      "img": "images/misterchance.jpg",
+      "desc": "Un simple jardinier, naïf et silencieux, devient par hasard conseiller politique influent. Satire douce-amère de la société médiatique et du pouvoir, portée par l'humour absurde de Peter Sellers."
+    }
+  ],
+
+  "drame": [
+    {
+      "id": "la-vita-e-bella",
+      "title": "La Vita è bella",
+      "year": 1997,
+      "duration": 116,
+      "img": "images/lavitaebella.jpg",
+      "desc": "Guido, père aimant et plein d'imagination, transforme l'horreur du camp de concentration en jeu pour protéger son fils. Une ode bouleversante à la force de l'amour et de l'humour face à l'inhumanité."
+    },
+    {
+      "id": "the-pianist",
+      "title": "Le Pianiste",
+      "year": 2002,
+      "duration": 150,
+      "img": "images/pianist.jpg",
+      "desc": "Władysław Szpilman, pianiste juif polonais, tente de survivre à l'occupation nazie de Varsovie. Roman Polanski signe un drame poignant sur la dignité et la résistance silencieuse."
+    },
+    {
+      "id": "billy-elliot",
+      "title": "Billy Elliot",
+      "year": 2000,
+      "duration": 110,
+      "img": "images/billyelliot.jpg",
+      "desc": "Dans une ville minière anglaise frappée par la grève, un garçon découvre la danse classique. Malgré les préjugés de son entourage, il poursuit son rêve. Un film sur la passion et l'émancipation."
+    },
+    {
+      "id": "the-intouchables-eu",
+      "title": "Intouchables",
+      "year": 2011,
+      "duration": 112,
+      "img": "images/intouchables.jpg",
+      "desc": "Un aristocrate paralysé engage un aide à domicile venu de la banlieue. Leur amitié improbable transcende les barrières sociales dans un mélange d'humour, de tendresse et d'humanité."
+    },
+    {
+      "id": "amour",
+      "title": "Amour",
+      "year": 2012,
+      "duration": 127,
+      "img": "images/amour.jpg",
+      "desc": "Georges et Anne, couple d'octogénaires mélomanes, voient leur relation mise à l'épreuve par la maladie. Michael Haneke signe un drame bouleversant sur la dignité, la vieillesse et l'amour véritable."
+    }
+  ],
+
+  "thriller": [
+    {
+      "id": "leon",
+      "title": "Léon",
+      "year": 1994,
+      "duration": 110,
+      "img": "images/leon.jpg",
+      "desc": "Tueur à gages solitaire, Léon recueille Mathilda, une fillette dont la famille a été assassinée par des policiers corrompus. Entre violence et tendresse, leur lien improbable devient une quête de survie et d'humanité."
+    },
+    {
+      "id": "the-lives-of-others",
+      "title": "La Vie des autres",
+      "year": 2006,
+      "duration": 137,
+      "img": "images/livesofothers.jpg",
+      "desc": "En Allemagne de l'Est, un agent de la Stasi espionne un couple d'artistes dissidents. Peu à peu, il s'attache à eux et remet en cause tout ce en quoi il croyait. Un thriller politique d'une grande humanité."
+    },
+    {
+      "id": "the-girl-with-dragon-tattoo",
+      "title": "Millénium : Les hommes qui n'aimaient pas les femmes",
+      "year": 2009,
+      "duration": 152,
+      "img": "images/millenium.jpg",
+      "desc": "Un journaliste déchu et une hackeuse marginale enquêtent sur la disparition d'une jeune femme survenue quarante ans plus tôt. L'enquête révèle les secrets sombres d'une famille suédoise influente."
+    },
+    {
+      "id": "tell-no-one-eu",
+      "title": "Ne le dis à personne",
+      "year": 2006,
+      "duration": 131,
+      "img": "images/personne.jpg",
+      "desc": "Un médecin reçoit un e-mail semblant prouver que sa femme, disparue depuis huit ans, est toujours en vie. Un puzzle d'émotions et de suspense à la française, mêlant amour et paranoïa."
+    },
+    {
+      "id": "the-hunt",
+      "title": "La Chasse",
+      "year": 2012,
+      "duration": 115,
+      "img": "images/lachasse.jpg",
+      "desc": "Un instituteur danois est accusé à tort d'abus sur enfant. Sa vie bascule dans une spirale de haine et de peur collective. Un thriller social glaçant porté par Mads Mikkelsen."
+    }
+  ],
+
+  "horreur": [
+    {
+      "id": "rec",
+      "title": "[REC]",
+      "year": 2007,
+      "duration": 78,
+      "img": "images/rec.jpg",
+      "desc": "Une journaliste et son caméraman suivent les pompiers lors d'une intervention dans un immeuble de Barcelone. L'endroit est mis en quarantaine, et les résidents se transforment en créatures terrifiantes. Une plongée en temps réel dans la panique."
+    },
+    {
+      "id": "let-the-right-one-in",
+      "title": "Morse",
+      "year": 2008,
+      "duration": 114,
+      "img": "images/morse.jpg",
+      "desc": "En Suède, un garçon solitaire se lie d'amitié avec une étrange fillette qui ne sort que la nuit. Peu à peu, il découvre sa véritable nature. Un film d'horreur poétique sur l'isolement et l'innocence."
+    },
+    {
+      "id": "raw",
+      "title": "Grave",
+      "year": 2016,
+      "duration": 99,
+      "img": "images/grave.jpg",
+      "desc": "Justine, étudiante vétérinaire végétarienne, découvre une faim nouvelle après un bizutage carné. Entre dégoût et fascination, elle se transforme. Un choc viscéral signé Julia Ducournau."
+    },
+    {
+      "id": "the-others",
+      "title": "Les Autres",
+      "year": 2001,
+      "duration": 104,
+      "img": "images/others.jpg",
+      "desc": "Dans un manoir isolé, une mère élève ses deux enfants photosensibles. Bientôt, des phénomènes étranges surgissent. Un huis clos gothique où la peur vient du silence et de l'invisible."
+    },
+    {
+      "id": "rawhead-rex",
+      "title": "Rawhead Rex",
+      "year": 1986,
+      "duration": 89,
+      "img": "images/rawheadrex.jpg",
+      "desc": "En Irlande, des archéologues libèrent accidentellement un démon ancien. Le monstre sème la terreur dans la campagne. Un conte horrifique ancré dans les mythes celtiques."
+    }
+  ]
+},
+
+  "asian": {
+  "comédie": [
+    {
+      "id": "shaolin-soccer",
+      "title": "Shaolin Soccer",
+      "year": 2001,
+      "duration": 113,
+      "img": "images/shaolinsoccer.jpg",
+      "desc": "Un ancien moine Shaolin réunit ses frères d'arts martiaux pour former une équipe de football pas comme les autres. En mélangeant kung-fu et ballon rond, ils transforment chaque match en spectacle acrobatique délirant. Une comédie d'action culte et déjantée signée Stephen Chow."
+    },
+    {
+      "id": "my-sassy-girl",
+      "title": "My Sassy Girl",
+      "year": 2001,
+      "duration": 123,
+      "img": "images/mysassygirl.jpg",
+      "desc": "Gyeon-woo, étudiant banal, croise une jeune femme imprévisible et autoritaire. Leur relation, faite de disputes et de tendresse, devient une aventure touchante et drôle. Ce film coréen iconique mêle romance, drame et humour avec une sincérité rare."
+    },
+    {
+      "id": "crazy-rich-asians",
+      "title": "Crazy Rich Asians",
+      "year": 2018,
+      "duration": 120,
+      "img": "images/crazyrichasians.jpg",
+      "desc": "Rachel découvre que son petit ami est l'héritier d'une des familles les plus riches de Singapour. Confrontée à la haute société et à une belle-mère redoutable, elle doit s'imposer avec humour et dignité. Une comédie romantique pétillante et colorée."
+    },
+    {
+      "id": "korean-fried-chicken",
+      "title": "Korean Fried Chicken",
+      "year": 2022,
+      "duration": 118,
+      "img": "images/korean_fried_chicken.jpg",
+      "desc": "Une brigade anti-drogue, dirigée par le chef Go, cherche à démanteler une organisation criminelle. Pour pouvoir surveiller et infiltrer ce gang, cinq agents se font passer pour de simples salariés en ouvrant un restaurant. Ils se retrouvent bientôt dans une situation improbable lorsque leur restaurant gagne en popularité grâce au délicieux poulet qu'ils proposent."
+    },
+    {
+      "id": "the-good-the-bad-the-weird",
+      "title": "Le Bon la Brute et le Cinglé",
+      "year": 2008,
+      "duration": 139,
+      "img": "images/lebonbrutecingle.jpg",
+      "desc": "Un riche homme d'affaires est en possession d'une carte mystérieuse qu'il vend à un banquier japonais. Pour en récolter tous les bénéfices, il paie Chang-yi (la brute), le plus célèbre tueur de la région, pour la récupérer par la force des armes. Mais lorsque celui-ci attaque le train où se trouve la carte, un voleur fou, Tae-goo (le cinglé), l'a devancé et a récupéré le document sans en connaître la valeur réelle, en pensant détenir une carte au trésor. Dans le train se trouve aussi Do-won (le bon), un célèbre chasseur de primes, pour qui la traque des deux bandits commence. "
+    }
+  ],
+
+  "drame": [
+    {
+      "id": "parasite",
+      "title": "Parasite",
+      "year": 2019,
+      "duration": 132,
+      "img": "images/parasite.jpg",
+      "desc": "La famille Kim, vivant dans la misère, infiltre la luxueuse demeure des Park en se faisant passer pour des employés modèles. Mais la supercherie prend une tournure tragique lorsque deux mondes opposés s'entrechoquent. Palme d'or pour cette satire sociale brillante et cruelle."
+    },
+    {
+      "id": "shoplifters",
+      "title": "Une Affaire de famille",
+      "year": 2018,
+      "duration": 121,
+      "img": "images/shoplifters.jpg",
+      "desc": "À Tokyo, une famille pauvre survit en volant dans les magasins. Un jour, elle recueille une fillette maltraitée. Entre affection sincère et mensonges, ce drame humaniste explore les liens choisis plutôt que le sang. Palme d'or 2018 pour Hirokazu Kore-eda."
+    },
+    {
+      "id": "rashomon",
+      "title": "Rashômon",
+      "year": 1950,
+      "duration": 88,
+      "img": "images/rashomon.jpg",
+      "desc": "Dans le Japon médiéval, un crime est raconté par plusieurs témoins dont les versions se contredisent. Chaque récit révèle la subjectivité de la vérité. Un chef-d'œuvre d'Akira Kurosawa sur la nature humaine et la perception du réel."
+    },
+    {
+      "id": "departures",
+      "title": "Departures",
+      "year": 2008,
+      "duration": 130,
+      "img": "images/departures.jpg",
+      "desc": "Un violoncelliste au chômage devient par hasard 'préparateur de morts'. Au contact des familles endeuillées, il redécouvre le sens de la vie. Ce drame japonais mêle émotion, respect des traditions et beauté du rituel funéraire."
+    },
+    {
+      "id": "burning",
+      "title": "Burning",
+      "year": 2018,
+      "duration": 148,
+      "img": "images/burning.jpg",
+      "desc": "Jong-soo retrouve une amie d'enfance et fait la connaissance de Ben, un homme riche et mystérieux. Peu après, la jeune femme disparaît. Adapté d'une nouvelle de Murakami, un drame troublant entre amour, jalousie et vide existentiel."
+    }
+  ],
+
+  "thriller": [
+    {
+      "id": "oldboy",
+      "title": "Oldboy",
+      "year": 2003,
+      "duration": 120,
+      "img": "images/oldboy.jpg",
+      "desc": "Enlevé et séquestré pendant quinze ans sans raison, Oh Dae-su est relâché soudainement. Obsédé par la vengeance, il découvre que son bourreau a tout orchestré. Un thriller coréen culte mêlant violence, poésie et tragédie."
+    },
+    {
+      "id": "infernal-affairs",
+      "title": "Infernal Affairs",
+      "year": 2002,
+      "duration": 101,
+      "img": "images/infernalaffairs.jpg",
+      "desc": "Un policier infiltré dans la mafia et un mafieux infiltré dans la police s'affrontent sans savoir qui est qui. Le suspense monte jusqu'à un face-à-face explosif. Film hongkongais à l'origine du remake américain 'Les Infiltrés'."
+    },
+    {
+      "id": "memories-of-murder",
+      "title": "Memories of Murder",
+      "year": 2003,
+      "duration": 132,
+      "img": "images/memoriesofmurder.jpg",
+      "desc": "Dans la Corée rurale des années 80, deux policiers traquent un tueur en série. Mal préparés et dépassés, ils sombrent dans la violence et le doute. Inspiré d'une histoire vraie, un chef-d'œuvre de Bong Joon-ho."
+    },
+    {
+      "id": "the-handmaiden",
+      "title": "Mademoiselle",
+      "year": 2016,
+      "duration": 145,
+      "img": "images/handmaiden.jpg",
+      "desc": "Dans la Corée des années 1930, une jeune servante est engagée par une riche héritière. Manipulations, désir et tromperies se tissent dans un jeu de dupes sensuel et cruel. Un thriller d'une beauté envoûtante signé Park Chan-wook."
+    },
+    {
+      "id": "the-wailing",
+      "title": "The Wailing",
+      "year": 2016,
+      "duration": 156,
+      "img": "images/wailing.jpg",
+      "desc": "Dans un village coréen, une série de morts inexpliquées terrifie la population. Un policier mène l'enquête, oscillant entre superstition et raison. Le film mêle enquête policière, possession et désespoir métaphysique."
+    }
+  ],
+
+  "horreur": [
+    {
+      "id": "ringu",
+      "title": "Ringu",
+      "year": 1998,
+      "duration": 96,
+      "img": "images/ringu.jpg",
+      "desc": "Une journaliste enquête sur une cassette vidéo maudite : quiconque la regarde meurt sept jours plus tard. Son enquête devient une course contre la montre. Le film fondateur du cinéma d'horreur japonais moderne."
+    },
+    {
+      "id": "ju-on",
+      "title": "Ju-On : The Grudge",
+      "year": 2002,
+      "duration": 92,
+      "img": "images/juon.jpg",
+      "desc": "Une maison maudite à Tokyo propage une malédiction mortelle à quiconque y pénètre. À travers plusieurs destins, l'horreur se transmet comme un virus. Une œuvre glaçante et non linéaire devenue culte."
+    },
+    {
+      "id": "a-tale-of-two-sisters",
+      "title": "A Tale of Two Sisters",
+      "year": 2003,
+      "duration": 115,
+      "img": "images/twosisters.jpg",
+      "desc": "Deux sœurs reviennent d'un hôpital psychiatrique dans une demeure où plane la folie. Leur belle-mère est terrifiante, et des visions hantent la maison. Un conte psychologique et horrifique d'une élégance rare."
+    },
+    {
+      "id": "train-to-busan",
+      "title": "Dernier Train pour Busan",
+      "year": 2016,
+      "duration": 118,
+      "img": "images/busan.jpg",
+      "desc": "Dans un train reliant Séoul à Busan, un virus transforme les passagers en zombies. Un père tente de protéger sa fille au cœur du chaos. Un film d'action et d'horreur poignant sur la survie et l'humanité."
+    },
+    {
+      "id": "the-medium",
+      "title": "The Medium",
+      "year": 2021,
+      "duration": 131,
+      "img": "images/medium.jpg",
+      "desc": "Tourné comme un documentaire, ce film suit une chamane thaïlandaise dont la nièce semble possédée. Ce qui commence comme un rituel spirituel tourne à la terreur pure. Une horreur chamanique dérangeante et mystique."
+    }
+  ]
+}
+
+}
+ 
