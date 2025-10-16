@@ -218,6 +218,10 @@ main>section:nth-of-type(1) {
 .boxSearch select {
   height: 1.5rem;
 }
+#genreSearch{
+  width: 195px;
+  text-align: center;
+}
 
 
 .resRech {
@@ -247,3 +251,15 @@ main>section:nth-of-type(1) {
       }
     }
   }
+@media screen and (max-width: 992px) {
+  .containerSearch {
+    display:flex;
+    flex-direction: column;
+    .boxSearch{
+      margin : 1rem;
+    }
+    #genreSearch{
+      width: 195px;
+    }
+  }
+}
