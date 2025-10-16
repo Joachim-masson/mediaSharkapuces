@@ -1,3 +1,17 @@
+// --- MISE A JOUR IMMEDIATE DES BADGES AU CHARGEMENT DE LA PAGE ---
+
+// On définit les clés de stockage une seule fois
+const PANIER_KEY = 'Panier';
+const FAVORIS_KEY = 'Favoris';
+
+// On récupère les listes depuis le localStorage
+const panierInitial = JSON.parse(localStorage.getItem(PANIER_KEY)) || [];
+const favorisInitial = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
+
+// On met à jour les badges avec les données récupérées
+document.getElementById('panier-count').textContent = panierInitial.length || 0;
+document.getElementById('favoris-count').textContent = favorisInitial.length || 0;
+
 // --- Chargement JSON ---
 fetch('../assets/livre.json')
   .then(response => response.json())

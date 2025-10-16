@@ -1,0 +1,96 @@
+@import url(../styles/graphic_chart.css);
+@import url(../styles/footer.css);
+@import url(../navbar/navbar.css);
+
+* {
+  margin: 0;
+  border: none;
+}
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1 {
+  background-color: var(--color-light-gray);
+  padding: 1em;
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Empile .game et #game-container */
+  align-items: center; /* Centre horizontalement */
+  justify-content: center; /* Centre verticalement (optionnel) */
+  background-color: var(--color-light-brown);
+  font-family: Arial, sans-serif;
+}
+
+/* Bloc d’intro */
+.game {
+  width: 60%;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#game-container {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+#word-display {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#word-input {
+  padding: 10px;
+  font-size: 1em;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#start-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#score-display,
+#time-display {
+  margin-top: 10px;
+  font-weight: bold;
+}
+#win-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #333;
+  padding: 20px 40px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
