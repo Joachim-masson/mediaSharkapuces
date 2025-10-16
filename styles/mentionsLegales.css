@@ -9,8 +9,8 @@
    h2{
       padding: 1rem;
    }
-   p {
-      width : 32rem;
+   p, ul {
+      width : 40rem;
       padding:2rem 5rem 3rem;
       background-color: var(--color-light-brown);
    }

@@ -1,0 +1,153 @@
+@import url('../styles/graphic_chart.css');
+@import url('../navbar/navbar.css');
+@import url('../styles/footer.css');
+/* modifier les polices et regarder la charte graphique voir si ça correspond */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: var(--color-light-brown);
+    flex-direction: column;
+    font-family: var(--font-family-base);
+}
+
+main {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hang-header {
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .hang-header h1 {
+    text-align: center;
+    font-family: var(--font-family-title);
+    color: var(--color-dark-gray);
+    font-weight: var(--font-weight-bold);
+  }
+  .container {
+    text-align: center;
+    background-color: var(--color-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 95%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+  }
+  #word, #guesses, #message {
+    margin: 0.5rem 0;
+    grid-column: 1 / -1;
+  }
+  #word {
+    font-size: 2.5rem;
+    letter-spacing: 0.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  #hangman {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+  #guesses {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    font-weight: 300;
+  }
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 5;
+    align-self: center;
+  }
+  button {
+    margin: 0.3rem;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(132, 70, 70);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: var(--font-family-base);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  button:hover {
+    background-color: rgb(217, 125, 125);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  #newGameBtn {
+    background-color: #124326;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    grid-column: 1 / -1;
+  }
+  #newGameBtn:hover {
+    background-color: #27ae60;
+  }
+  #message {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    grid-column: 1 / -1;
+  }
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  .failure {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+.btnfoot{
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 0;
+  background-color: var(--color-red);
+  font-weight: 600;
+  color: var(--color-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: var(--color-red);
+  }
+}
