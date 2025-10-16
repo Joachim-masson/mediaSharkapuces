@@ -12,6 +12,7 @@ const favorisInitial = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
 document.getElementById('panier-count').textContent = panierInitial.length || 0;
 document.getElementById('favoris-count').textContent = favorisInitial.length || 0;
 
+
 // --- Chargement JSON ---
 fetch('../assets/livre.json')
   .then(response => response.json())
@@ -19,11 +20,12 @@ fetch('../assets/livre.json')
     const livresData = data.categories.livres;
     const affichage = document.getElementById('affichage-livres');
     const boutons = document.querySelectorAll('.boutons-sous-categorie button');
+    
+    // Conteneurs pour les dropdowns
     const panierContainer = document.getElementById('panier-container');
+    const favorisContainer = document.getElementById('favoris-container');
     const dropdownMenu = document.getElementById('dropdown-menu');
-
-    const PANIER_KEY = 'Panier';
-    const FAVORIS_KEY = 'Favoris';
+    const dropdownMenuFavoris = document.getElementById('dropdown-menu-favoris');
 
     let panier = JSON.parse(localStorage.getItem(PANIER_KEY)) || [];
     let favoris = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
@@ -35,6 +37,51 @@ fetch('../assets/livre.json')
     const tousLesLivres = Object.keys(livresData)
       .filter(key => key !== "Panier" && key !== "favoris")
       .flatMap(key => livresData[key]);
+      
+    // --- GESTION DES POPUPS DE CONFIRMATION ---
+
+    // On récupère les éléments du DOM pour les popups
+    const popupGlobal = document.getElementById('confirm-popup');
+    const popupUnitaire = document.getElementById('confirm-popup-uni');
+
+    // Les boutons des popups
+    const btnConfirmYes = document.getElementById('confirm-yes');
+    const btnConfirmNo = document.getElementById('confirm-no');
+    const btnConfirmYesUni = document.getElementById('confirm-yes-uni');
+    const btnConfirmNoUni = document.getElementById('confirm-no-uni');
+
+    // Variable pour garder en mémoire l'action à confirmer
+    let actionAConfirmer = null;
+
+    // Fonctions pour afficher/cacher les popups
+    const showPopup = (popup) => popup.classList.add('visible');
+    const hidePopups = () => {
+        popupGlobal.classList.remove('visible');
+        popupUnitaire.classList.remove('visible');
+    };
+
+    // Logique de confirmation pour la suppression GLOBALE (vider)
+    btnConfirmYes.addEventListener('click', () => {
+        if (actionAConfirmer) {
+            actionAConfirmer(); // Exécute l'action mise en attente
+            actionAConfirmer = null; // Réinitialise l'action
+        }
+        hidePopups(); // Cache le popup
+    });
+
+    // Logique de confirmation pour la suppression UNITAIRE
+    btnConfirmYesUni.addEventListener('click', () => {
+        if (actionAConfirmer) {
+            actionAConfirmer(); // Exécute l'action mise en attente
+            actionAConfirmer = null; // Réinitialise l'action
+        }
+        hidePopups(); // Cache le popup
+    });
+
+    // Les boutons "Annuler" cachent simplement les popups
+    btnConfirmNo.addEventListener('click', hidePopups);
+    btnConfirmNoUni.addEventListener('click', hidePopups);
+
 
     // --- Fonctions utilitaires ---
     const savePanier = () => localStorage.setItem(PANIER_KEY, JSON.stringify(panier));
@@ -91,108 +138,165 @@ fetch('../assets/livre.json')
     };
 
     // --- Dropdown panier ---
-    const afficherDropdown = () => {
+    const afficherDropdownPanier = () => {
       if (panier.length === 0) {
         dropdownMenu.innerHTML = "<p>Aucun article dans le panier.</p>";
-        dropdownMenu.classList.add('visible');
-        return;
-      }
-      const total = panier.reduce((sum, livre) => sum + parseFloat(livre.Prix || 0), 0);
-      dropdownMenu.innerHTML = `
-        <table class="panier-table">
-          <thead>
-            <tr>
-              <th>Titre</th>
-              <th>Supprimer</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${panier.map(livre => `
-              <tr data-id="${livre.id}">
-                <td>${livre.titre}</td>
-                <td class="col-delete">
-                  <button class="delete-item" data-id="${livre.id}" aria-label="Supprimer ${livre.titre}">
-                    <img src="../navbar/images/trash.svg" alt="Supprimer" width="18" height="18">
+      } else {
+        dropdownMenu.innerHTML = `
+          <table class="panier-table">
+            <thead>
+              <tr>
+                <th>Titre</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${panier.map(livre => `
+                <tr data-id="${livre.id}">
+                  <td>${livre.titre}</td>
+                  <td class="col-delete">
+                    <button class="delete-item-panier" data-id="${livre.id}" aria-label="Supprimer ${livre.titre} du panier">
+                      <img src="../navbar/images/trash.svg" alt="Supprimer" width="18" height="18">
+                    </button>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">
+                  <button id="vider-panier-btn" class="vider-panier-btn">
+                    <img src="../navbar/images/trash.svg" alt="Vider le panier">
+                    Vider le panier
                   </button>
                 </td>
               </tr>
-            `).join('')}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3" class="panier-total">Total : ${total.toFixed(2)}€</td>
-            </tr>
-            <tr>
-              <td colspan="3">
-                <button id="vider-panier-btn" class="vider-panier-btn">
-                  <img src="../navbar/images/trash.svg" alt="Vider le panier">
-                  Vider le panier
-                </button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      `;
+            </tfoot>
+          </table>
+        `;
+      }
       dropdownMenu.classList.add('visible');
     };
-
-    const cacherDropdown = () => dropdownMenu.classList.remove('visible');
-    panierContainer.addEventListener('mouseenter', afficherDropdown);
-    panierContainer.addEventListener('mouseleave', cacherDropdown);
-
-    // --- Gestion suppression et vidage du panier (listener fusionné) ---
-    dropdownMenu.addEventListener('click', (e) => {
-      const deleteBtn = e.target.closest('.delete-item');
-      const viderBtn = e.target.closest('#vider-panier-btn');
-
-    if (deleteBtn) {
-        const idToRemove = parseInt(deleteBtn.dataset.id, 10);
-        if (Number.isNaN(idToRemove)) return;
-
-        // Récupère la popup et les boutons
-        const popup = document.getElementById('confirm-popup-uni');
-        const yesBtn = document.getElementById('confirm-yes-uni');
-        const noBtn = document.getElementById('confirm-no-uni');
-
-        // Affiche la popup
-        popup.style.display = 'flex';
-
-        // Définit ce que fait le bouton "Oui"
-        yesBtn.onclick = () => {
-            popup.style.display = 'none'; // Cache la popup
-            const itemRemoved = panier.find(p => p.id === idToRemove);
-            panier = panier.filter(p => p.id != idToRemove); // Supprime l'article
-            
-            // Met à jour l'interface
-            savePanier();
-            updateBadges();
-            afficherDropdown();
-            if (itemRemoved) {
-                showToast(`"${itemRemoved.titre}" supprimé du panier.`, 'info');
-            }
-        };
-
-        // Définit ce que fait le bouton "Non"
-        noBtn.onclick = () => {
-            popup.style.display = 'none'; // Cache simplement la popup
-        };
-    }
-
-      if (viderBtn) {
-        const popup = document.getElementById('confirm-popup');
-        const yesBtn = document.getElementById('confirm-yes');
-        const noBtn = document.getElementById('confirm-no');
-        popup.style.display = 'flex';
-        yesBtn.onclick = () => {
-          popup.style.display = 'none';
-          panier = [];
-          savePanier();
-          updateBadges();
-          afficherDropdown();
-          showToast("Panier vidé avec succès.", "info");
-        };
-        noBtn.onclick = () => { popup.style.display = 'none'; };
+    
+    const cacherDropdownPanier = () => dropdownMenu.classList.remove('visible');
+    panierContainer.addEventListener('mouseenter', afficherDropdownPanier);
+    panierContainer.addEventListener('mouseleave', cacherDropdownPanier);
+    
+    // --- Dropdown Favoris ---
+    const afficherDropdownFavoris = () => {
+      if (favoris.length === 0) {
+        dropdownMenuFavoris.innerHTML = "<p>Aucun livre dans les favoris.</p>";
+      } else {
+        dropdownMenuFavoris.innerHTML = `
+          <table class="panier-table">
+            <thead>
+              <tr>
+                <th>Titre</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${favoris.map(livre => `
+                <tr data-id="${livre.id}">
+                  <td>${livre.titre}</td>
+                  <td class="col-delete">
+                    <button class="delete-item-favoris" data-id="${livre.id}" aria-label="Supprimer ${livre.titre} des favoris">
+                      <img src="../navbar/images/trash.svg" alt="Supprimer" width="18" height="18">
+                    </button>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">
+                  <button id="vider-favoris-btn" class="vider-panier-btn">
+                    <img src="../navbar/images/trash.svg" alt="Vider les favoris">
+                    Vider les favoris
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        `;
       }
+      dropdownMenuFavoris.classList.add('visible');
+    };
+
+    const cacherDropdownFavoris = () => dropdownMenuFavoris.classList.remove('visible');
+    favorisContainer.addEventListener('mouseenter', afficherDropdownFavoris);
+    favorisContainer.addEventListener('mouseleave', cacherDropdownFavoris);
+
+    // --- Gestion suppression et vidage du PANIER (AVEC CONFIRMATION) ---
+    dropdownMenu.addEventListener('click', (e) => {
+        const deleteBtn = e.target.closest('.delete-item-panier');
+        const viderBtn = e.target.closest('#vider-panier-btn');
+
+        if (deleteBtn) {
+            const idToRemove = parseInt(deleteBtn.dataset.id, 10);
+            // On met l'action de suppression en attente
+            actionAConfirmer = () => {
+                const itemRemoved = panier.find(p => p.id === idToRemove);
+                panier = panier.filter(p => p.id !== idToRemove);
+                savePanier();
+                updateBadges();
+                afficherDropdownPanier();
+                if (itemRemoved) {
+                    showToast(`"${itemRemoved.titre}" supprimé du panier.`, 'info');
+                }
+            };
+            // On affiche le popup de confirmation unitaire
+            showPopup(popupUnitaire);
+        }
+
+        if (viderBtn) {
+            // On met l'action de vidage en attente
+            actionAConfirmer = () => {
+                panier = [];
+                savePanier();
+                updateBadges();
+                afficherDropdownPanier();
+                showToast("Panier vidé avec succès.", "info");
+            };
+            // On affiche le popup de confirmation globale
+            showPopup(popupGlobal);
+        }
+    });
+
+    // --- Gestion suppression et vidage des FAVORIS (AVEC CONFIRMATION) ---
+    dropdownMenuFavoris.addEventListener('click', (e) => {
+        const deleteBtn = e.target.closest('.delete-item-favoris');
+        const viderBtn = e.target.closest('#vider-favoris-btn');
+
+        if (deleteBtn) {
+            const idToRemove = parseInt(deleteBtn.dataset.id, 10);
+            // On met l'action en attente
+            actionAConfirmer = () => {
+                const itemRemoved = favoris.find(f => f.id === idToRemove);
+                favoris = favoris.filter(f => f.id !== idToRemove);
+                saveFavoris();
+                updateBadges();
+                afficherDropdownFavoris();
+                if (itemRemoved) {
+                    showToast(`"${itemRemoved.titre}" supprimé des favoris.`, 'info');
+                }
+            };
+            // On affiche le popup de confirmation unitaire
+            showPopup(popupUnitaire);
+        }
+
+        if (viderBtn) {
+            // On met l'action en attente
+            actionAConfirmer = () => {
+                favoris = [];
+                saveFavoris();
+                updateBadges();
+                afficherDropdownFavoris();
+                showToast("Favoris vidés avec succès.", "info");
+            };
+            // On affiche le popup de confirmation globale
+            showPopup(popupGlobal);
+        }
     });
 
     // --- Événements sur icônes livres ---
@@ -201,30 +305,30 @@ fetch('../assets/livre.json')
       const idLivre = parseInt(icon.dataset.id, 10);
       if (Number.isNaN(idLivre)) return;
 
-      const livreAjoute = tousLesLivres.find(l => l.id === idLivre);
-      if (!livreAjoute) return;
+      const livreSelectionne = tousLesLivres.find(l => l.id === idLivre);
+      if (!livreSelectionne) return;
 
       if (icon.classList.contains('icon-panier')) {
-        if (livreAjoute.disponible) {
+        if (livreSelectionne.disponible) {
           if (!isInArrayById(panier, idLivre)) {
-          panier.push(livreAjoute);
-          savePanier();
-          updateBadges();
-          showToast(`"${livreAjoute.titre}" ajouté au panier !`, 'success');
-        } else showToast(`"${livreAjoute.titre}" est déjà dans le panier.`, 'info');
-      } else { showToast(`"${livreAjoute.titre}" est indisponible.`, 'info') }
-    } else if (icon.classList.contains('icon-favoris')) {
-        if (!isInArrayById(favoris, idLivre)) {
-          favoris.push(livreAjoute);
-          saveFavoris();
-          updateBadges();
-          showToast(`"${livreAjoute.titre}" ajouté aux favoris !`, 'success');
-        } else {
-          favoris = favoris.filter(l => l.id !== idLivre);
-          saveFavoris();
-          updateBadges();
-          showToast(`"${livreAjoute.titre}" retiré des favoris.`, 'info');
-        }
+            panier.push(livreSelectionne);
+            savePanier();
+            updateBadges();
+            showToast(`"${livreSelectionne.titre}" ajouté au panier !`, 'success');
+          } else showToast(`"${livreSelectionne.titre}" est déjà dans le panier.`, 'info');
+        } else { showToast(`"${livreSelectionne.titre}" est indisponible.`, 'info') }
+      } else if (icon.classList.contains('icon-favoris')) {
+          if (!isInArrayById(favoris, idLivre)) {
+            favoris.push(livreSelectionne);
+            saveFavoris();
+            updateBadges();
+            showToast(`"${livreSelectionne.titre}" ajouté aux favoris !`, 'success');
+          } else {
+            favoris = favoris.filter(l => l.id !== idLivre);
+            saveFavoris();
+            updateBadges();
+            showToast(`"${livreSelectionne.titre}" retiré des favoris.`, 'info');
+          }
       }
     });
 
@@ -264,6 +368,7 @@ fetch('../assets/livre.json')
     let currentSlideIndex = 0;
 
     const updateCarousel = () => {
+      if (slides.length === 0) return; // Sécurité si pas de slide
       const slideWidth = slides[0].getBoundingClientRect().width;
       carouselTrack.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
       slides.forEach(slide => slide.classList.remove('current-slide'));
