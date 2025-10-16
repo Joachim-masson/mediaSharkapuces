@@ -1,308 +1,471 @@
+// --- MISE A JOUR IMMEDIATE DES BADGES AU CHARGEMENT DE LA PAGE ---
 
-//FRENCH MOVIES
+// On définit les clés de stockage une seule fois
+const PANIER_KEY = 'Panier';
+const FAVORIS_KEY = 'Favoris';
 
-// Base données
-const frenchmovie = {
-    comédie: [
-        {
-            id: "les-tuche",
-            title: "Les Tuche",
-            year: 2011,
-            duration: 95,
-            img: "images/lestuches.jpg",
-            desc: "Dans une petite ville du Nord, une famille déjantée remporte le gros lot et débarque dans un univers de luxe qui ne lui ressemble pas. Entre gaffes, bonne humeur et esprit de clan, chacun tente de rester soi-même malgré la nouvelle vie."
-        },
-        {
-            id: "bienvenue-chez-les-chtis",
-            title: "Bienvenue chez les Ch'tis",
-            year: 2008,
-            duration: 106,
-            img: "images/bienvenue.jpg",
-            desc: "Muté à Bergues, un postier du Sud découvre le Nord qu'il imaginait hostile. De quiproquos en rencontres chaleureuses, il apprivoise l'accent, la pluie… et surtout l'amitié qui bouscule ses préjugés."
-        },
-        {
-            id: "intouchables",
-            title: "Intouchables",
-            year: 2011,
-            duration: 112,
-            img: "images/intouchables.jpg",
-            desc: "À la suite d'un accident, un aristocrate tétraplégique embauche un aide à domicile venu d'un milieu populaire. Leur duo improbable se nourrit d'humour et d'audace: chacun secoue l'autre, jusqu'à réinventer sa façon d'être au monde."
-        },
-        {
-            id: "les-visiteurs",
-            title: "Les Visiteurs",
-            year: 1993,
-            duration: 107,
-            img: "images/visiteurs.jpg",
-            desc: "Un chevalier et son écuyer sont propulsés du Moyen Âge à la France des années 1990. Percés d'armures et de jurons, ils affrontent l'électricité, l'ascenseur et la politesse moderne dans une suite de catastrophes réjouissantes."
-        },
-        {
-            id: "le-diner-de-cons",
-            title: "Le Dîner de Cons",
-            year: 1998,
-            duration: 80,
-            img: "images/diner.jpg",
-            desc: "Chaque semaine, des bourgeois organisent un dîner où chacun amène un « con ». Mais le champion du soir, naïf et attachant, retourne la situation à force de gaffes sincères et de bonté."
-        }
-    ],
+// On récupère les listes depuis le localStorage
+const panierInitial = JSON.parse(localStorage.getItem(PANIER_KEY)) || [];
+const favorisInitial = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
 
-    drame: [
-        {
-            id: "la-haine",
-            title: "La Haine",
-            year: 1995,
-            duration: 98,
-            img: "images/haine.jpg",
-            desc: "Au lendemain d'une bavure policière, trois amis de banlieue dérivent 24 heures durant, entre colère et désœuvrement. Un noir et blanc tendu qui questionne la spirale de la violence et le regard des institutions."
-        },
-        {
-            id: "les-choristes",
-            title: "Les Choristes",
-            year: 2004,
-            duration: 97,
-            img: "images/choristes.jpg",
-            desc: "Dans un internat austère de l'après-guerre, un surveillant rassemble des élèves difficiles autour d'un chœur. La musique fissure l'autoritarisme et redonne aux enfants une part d'innocence et d'élan."
-        },
-        {
-            id: "un-prophete",
-            title: "Un Prophète",
-            year: 2009,
-            duration: 155,
-            img: "images/prophete.jpg",
-            desc: "Jeune détenu sans repères, Malik apprend la loi du plus fort en prison. De petites missions en alliances dangereuses, il s'impose comme stratège et force d'ascension au cœur d'un système carcéral implacable."
-        },
-        {
-            id: "amelie-poulain",
-            title: "Le Fabuleux Destin d'Amélie Poulain",
-            year: 2001,
-            duration: 122,
-            img: "images/amelie.jpg",
-            desc: "À Montmartre, Amélie s'invente une vie faite de micro-bontés et de coïncidences poétiques. Quand elle croise Nino, collectionneur d'images oubliées, son imaginaire se frotte au risque du vrai rendez-vous."
-        },
-        {
-            id: "de-rouille-et-dos",
-            title: "De Rouille et d'Os",
-            year: 2012,
-            duration: 122,
-            img: "images/rouille.jpg",
-            desc: "Un père à la dérive et une dresseuse d'orques amputée s'apprivoisent dans une relation brute où se mêlent désir, survie et dignité. Deux corps cabossés cherchent un équilibre."
-        }
-    ],
+// On met à jour les badges avec les données récupérées
+document.getElementById('cartBadge').textContent = panierInitial.length || 0;
+document.getElementById('favBadge').textContent = favorisInitial.length || 0;
 
-    thriller: [
-        {
-            id: "ne-le-dis-a-personne",
-            title: "Ne le dis à personne",
-            year: 2006,
-            duration: 131,
-            img: "images/personne.jpg",
-            desc: "Huit ans après le meurtre de sa femme, un pédiatre reçoit un e-mail troublant. La piste rouvre: faux-semblants, flics et secrets familiaux se télescopent dans une cavale sous haute tension."
-        },
-        {
-            id: "36-quai-des-orfevres",
-            title: "36 Quai des Orfèvres",
-            year: 2004,
-            duration: 111,
-            img: "images/orfevres.jpg",
-            desc: "Deux flics rivaux chassent le même gang de braqueurs. Au 36, l'ambition dévore tout: loyautés fragiles, procédures qui vacillent, morale qui s'effrite au fil de la traque."
-        },
-        {
-            id: "le-pacte-des-loups",
-            title: "Le Pacte des loups",
-            year: 2001,
-            duration: 142,
-            img: "images/pacte.jpg",
-            desc: "Sous Louis XV, une « bête » terrorise le Gévaudan. Un naturaliste et un guerrier iroquois enquêtent, entre complots, superstition et scènes d'action baroques."
-        },
-        {
-            id: "la-proie",
-            title: "La Proie",
-            year: 2011,
-            duration: 102,
-            img: "images/proie.jpg",
-            desc: "Évadé pour sauver sa famille, un braqueur traque un ex-codétenu devenu tueur. Polar de poursuite nerveux où la police se retrouve prise entre les deux."
-        },
-        {
-            id: "affaire-sk1",
-            title: "L'Affaire SK1",
-            year: 2015,
-            duration: 120,
-            img: "images/sk1.jpg",
-            desc: "Dans les années 90, la brigade criminelle de Paris remonte, pièce par pièce, la piste d'un tueur en série. Chronique procédurale des années ADN naissantes."
-        }
-    ],
+// ---- CONFIG JSON (chemin RELATIF à dvd-page.html) ----
+const JSON_URL = "./data/dvd.json"; 
 
-    horreur: [
-        {
-            id: "grave",
-            title: "Grave",
-            year: 2016,
-            duration: 98,
-            img: "images/grave.jpg",
-            desc: "Justine, étudiante vétérinaire végétarienne, découvre une faim nouvelle après un bizutage carné. Corps, pulsions et identité déraillent dans un coming-of-age viscéral."
-        },
-        {
-            id: "martyrs",
-            title: "Martyrs",
-            year: 2008,
-            duration: 100,
-            img: "images/martyrs.jpg",
-            desc: "Deux jeunes femmes hantées par un trauma d'enfance s'enfoncent dans une vengeance qui révèle un projet aussi fanatique que dérangeant. Extrême, radical et tragique."
-        },
-        {
-            id: "frontieres",
-            title: "Frontière(s)",
-            year: 2007,
-            duration: 108,
-            img: "images/frontiere.jpeg",
-            desc: "En fuite après un braquage, des jeunes tombent sur une famille néo-nazie dans une auberge isolée. Survival brutal qui dérape en cauchemar."
-        },
-        {
-            id: "haute-tension",
-            title: "Haute Tension",
-            year: 2003,
-            duration: 91,
-            img: "images/tension.jpg",
-            desc: "Deux amies révisent à la campagne; un tueur fait irruption dans la nuit. Course-poursuite suffocante et twist traumatique."
-        },
-        {
-            id: "a-l-interieur",
-            title: "À l'intérieur",
-            year: 2007,
-            duration: 83,
-            img: "images/interieur.jpg",
-            desc: "La veille de son accouchement, une femme enceinte est assiégée chez elle par une inconnue. Un huis clos gore et implacable."
-        }
-    ]
-};
+// Helper de sélection DOM
+const $  = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+let catalogue = null;            
+let filmIndex = new Map();       
+let panier  = JSON.parse(localStorage.getItem(PANIER_KEY))  || [];
+let favoris = JSON.parse(localStorage.getItem(FAVORIS_KEY)) || [];
 
+// éléments DOM
+const favPanel  = $('#favPanel');
+const favBtn    = $('#favBtn');
+const favBadge  = $('#favBadge');
+const cartBadge = $('#cartBadge');
 
-const favs = new Set();
-const cart = [];
+// LS save
+const savePanier  = () => localStorage.setItem(PANIER_KEY,  JSON.stringify(panier));
+const saveFavoris = () => localStorage.setItem(FAVORIS_KEY, JSON.stringify(favoris));
+const isInArrayById = (arr, id) => arr.some(item => String(item.id) === String(id));
 
-function slugify(str) {
-    return String(str)
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '');
-}
-
-function normalizeMovie(movie) {
-    const id = movie.id ?? slugify(movie.title || crypto.randomUUID());
-    return {
-        id,
-        title: movie.title ?? "Titre inconnu",
-        year: movie.year ?? "—",
-        duration: movie.duration ?? "?",
-        img: movie.img ?? "",
-        desc: movie.desc ?? "Résumé indisponible."
-    };
-}
-
+// Badges
 function updateBadges() {
-    const favEl = document.getElementById("favCount");
-    const cartEl = document.getElementById("cartCount");
-    if (favEl) favEl.textContent = favs.size;
-    if (cartEl) cartEl.textContent = cart.length;
+  if (!cartBadge || !favBadge) return;
+  cartBadge.textContent = panier.length  || 0;
+  favBadge.textContent  = favoris.length || 0;
+
+  for (const el of [cartBadge, favBadge]) {
+    el.classList.remove('bump');
+    void el.offsetWidth;
+    el.classList.add('bump');
+    el.toggleAttribute('hidden', Number(el.textContent) === 0);
+  }
+
+  const countEl = favPanel?.querySelector('header .count');
+  if (countEl) countEl.textContent = `(${favoris.length})`;
 }
 
+function showToast(message, type = 'info', duration = 2200) {
+  const container = document.getElementById('toast') || (() => {
+    const d = document.createElement('div'); d.id = 'toast'; document.body.appendChild(d); return d;
+  })();
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = message;
+  container.appendChild(t);
+  setTimeout(() => {
+    t.style.opacity = '0';
+    t.style.transform = 'translateY(-6px)';
+    setTimeout(() => t.remove(), 300);
+  }, duration);
+}
 
-function showImages(category) {
-    const gallery = document.getElementById("gallery");
-    if (!gallery) return;
+// Charge le Json et construit l'index
+async function loadCatalogue() {
+  const res = await fetch(JSON_URL, { cache: 'no-store' });
+  if (!res.ok) {
+    console.error('Fetch catalogue KO:', res.status, res.statusText, 'URL:', new URL(JSON_URL, location.href).href);
+    throw new Error('HTTP '+res.status);
+  }
+  catalogue = await res.json();
+  buildIndex();
+}
 
-    gallery.innerHTML = "";
-
-    const list = frenchmovie[category];
-    if (!list) {
-        gallery.textContent = "Catégorie introuvable.";
-        return;
+function buildIndex() {
+  filmIndex.clear();
+  if (!catalogue) return;
+  //parcours le catalogue pour créer un index plat des films
+  for (const [region, genres] of Object.entries(catalogue)) {
+    for (const [genre, films] of Object.entries(genres || {})) {
+      for (const f of films || []) {
+        const key = String(f.id);
+        if (filmIndex.has(key)) {
+          console.warn(`ID dupliqué: "${key}" (${region}/${genre}) — l'entrée précédente sera écrasée.`);
+        }
+        filmIndex.set(key, { ...f, region, genre });
+      }
     }
+  }
+}
 
-    list.slice(0, 6).forEach(raw => {
-        const film = normalizeMovie(raw);
+// Dropdown global favoris
+function renderFavDropdown() {
+  if (!favPanel) return;
+  const ul    = favPanel.querySelector('.fav-list');
+  const empty = favPanel.querySelector('.empty');
+  const count = favPanel.querySelector('header .count');
 
-        const figure = document.createElement("figure");
-        figure.tabIndex = 0;
-        figure.dataset.id = film.id;
+  ul.innerHTML = '';
+  if (count) count.textContent = `(${favoris.length})`;
 
-        const img = document.createElement("img");
-        img.src = film.img;
-        img.alt = `Affiche du film ${film.title}`;
-
-        const caption = document.createElement("figcaption");
-        caption.textContent = film.title;
-
-        const overlay = document.createElement("div");
-        overlay.className = "overlay";
-        overlay.innerHTML = `
-      <h4>${film.title}</h4>
-      <div class="meta">${film.year} • ${film.duration} min</div>
-      <p class="desc">${film.desc}</p>
-      <div class="actions">
-        <button class="icon-btn fav"
-                type="button"
-                aria-pressed="${favs.has(film.id)}"
-                data-id="${film.id}">
-                <img class="icon" src="../navbar/images/heart.svg" alt="" aria-hidden="true">
-                </button>
-        <button class="icon-btn add-cart"
-                type="button"
-                data-id="${film.id}"> 
-                <img class="icon" src="images/shopping-cart-white.svg" alt="" aria-hidden="true">
-                </button>
-      </div>
+//bouton vider favoris
+  let favFooter = favPanel.querySelector('.fav-footer');
+  if (!favFooter) {
+    favFooter = document.createElement('footer');
+    favFooter.className = 'fav-footer';
+    favFooter.innerHTML = `
+      <footer class="cart-footer">
+      <button class="vider-favoris" type="button">
+        Vider les favoris
+      </button>
+      </footer>
     `;
+    favPanel.appendChild(favFooter);
+  }
 
-        figure.append(img, caption, overlay);
-        gallery.appendChild(figure);
-    });
+  if (favoris.length === 0) {
+    if (empty) empty.style.display = 'block';
+    favFooter.style.display = 'none';
+    return;
+  }
+  if (empty) empty.style.display = 'none';
+  favFooter.style.display = 'block';
+
+  ul.innerHTML = favoris.map(f => `
+    <li data-id="${f.id}">
+      <img src="${f.img}" alt="Affiche de ${f.title}">
+      <div>
+        <div class="title">${f.title}</div>
+        <div class="meta">${f.year} • ${f.duration} min</div>
+      </div>
+      <button class="remove" type="button" aria-label="Retirer ${f.title}" data-id="${f.id}">×</button>
+    </li>
+  `).join('');
 }
 
-// Une fois
-document.addEventListener("DOMContentLoaded", () => {
-    const gallery = document.getElementById("gallery");
-    if (gallery) {
-        gallery.addEventListener("click", (e) => {
-            const favBtn = e.target.closest(".fav");
-            const cartBtn = e.target.closest(".add-cart");
+//Section films (par région)
+function createMovieSection(sectionEl, regionKey, defaultGenre) {
+  if (!sectionEl) return;
+  const gallery  = sectionEl.querySelector('.gallery');
+  const selector = sectionEl.querySelector('.boutonselector');
 
-            if (favBtn) {
-                const id = favBtn.dataset.id;
-                if (favs.has(id)) {
-                    favs.delete(id);
-                    favBtn.setAttribute("aria-pressed", "false");
-                } else {
-                    favs.add(id);
-                    favBtn.setAttribute("aria-pressed", "true");
-                }
-                updateBadges();
-            }
+  const list = (genre) => catalogue?.[regionKey]?.[genre] ?? [];
 
-            if (cartBtn) {
-                const id = cartBtn.dataset.id;
-                cart.push(id);
-                updateBadges();
-                cartBtn.textContent = "Ajouté";
-            }
-        });
+  // Visuel des films
+  const renderFilms = (liste) => {
+    if (!gallery) return;
+    if (!liste || !liste.length) {
+      gallery.innerHTML = `<p>Aucune donnée trouvée.</p>`;
+      return;
+    }
+    gallery.innerHTML = liste.slice(0, 6).map(film => `
+      <figure data-id="${film.id}" tabindex="0">
+        <img src="${film.img}" alt="Affiche du film ${film.title}" onerror="this.src='images/placeholder.jpg'">
+        <figcaption>${film.title}</figcaption>
+        <div class="overlay">
+          <h4>${film.title}</h4>
+          <div class="meta">${film.year} • ${film.duration} min</div>
+          <p class="desc">${film.desc}</p>
+          <div class="actions">
+            <button class="icon-btn action-favoris" type="button" data-id="${film.id}"
+                    aria-pressed="${isInArrayById(favoris, film.id)}" title="Ajouter aux favoris">
+              <img class="icon" src="../navbar/images/heart.svg" alt="" aria-hidden="true">
+            </button>
+            <button class="icon-btn action-panier" type="button" data-id="${film.id}"
+                    aria-pressed="${isInArrayById(panier, film.id)}" title="Ajouter au panier">
+              <img class="icon" src="images/shopping-cart-white.svg" alt="" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+      </figure>
+    `).join('');
+  };
 
+  // Animation (ta logique)
+  let __isSwitching = false;
+  function switchCategory(genre) {
+    if (!gallery || __isSwitching) return;
+    __isSwitching = true;
 
+    const liste = list(genre);
+
+    const cs = getComputedStyle(gallery);
+    const dur   = Math.max(...cs.transitionDuration.split(',').map(s => parseFloat(s) || 0));
+    const delay = Math.max(...cs.transitionDelay.split(',').map(s => parseFloat(s) || 0));
+    const totalMs = (dur + delay) * 1000;
+
+    const prevH = gallery.offsetHeight;
+    gallery.style.height = prevH + 'px';
+    gallery.classList.add('is-leaving');
+    void gallery.offsetWidth;
+
+    let leftPhaseDone = false;
+    const proceedToSwap = () => {
+      if (leftPhaseDone) return;
+      leftPhaseDone = true;
+
+      renderFilms(liste);
+      const nextH = gallery.scrollHeight;
+      gallery.style.height = nextH + 'px';
+
+      gallery.classList.remove('is-leaving');
+      gallery.classList.add('is-entering');
+
+      let cleaned = false;
+      const cleanUp = (ev) => {
+        if (ev && ev.propertyName && ev.propertyName !== 'height') return;
+        if (cleaned) return;
+        cleaned = true;
+        gallery.removeEventListener('transitionend', cleanUp);
+        gallery.style.height = '';
+        gallery.classList.remove('is-entering');
+        __isSwitching = false;
+      };
+      gallery.addEventListener('transitionend', cleanUp);
+      setTimeout(cleanUp, Math.max(220, totalMs + 80));
+    };
+
+    const onLeave = (e) => {
+      if (e.target !== gallery) return;
+      gallery.removeEventListener('transitionend', onLeave);
+      proceedToSwap();
+    };
+    gallery.addEventListener('transitionend', onLeave, { once: true });
+    setTimeout(proceedToSwap, Math.max(220, totalMs + 80));
+  }
+
+  // Délégation d'événements DANS la section
+  sectionEl.addEventListener('click', (e) => {
+    // Tabs genres
+    const tab = e.target.closest('button[data-category]');
+    if (tab && selector.contains(tab)) {
+      selector.querySelectorAll('button[data-category]').forEach(b => {
+        b.classList.toggle('active-red', b === tab);
+        b.setAttribute('aria-selected', b === tab ? 'true' : 'false');
+      });
+      switchCategory(tab.dataset.category);
+      return;
     }
 
-    // Boutons de catégories
-    const selector = document.querySelector(".boutonselector");
-    if (selector) {
-        selector.addEventListener("click", (e) => {
-            const btn = e.target.closest("button[data-category]");
-            if (!btn) return;
-            showImages(btn.dataset.category);
-        });
+    // Actions favoris/panier
+    const btnFav  = e.target.closest('.action-favoris');
+    const btnCart = e.target.closest('.action-panier');
+    if (!btnFav && !btnCart) return;
+
+    const id   = (btnFav || btnCart).dataset.id;
+    const film = filmIndex.get(String(id));
+    if (!film) return;
+
+    if (btnFav) {
+      if (!isInArrayById(favoris, id)) {
+        favoris.push(film);
+        btnFav.setAttribute('aria-pressed', 'true');
+        showToast(`"${film.title}" ajouté aux favoris !`, 'success');
+      } else {
+        favoris = favoris.filter(f => String(f.id) !== String(id));
+        btnFav.setAttribute('aria-pressed', 'false');
+        showToast(`"${film.title}" retiré des favoris.`, 'info');
+      }
+      saveFavoris(); updateBadges(); renderFavDropdown();
     }
 
-    // Init par défaut
-    showImages("comédie");
+    if (btnCart) {
+      if (!isInArrayById(panier, id)) {
+        panier.push(film);
+        btnCart.setAttribute('aria-pressed', 'true');
+        showToast(`"${film.title}" ajouté au panier !`, 'success');
+      } else {
+        panier = panier.filter(p => String(p.id) !== String(id));
+        btnCart.setAttribute('aria-pressed', 'false');
+        showToast(`"${film.title}" retiré du panier.`, 'info');
+      }
+      savePanier(); updateBadges(); renderCartDropdown(); // dropdown panier
+    }
+  });
+
+  // Affichage initial
+  const defaultTab =
+    selector.querySelector('[data-category].active-red')?.dataset.category
+    || defaultGenre
+    || Object.keys(catalogue?.[regionKey] || {})[0];
+
+  switchCategory(defaultTab);
+}
+
+/* ---------- Panneau favoris (global) ---------- */
+if (favBtn && favPanel) {
+  favBtn.addEventListener('click', () => {
+    const opened = !favPanel.hasAttribute('hidden');
+    favPanel.toggleAttribute('hidden', opened);
+    favBtn.setAttribute('aria-expanded', String(!opened));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!favPanel.contains(e.target) && !favBtn.contains(e.target)) {
+      favPanel.setAttribute('hidden', '');
+      favBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+favPanel.addEventListener('click', (e) => {
+  const removeBtn = e.target.closest('.remove');
+  const clearBtn  = e.target.closest('.vider-favoris');
+
+  // suppression solo
+  if (removeBtn) {
+    const id = removeBtn.dataset.id;
+    const item = favoris.find(f => String(f.id) === String(id));
+    favoris = favoris.filter(f => String(f.id) !== String(id));
+    saveFavoris();
     updateBadges();
+    renderFavDropdown();
+
+    const btnFavInGrid = document.querySelector(`.action-favoris[data-id="${CSS.escape(String(id))}"]`);
+    if (btnFavInGrid) btnFavInGrid.setAttribute('aria-pressed', 'false');
+
+    showToast(`"${item?.title || 'Article'}" retiré des favoris.`, 'info');
+    return;
+  }
+
+  // Vide tous les favoris
+  if (clearBtn) {
+    if (!favoris.length) return;
+    if (confirm('Vider tous les favoris ?')) {
+      favoris = [];
+      saveFavoris();
+      updateBadges();
+      renderFavDropdown();
+      showToast('Favoris vidés.', 'info');
+    }
+    return;
+  }
 });
+
+}
+
+// Panier
+let cartPanel = null;
+function ensureCartPanel() {
+  const panierContainer = document.getElementById('panier-container');
+  if (!panierContainer) return null;
+
+  if (!cartPanel) {
+    cartPanel = document.createElement('div');
+    cartPanel.id = 'cartPanel';
+    cartPanel.className = 'fav-panel cart-panel'; 
+    cartPanel.setAttribute('hidden', '');
+    cartPanel.innerHTML = `
+      <header>Panier <span class="count">(0)</span></header>
+      <ul class="cart-list" role="list"></ul>
+      <p class="empty">Aucun article dans le panier.</p>
+      <footer class="cart-footer">
+        <button class="vider-panier" type="button">
+          Vider le panier
+        </button>
+      </footer>
+    `;
+    panierContainer.appendChild(cartPanel);
+
+    const openCart = () => cartPanel.removeAttribute('hidden');
+    const closeCart = () => cartPanel.setAttribute('hidden', '');
+
+    panierContainer.addEventListener('mouseenter', openCart);
+    panierContainer.addEventListener('mouseleave', closeCart);
+    panierContainer.addEventListener('click', (e) => {
+      if (cartPanel.contains(e.target)) return;
+      const opened = !cartPanel.hasAttribute('hidden');
+      cartPanel.toggleAttribute('hidden', opened);
+    });
+
+    // Délégation : retirer un item / vider panier
+    cartPanel.addEventListener('click', (e) => {
+      const removeBtn = e.target.closest('.remove-from-cart');
+      const clearBtn  = e.target.closest('.vider-panier');
+
+      if (removeBtn) {
+        const id = String(removeBtn.dataset.id);
+        const removed = panier.find(p => String(p.id) === id);
+        panier = panier.filter(p => String(p.id) !== id);
+        savePanier(); updateBadges(); renderCartDropdown();
+        const btnInGrid = document.querySelector(`.action-panier[data-id="${CSS.escape(id)}"]`);
+        if (btnInGrid) btnInGrid.setAttribute('aria-pressed', 'false');
+        showToast(`"${removed?.title || 'Article'}" retiré du panier.`, 'info');
+      }
+
+      if (clearBtn) {
+        if (!panier.length) return;
+        if (confirm('Vider tout le panier ?')) {
+          panier = [];
+          savePanier(); updateBadges(); renderCartDropdown();
+          showToast('Panier vidé.', 'info');
+        }
+      }
+    });
+// Synchronisation panier entre onglets
+    window.addEventListener('storage', (e) => {
+      if (e.key === PANIER_KEY) {
+        try { panier = JSON.parse(e.newValue) || []; } catch { panier = []; }
+        renderCartDropdown();
+      }
+    });
+  }
+  return cartPanel;
+}
+
+function renderCartDropdown() {
+  const panel = ensureCartPanel();
+  if (!panel) return;
+
+  const cartList   = panel.querySelector('.cart-list');
+  const cartEmpty  = panel.querySelector('.empty');
+  const cartCount  = panel.querySelector('header .count');
+  const cartFooter = panel.querySelector('.cart-footer');
+
+  cartList.innerHTML = '';
+  cartCount.textContent = `(${panier.length})`;
+
+  if (panier.length === 0) {
+    cartEmpty.style.display = 'block';
+    cartFooter.style.display = 'none';
+    return;
+  }
+  cartEmpty.style.display = 'none';
+  cartFooter.style.display = 'block';
+
+  cartList.innerHTML = panier.map(item => `
+    <li data-id="${item.id}" style="display:grid; grid-template-columns:44px 1fr auto; gap:10px; align-items:center; padding:8px; border-radius:8px;">
+      <img src="${item.img}" alt="Affiche de ${item.title}" width="44" height="60" style="object-fit:cover; border-radius:6px;">
+      <div>
+        <div class="title">${item.title}</div>
+        <div class="meta">${item.year} • ${item.duration} min</div>
+      </div>
+      <button class="remove-from-cart" type="button" aria-label="Retirer ${item.title}" data-id="${item.id}">×</button>
+    </li>
+  `).join('');
+}
+
+// Synchronisation entre onglets
+window.addEventListener('storage', (e) => {
+  if (e.key === PANIER_KEY)  { try { panier  = JSON.parse(e.newValue) || []; } catch { panier = []; } }
+  if (e.key === FAVORIS_KEY) { try { favoris = JSON.parse(e.newValue) || []; } catch { favoris = []; } }
+  updateBadges();
+  renderFavDropdown();
+  renderCartDropdown();
+});
+
+// Init
+(async () => {
+  try {
+    updateBadges();
+    await loadCatalogue();    // charge le JSON et construit l'index
+    renderFavDropdown();
+    renderCartDropdown(); 
+
+    // Section films
+    createMovieSection(document.getElementById('french'),   'french',   'comédie');
+    createMovieSection(document.getElementById('american'), 'american', 'comédie');
+    createMovieSection(document.getElementById('european'), 'european', 'comédie');
+    createMovieSection(document.getElementById('asian'),    'asian',    'comédie');
+
+  } catch (err) {
+    console.error('Catalogue error:', err, 'URL:', new URL(JSON_URL, location.href).href);
+    $$('.movie-section .gallery').forEach(g => g.innerHTML = `<p>Erreur chargement catalogue.</p>`);
+  }
+})();
