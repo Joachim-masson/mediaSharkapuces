@@ -32,28 +32,32 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     });
 });
 
+// carousel de ma page
 
 let mesImages = document.querySelectorAll('.container2 img');
 
-// 2. Définir les catégories
+const BASE_PATH = "images/grid/";
 let categories = {
-    fps: ["", "images/fps2.jpg", "images/fps3.jpg", "images/fps4.jpg", "images/fps5.jpg", "images/fps6.jpg"],
-    rpg: ["images/rpg1.jpg", "images/rpg2.jpg", "images/rpg3.jpg", "images/rpg4.jpg", "images/rpg5.jpg", "images/rpg6.jpg"]
-
+  fps: ["images/grid/b4b87eb735d738ae903e018ea687de1778dc4b53d05b3edf.avif", "images/grid/apex-legends-1sze4.jpg", "images/grid/Capture d’écran 2025-10-10 151928.png", "images/grid/1696414021417.webp", "images/grid/iHZIqzxIpvLe8g-medium.jpg", "images/grid/za3pxrr77px31.jpg"],
+  rpg: ["images/grid/clair-obscur.avif", "images/grid/diablo4.webp", "images/grid/dota2.jpg", "images/grid/eldenring.avif", "images/grid/hades2.jpeg", "images/grid/wukong.avif"],
+  combat: ["images/grid/dbz.avif", "images/grid/for honor.jpg", "images/grid/mortal.jpeg", "images/grid/street.jpg", "images/grid/tekken.jpg", "images/grid/batman.avif"],
+  course: ["images/grid/forza5.webp", "images/grid/nfs most wanted.webp", "images/grid/nfs heat.avif", "images/grid/trackmania.png", "images/grid/corsa.avif", BASE_PATH +"f1.webp"]
 };
 
-let mesBoutons = document.querySelectorAll('.bouton button');
+let mesBoutons = document.querySelectorAll('button');
 
 mesBoutons.forEach(function (unBouton) {
-    unBouton.addEventListener('click', function () {
-
-
-        let categorie = unBouton.dataset.category;
-
-        // 6. Boucle pour changer les 6 images
-        for (let i = 0; i < 6; i++) {
-            mesImages[i].src = categories[categorie][i];
-        }
-
-    });
+  unBouton.addEventListener('click', function () {
+       
+    let categorie = unBouton.dataset.categorie;
+     
+    for (let i = 0; i < 6; i++) {
+      if (categories[categorie] && categories[categorie][i]) {
+        
+        mesImages[i].src = categories[categorie][i];
+      }
+    }
+  });
 });
+
+// grid dynamique qui change en fonction des catégories

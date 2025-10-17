@@ -21,7 +21,7 @@
             <li class="dropdown">
                 <a href="#">Livres ▾</a>
                 <ul class="dropdown-menu">
-                    <li><a href="">Comics</a></li>
+                    <li><a href="../comics/comics.html">Comics</a></li>
                     <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
                     <li><a href="../nature/nature.html">Nature</a></li>
                     <li><a href="../manga/manga.html">Manga</a></li>
@@ -30,6 +30,15 @@
             <li><a href="../musique/musique.html">Musique</a></li>
             <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
             <li><a href="../jeuxvideo/jeuxvideo.html">Jeux Vidéos</a></li>
+             <li class="dropdown">
+                <a href="#">Mini Game ▾</a>
+                <ul class="dropdown-menu">
+                <li><a href="../memoriManga/memorimanga.html">Memories Manga</a></li>
+                <li><a href="../memories/memories.html">Memories Poulet</a></li>
+                <li><a href="../dactylographie/dactylographie.html">Dactilographie</a></li>
+                <li><a href="../hangman/hangman.html">Hangman</a></li>
+            </ul>
+            </li>
             <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
             <li><a href="../contact.html">Contact</a></li>
         </ul>
@@ -54,8 +63,8 @@
                     de voyager, de rêver et de vivre des histoires incroyables sans quitter son écran. C’est un espace
                     où la technologie et l’imagination se rejoignent pour créer des mondes uniques.</p>
                 <p>
-                    <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
-                    <button class="btn border-red" href="last-exit.html">Voir les dernières sorties</button>
+                    <a href="../homepage/index.html"><button class="btn active-red">Retourner à l'accueil</button></a>
+                    <a href="#tours"><button class="btn border-red">Voir les événements</button></a>
                 </p>
             </article>
         </section>
@@ -94,7 +103,7 @@
             </div>
             <button class="carousel-button next">&#10095;</button>
         </section>
-
+    
         <section class="carousel" aria-labelledby="carouselheading">
             <h2>jeux Xbox</h2>
             <button class="carousel-button prev">&#10094;</button>
@@ -126,7 +135,7 @@
             </div>
             <button class="carousel-button next">&#10095;</button>
         </section>
-
+    
         <section class="carousel" aria-labelledby="carouselheading">
             <h2>jeux playstation</h2>
             <button class="carousel-button prev">&#10094;</button>
@@ -162,40 +171,51 @@
             </div>
             <button class="carousel-button next">&#10095;</button>
         </section>
-
+            <section>
+            <div>
+            <h2> jeux par catégories</h2>
+                
+            </div>
+            </section>
         <section class="container1">
-            <div class="boutons">
+            
+            <div class=".boutons">
                 <button data-categorie="fps">FPS</button>
                 <button data-categorie="rpg">RPG</button>
                 <button data-categorie="combat">combat</button>
-                <button data-categorie="aventure">aventure</button>
-            </div>
-
+                <button data-categorie="course">course</button>
+            </div></section>
+<section>
             <div class="container2">
                 <div class="imgcontainer">
-                    <img src="images/grid/b4b87eb735d738ae903e018ea687de1778dc4b53d05b3edf.avif" alt=" régle incendie">
+                    <img src="images/grid/b4b87eb735d738ae903e018ea687de1778dc4b53d05b3edf.avif" alt=" pubg">
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/grid/apex-legends-1sze4.jpg" alt=" régle incendie">
+                    <img src="images/grid/apex-legends-1sze4.jpg" alt=" apex legends">
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/grid/Capture d’écran 2025-10-10 151928.png" alt=" régle incendie">
+                    <img src="images/grid/Capture d’écran 2025-10-10 151928.png" alt="warzone">
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/grid/1696414021417.webp" alt=" régle incendie">
+                    <img src="images/grid/1696414021417.webp" alt=" csgo 2">
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/grid/iHZIqzxIpvLe8g-medium.jpg" alt=" régle incendie">
+                    <img src="images/grid/iHZIqzxIpvLe8g-medium.jpg" alt="rust">
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/grid/za3pxrr77px31.jpg" alt=" régle incendie">
+                    <img src="images/grid/za3pxrr77px31.jpg" alt="call of duty black ops 2">
                 </div>
             </div>
+        </section>
+        <section id="planche">
         </section>
         <section class="tournois">
             <div class="tournois1">
                 <img src="images/gamer-tournament-poster-design-template-1893af7697b9cc93a2c9f723e0e530cf_screen.png">
-                <p id="tours">Préparez-vous pour une soirée exceptionnelle dédiée aux passionnés de jeux vidéo !<br> La
+                <div class="inscription">
+                    <h2>Gaming Tournament</h2>
+                
+                    <p id="tours">Préparez-vous pour une soirée exceptionnelle dédiée aux passionnés de jeux vidéo !<br> La
                     Médiathèque Sharkapuce
                     les 23 et 24 décembre un grand tournoi de gaming<br> ouvert à
                     tous.
@@ -205,6 +225,8 @@
                     vous
                     soyez joueur confirmé ou simple curieux,<br> venez vivre une expérience unique au cœur de l'univers
                     gaming !</p>
+                    <a href="#"><button class="btn border-red" id="insc">inscription au tournoi</button></a>
+                </div>
         </section>
         </div>
     </main>
