@@ -38,23 +38,27 @@ main > header:nth-of-type(1) p:first-of-type {
     margin: 20px 0;
 }
 
-#affichage-livres { /* Assumant que .liste-livres est l'ID #affichage-livres du JS */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-items: center;
+#affichage-livres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  align-items: start;
 }
 
 /*========== CARTES LIVRES ==========*/
 .carte-livre {
-    width: 300px;
-    margin: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s;
-    /* Suppression de display: inline-block et vertical-align qui sont inutiles dans un conteneur Grid */
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .carte-livre:hover {
@@ -62,9 +66,10 @@ main > header:nth-of-type(1) p:first-of-type {
 }
 
 .image-container {
-    position: relative;
+    flex-shrink: 0;
     width: 100%;
     height: 300px;
+    position: relative;
 }
 
 .image-livre {
@@ -93,13 +98,13 @@ main > header:nth-of-type(1) p:first-of-type {
 
 .overlay h4 {
     text-align: center;
-    margin: 0 0 10px 0; /* Ajout d'un margin-bottom */
+    margin: 0 0 10px 0;
     color: #fff;
 }
 
 .overlay .shopping-icons {
     display: flex;
-    justify-content: center; /* Centré pour un meilleur rendu */
+    justify-content: center;
     gap: 20px;
     margin-bottom: 10px;
 }
@@ -107,32 +112,60 @@ main > header:nth-of-type(1) p:first-of-type {
 .overlay .icon-panier,
 .overlay .icon-favoris {
     filter: invert(1);
-    width: 24px; /* Taille unifiée */
+    width: 24px;
     height: 24px;
 }
+
+/*========== RESPONSIVE LIVRES ==========*/
+@media screen and (max-width: 900px) {
+  #affichage-livres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #affichage-livres {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 
 /*========== CAROUSEL ==========*/
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Ajout d'une largeur max pour les grands écrans */
+    max-width: 1200px;
     margin: 50px auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 .carousel-track-container {
-    overflow: hidden;
+    /* On autorise le défilement horizontal que le JS va piloter */
+    overflow-x: auto;
+    /* On active le "magnétisme" pour que les slides s'alignent proprement */
+    scroll-snap-type: x mandatory;
+    
+    /* --- On cache la barre de défilement --- */
+    scrollbar-width: none; /* Pour Firefox */
+}
+
+/* Pour Chrome, Safari, etc. */
+.carousel-track-container::-webkit-scrollbar {
+    display: none;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px; /* Utilisation de gap pour l'espacement */
+    /* La transition CSS n'est plus nécessaire, le 'behavior: smooth' du JS s'en occupe */
+    gap: 20px;
 }
 
 .carousel-slide {
-    flex: 0 0 calc(100% / 3 - 20px * 2 / 3); /* Calcul plus robuste avec gap */
+    flex: 0 0 calc(100% / 3 - 20px * 2 / 3);
+    /* Chaque slide devient un point d'arrêt "magnétique" */
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* Améliore l'expérience en forçant l'arrêt */
 }
 
 .carousel-slide img {
