@@ -3,18 +3,18 @@
     "livres": {
       "Panier": {
       "id": 1,
-      "titre": "Panier",
+      "title": "Panier",
       "image": "../navbar/images/shopping_cart.svg"
     },
       "favoris": {
       "id": 2,
-      "titre": "Favoris",
+      "title": "Favoris",
       "image": "../navbar/images/heart.svg"
       },
       "Animaux": [
         {
           "id": 1,
-          "titre": "Le Chat Qui Voulait Être Un Lion",
+          "title": "Le Chat Qui Voulait Être Un Lion",
           "auteur": "Félix Ronron",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1025",
@@ -23,7 +23,7 @@
         },
         {
           "id": 2,
-          "titre": "Les Chiens Ont Du Nez Pour Les Affaires",
+          "title": "Les Chiens Ont Du Nez Pour Les Affaires",
           "auteur": "Rex Dubois",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1074",
@@ -32,7 +32,7 @@
         },
         {
           "id": 3,
-          "titre": "Mouton Academy : L'École Des Blagounettes",
+          "title": "Mouton Academy : L'École Des Blagounettes",
           "auteur": "Bertrand Laineux",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=1043",
@@ -41,7 +41,7 @@
         },
         {
           "id": 4,
-          "titre": "Un Dauphin Dans Ma Baignoire",
+          "title": "Un Dauphin Dans Ma Baignoire",
           "auteur": "Marine Bulle",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=663",
@@ -50,7 +50,7 @@
         },
         {
           "id": 5,
-          "titre": "Les Fourmis Ont Le Dernier Mot",
+          "title": "Les Fourmis Ont Le Dernier Mot",
           "auteur": "Antoine Millepattes",
           "disponible": false,
           "image": "https://media.istockphoto.com/id/186823289/fr/photo/fourmi.jpg?s=612x612&w=0&k=20&c=wGrD2ZNwcrdbSfpWSAgVovDwb67a7fOwjoCMpMqc0ic=",
@@ -59,7 +59,7 @@
         },
         {
           "id": 6,
-          "titre": "Le Canard Philosophe",
+          "title": "Le Canard Philosophe",
           "auteur": "Donald Plume",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1036",
@@ -68,7 +68,7 @@
         },
         {
           "id": 7,
-          "titre": "Lapin & Compagnie : Chroniques D'un Rongeur Moderne",
+          "title": "Lapin & Compagnie : Chroniques D'un Rongeur Moderne",
           "auteur": "Carotte Lagrande",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1062",
@@ -77,7 +77,7 @@
         },
         {
           "id": 8,
-          "titre": "Le Paresseux Qui Courait Après Le Temps",
+          "title": "Le Paresseux Qui Courait Après Le Temps",
           "auteur": "Léo Lento",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=1073",
@@ -86,7 +86,7 @@
         },
         {
           "id": 9,
-          "titre": "Cochon D'Inde Superstar",
+          "title": "Cochon D'Inde Superstar",
           "auteur": "Ginette Roussette",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1068",
@@ -97,7 +97,7 @@
       "Plantes": [
         {
           "id": 1,
-          "titre": "Cactus et Sentiments Piquants",
+          "title": "Cactus et Sentiments Piquants",
           "auteur": "Aloès Véran",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1084",
@@ -106,7 +106,7 @@
         },
         {
           "id": 2,
-          "titre": "Le Chêne Qui Racontait Des Histoires",
+          "title": "Le Chêne Qui Racontait Des Histoires",
           "auteur": "Olivier Racine",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1083",
@@ -115,7 +115,7 @@
         },
         {
           "id": 3,
-          "titre": "Orchidée Mon Amour",
+          "title": "Orchidée Mon Amour",
           "auteur": "Flore Béat",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=1080",
@@ -124,7 +124,7 @@
         },
         {
           "id": 4,
-          "titre": "Le Basilic Qui Aimait Le Rock",
+          "title": "Le Basilic Qui Aimait Le Rock",
           "auteur": "Herbert Son",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1082",
@@ -133,7 +133,7 @@
         },
         {
           "id": 5,
-          "titre": "Les Plantes Ont La Main Verte (Et L'Humour Aussi)",
+          "title": "Les Plantes Ont La Main Verte (Et L'Humour Aussi)",
           "auteur": "Rose Bouton",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=1077",
@@ -142,7 +142,7 @@
         },
         {
           "id": 6,
-          "titre": "La Jungle de Mon Salon",
+          "title": "La Jungle de Mon Salon",
           "auteur": "Phil Dendron",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1079",
@@ -151,7 +151,7 @@
         },
         {
           "id": 7,
-          "titre": "Pissenlit Superstar",
+          "title": "Pissenlit Superstar",
           "auteur": "Léo Champêtre",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=1081",
@@ -160,7 +160,7 @@
         },
         {
           "id": 8,
-          "titre": "Mon Cactus M'a Dit Bonjour",
+          "title": "Mon Cactus M'a Dit Bonjour",
           "auteur": "Véra Plante",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1078",
@@ -169,7 +169,7 @@
         },
         {
           "id": 9,
-          "titre": "Le Pot de Fleur En Colère",
+          "title": "Le Pot de Fleur En Colère",
           "auteur": "Gérard Terreau",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=1076",
@@ -180,7 +180,7 @@
       "Voyages": [
         {
           "id": 1,
-          "titre": "Ma Valise A Disparu À Tokyo",
+          "title": "Ma Valise A Disparu À Tokyo",
           "auteur": "Camille Globe",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=290",
@@ -189,7 +189,7 @@
         },
         {
           "id": 2,
-          "titre": "Tongs, Soleil et Quiproquos",
+          "title": "Tongs, Soleil et Quiproquos",
           "auteur": "Lucie Palmiers",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=267",
@@ -198,7 +198,7 @@
         },
         {
           "id": 3,
-          "titre": "L'Itinéraire D'un Touriste Fatigué",
+          "title": "L'Itinéraire D'un Touriste Fatigué",
           "auteur": "Jean Bagage",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=250",
@@ -207,7 +207,7 @@
         },
         {
           "id": 4,
-          "titre": "Le GPS Qui Me Parlait Mal",
+          "title": "Le GPS Qui Me Parlait Mal",
           "auteur": "Michel Carte",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=225",
@@ -216,7 +216,7 @@
         },
         {
           "id": 5,
-          "titre": "Voyage au Bout du Canapé",
+          "title": "Voyage au Bout du Canapé",
           "auteur": "Odile Fainéante",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=190",
@@ -225,7 +225,7 @@
         },
         {
           "id": 6,
-          "titre": "Perdu En Bretagne (Sans GPS)",
+          "title": "Perdu En Bretagne (Sans GPS)",
           "auteur": "Gwenn Armer",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=165",
@@ -234,7 +234,7 @@
         },
         {
           "id": 7,
-          "titre": "Safari Sans Filet",
+          "title": "Safari Sans Filet",
           "auteur": "Pauline Brousse",
           "disponible": false,
           "image": "https://picsum.photos/500/700?image=155",
@@ -243,7 +243,7 @@
         },
         {
           "id": 8,
-          "titre": "Week-end À Trifouillis-les-Oies",
+          "title": "Week-end À Trifouillis-les-Oies",
           "auteur": "Armand Valise",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=130",
@@ -252,7 +252,7 @@
         },
         {
           "id": 9,
-          "titre": "Un Avion Nommé Désir",
+          "title": "Un Avion Nommé Désir",
           "auteur": "Julie Escale",
           "disponible": true,
           "image": "https://picsum.photos/500/700?image=120",
