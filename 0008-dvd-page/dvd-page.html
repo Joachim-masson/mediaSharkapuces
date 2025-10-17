@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE AND ICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/logo.svg">
+    <title>Dvd-box</title>
+    <!-- GENERAL CSS -->
+    <link rel="stylesheet" href="../styles/graphic_chart.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../styles/footer.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../navbar/navbar.css" type="text/css" media="screen" />
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="styles/dvd-page.css" type="text/css" media="screen" />
+</head>
+
+<body>
+<header>
+  <nav class="navbar">
+    <img src="../navbar/images/logomedia.png" alt="Logo du site" class="logo" />
+    <ul class="nav-list">
+      <li><a href="../homepage/index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Livres ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="../comics/comics.html">Comics</a></li>
+          <li><a href="../fanstatique/fanstatique.html">Fantastiques</a></li>
+          <li><a href="../nature/nature.html">Nature</a></li>
+          <li><a href="../manga/manga.html">Manga</a></li>
+        </ul>
+      </li>
+      <li><a href="../musique/musique.html">Musique</a></li>
+      <li><a href="../0008-dvd-page/dvd-page.html">DVD</a></li>
+      <li><a href="../jeuxvideo/jeuxvideo.html">Jeux Vidéos</a></li>
+      <li class="dropdown">
+                    <a href="#">Mini Game ▾</a>
+                    <ul class="dropdown-menu">
+                    <li><a href="../memoriManga/memorimanga.html">Memories Manga</a></li>
+                    <li><a href="../memories/memories.html">Memories Poulet</a></li>
+                    <li><a href="../dactylographie/dactylographie.html">Dactylographie</a></li>
+                    <li><a href="../hangman/hangman.html">Hangman</a></li>
+                </ul>
+                </li>
+      <li><a href="../0005-about-us/about-us.html">A propos de nous</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+
+    <div class="shopping">
+      <div class="icon-wrapper" id="favoris-container">
+        <button id="favBtn" class="icon-button" type="button"
+                aria-haspopup="true" aria-expanded="false" aria-controls="favPanel"
+                title="Voir mes coups de cœur">
+          <img src="../navbar/images/heart.svg" alt="Favoris" />
+        </button>
+        <span id="favBadge" class="badge" aria-live="polite">0</span>
+
+        <div id="favPanel" class="fav-panel" hidden>
+          <header>Coups de cœur <span class="count">(0)</span></header>
+          <ul class="fav-list" role="list"></ul>
+          <p class="empty">Aucun favori pour l'instant.</p>
+        </div>
+      </div>
+
+
+      <div class="icon-wrapper" id="panier-container">
+        <img src="../navbar/images/shopping_cart.svg" alt="Panier" />
+        <span id="cartBadge" class="badge" aria-live="polite">0</span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <main>
+
+        <section>
+            <article>
+                <h1>Le monde des DVD</h1>
+                <p>L'utilisation des films en bibliothèque est soumise à de nombreuses contraintes juridiques à
+                    connaître avant d'envisager toute forme de diffusion auprès des publics.</p>
+                <p>
+                    <button class="btn active-red" href="../homepage/index.html">Retourner à l'accueil</button>
+                    <button class="btn border-red" href="#">Voir les dernières sorties</button>
+                </p>
+            </article>
+        </section>
+
+        <section class="carousel" aria-labelledby="carouselheading">
+            <h2>Les dernières sorties</h2>
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide current-slide"><img src="images/dvd001.png" alt="John Wick Ballerina">
+                    </li>
+                    <li class="carousel-slide"><img src="images/dvd002.jpg" alt="28 ans plus tard"></li>
+                    <li class="carousel-slide"><img src="images/dvd003.jpeg" alt="Mission impossible"></li>
+                    <li class="carousel-slide"><img src="images/dvd004.jpg" alt="Dragons"></li>
+                    <li class="carousel-slide"><img src="images/dvd005.jpg" alt="Lilo Stitch"></li>
+                    <li class="carousel-slide"><img src="images/dvd006.png" alt="La venue de l'avenir"></li>
+                    <li class="carousel-slide"><img src="images/dvd007.jpg" alt="Avignon"></li>
+                    <li class="carousel-slide"><img src="images/dvd008.jpg" alt="Elio"></li>
+                    <li class="carousel-slide"><img src="images/dvd009.jpg" alt="Les 4 fantastiques"></li>
+                    <li class="carousel-slide"><img src="images/dvd010.jpg" alt="Thunderbolt"></li>
+                    <li class="carousel-slide"><img src="images/dvd011.jpg" alt="Exhuma"></li>
+                    <li class="carousel-slide"><img src="images/dvd012.jpg" alt="The apprentice"></li>
+                    <li class="carousel-slide"><img src="images/dvd013.jpg" alt="En fanfare"></li>
+                    <li class="carousel-slide"><img src="images/dvd014.jpg" alt="Jane Austen a gâche ma vie"></li>
+                    <li class="carousel-slide"><img src="images/dvd015.jpg" alt="The crow"></li>
+                    <li class="carousel-slide"><img src="images/dvd016.jpg" alt="The insider"></li>
+                    <li class="carousel-slide"><img src="images/dvd017.jpg" alt="The Pitt"></li>
+                    <li class="carousel-slide"><img src="images/dvd018.jpg" alt="Chernobyl"></li>
+                    <li class="carousel-slide"><img src="images/dvd019.jpeg" alt="L'opéra"></li>
+                    <li class="carousel-slide"><img src="images/dvd020.jpg" alt="Dans l'ombre"></li>
+                </ul>
+            </div>
+            <button class="carousel-button next">&#10095;</button>
+        </section>
+        <section>
+            <h2>Notre Dvdthèque</h2>
+            <article class="typeOfDVD movie-section" id="french">
+                <h3>Les films français</h3>
+
+                <div class="boutonselector">
+                    <button class="btn active-red" data-category="comédie">Comédie</button>
+                    <button class="btn border-red" data-category="drame">Drame</button>
+                    <button class="btn active-dark" data-category="thriller">Thriller</button>
+                    <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div id="gallery" class="gallery"></div>
+            </article>
+
+            <article class="typeOfDVD movie-section" id="american">
+                <h3>Les films américains</h3>
+    
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+    
+                <div class="gallery"></div>
+              </article>
+  
+              <article class="typeOfDVD movie-section" id="european">
+                <h3>Les films européens</h3>
+
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div class="gallery"></div>
+              </article>
+
+              <article class="typeOfDVD movie-section" id="asian">
+                <h3>Les films asiatiques</h3>
+
+                <div class="boutonselector">
+                  <button class="btn active-red" data-category="comédie">Comédie</button>
+                  <button class="btn border-red" data-category="drame">Drame</button>
+                  <button class="btn active-dark" data-category="thriller">Thriller</button>
+                  <button class="btn border-dark" data-category="horreur">Horreur</button>
+                </div>
+
+                <div class="gallery"></div>
+              </article>
+        </section>
+    </main>
+
+
+    <footer>
+        <header class="footer">
+            <a href="../homepage/index.html"><img src="../images/logoFooter.png" alt="Logo de la médiathèque" /></a>
+            <form action="" method="get">
+                <input type="email" id="email" name="email"
+                    placeholder="Renseigner votre email ici pour recevoir notre news letter" required>
+                <button type="submit">Souscrire</button>
+            </form>
+        </header>
+        <div class="generalFooter">
+            <p> &#169; 2025 Sharkapuce group</p>
+            <ul>
+                <li><a href="../mentionLegales.html">Mentions légales</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="JS/dvd-page.js" defer></script>
+    <script src="../scripts/Script-caroussel.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+[
+   {
+      "id": 1,
+      "artist": "Obituary",
+      "album": "World demise",
+      "genre": "Metal",
+      "title": ["don't car", "World demise", "Burned in", "Redefine","Paralyzing","Lost","Solid state","Splattered", "Final thoughts", "Boiling point", "Set in stone", "Kill for me"],
+      "image": "../images/musiquesImages/Pochette1.jpg",
+      "description":"Sorti en 1994 chez Roadrunner Records, World Demise marque une évolution pour Obituary, qui mêle à son death metal brutal des influences groove et industrielles. Porté par la voix unique de John Tardy et une production massive de Scott Burns, l’album dépeint un monde en ruine, entre violence, décadence et désillusion.",
+      "availability":true,
+      "music":"../audio/01 Don't care (mp3cut.net).mp3"
+   },
+   {
+      "id": 2,
+      "artist": "Malevolent Creation",
+      "album": "Retribution",
+      "genre": "Metal",
+      "title": ["Eve of the apocalypse", "Systematic execution", "Slaughter of innocence", "Coronation of our domain", "No flesh shall be spared", "The coldest survive", "Monster", "Mindlock", "Iced"],
+      "image": "../images/musiquesImages/Pochette2.jpg",
+      "description":"Sorti en 1992 chez Roadrunner, Retribution confirme Malevolent Creation comme une locomotive du death metal floridien : produit par Scott Burns, l’album privilégie des riffs rapides et implacables, une rythmique entraînante et une agressivité brute qui en font un classique sombre et sans concession.",
+      "availability":true,
+      "music":"../audio/04 Coronation of our domain (mp3cut.net).mp3"
+   },
+   {
+      "id": 3,
+      "artist": "Massacra",
+      "album": "Massacra",
+      "genre": "Metal",
+      "title": ["Apocalyptic warriors", "Researchers of tortures", "Sentenced for life", "War of attrition", "Trained to kill", "Nearer to death", "Final holocaust", "Eternal hate", "The day of massacra"],
+      "image": "../images/musiquesImages/Pochette3.jpg",
+      "description":"Sorti en 1990 sur Shark Records, l'album éponyme impose Massacra comme fer de lance du death/thrash français. Brutal et sans compromis, l’album mêle riffs tranchants, intensité guerrière et atmosphère apocalyptique, affirmant une identité européenne puissante au sein de la scène extrême.",
+      "availability":true,
+      "music":"../audio/06 Nearer to death (mp3cut.net).mp3"
+   },
+   {
+      "id": 4,
+      "artist": "loudblast",
+      "album": "Disincarnate",
+      "genre": "Metal",
+      "title": ["Steering for paradise", "After thy thought", "Dusk to dawn", "Outlet for conscience", "Disquieting beliefs", "The horror within", "Arrive into death soon", "Wrapped in roses", "Shaped images of disincarnate spirits"],
+      "image": "../images/musiquesImages/Pochette4.jpg",
+      "description":"Sorti en 1991 chez Semetery Records, Disincarnate confirme Loudblast comme pionnier du death metal français. Alliant technicité, lourdeur et atmosphère sombre, l’album mêle agressivité old-school et maîtrise mélodique, posant les bases d’un son à la fois brutal et raffiné",
+      "availability":true,
+      "music":"../audio/01 Steering for paradise (mp3cut.net).mp3"
+   },
+   {
+      "id": 5,
+      "artist": "Agressor",
+      "album": "Towards beyond",
+      "genre": "Metal",
+      "title": ["Intro", "Primeval transubstantiation", "The forteress", "Positionic showering", "Antediluvian", "Epileptic", "Hyaloid", "The crypt", "Future past/Eldest things", "Turkish march"],
+      "image": "../images/musiquesImages/Pochette5.jpg",
+      "description":"Sorti en 1992 chez Black Mark Production, Towards Beyond affirme Agressor comme figure clé du death/thrash français. Mélangeant vitesse, technicité et atmosphères occultes, l’album dégage une intensité mystique et sauvage qui en fait une œuvre marquante de la scène extrême européenne.",
+      "availability":true,
+      "music":"../audio/06 - Epileptic aura (mp3cut.net).mp3"
+   },
+   {
+      "id": 6,
+      "artist": "Suffocation",
+      "album": "Breeding the spawn",
+      "genre": "Metal",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette11.jpg",
+      "description":"",
+      "availability":true
+   },
+   {
+      "id": 7,
+      "artist": "Cannibal corpse",
+      "album": "The bleeding",
+      "genre": "Metal",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette12.jpg",
+      "description":"",
+      "availability":true
+   },
+   {
+      "id": 8,
+      "artist": "Sepultura",
+      "album": "Arise",
+      "genre": "Metal",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette13.jpg",
+      "description":"",
+      "availability":true
+   },
+   {
+      "id": 9,
+      "artist": "Death",
+      "album": "Human",
+      "genre": "Metal",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette14.jpg",
+      "description":"",
+      "availability":true
+   },
+   {
+      "id": 10,
+      "artist": "Atheist",
+      "album": "Elements",
+      "genre": "Jazz",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette15.jpg",
+      "description":"",
+      "availability":true
+   },
+   {
+      "id": 11,
+      "artist": "Obituary",
+      "album": "The end complete",
+      "genre": "Metal",
+      "title": "",
+      "image": "../images/musiquesImages/Pochette1.jpg",
+      "description":"Sorti en 1994 chez Roadrunner Records, World Demise marque une évolution pour Obituary, qui mêle à son death metal brutal des influences groove et industrielles. Porté par la voix unique de John Tardy et une production massive de Scott Burns, l’album dépeint un monde en ruine, entre violence, décadence et désillusion.",
+      "availability":true
+   }
+]
